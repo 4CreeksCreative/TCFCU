@@ -6,11 +6,21 @@ $('a').each(function(i,val){
 		$(val).attr('data-modal-index','0')
 	}
 })
-$('.modal-trigger').on('click',function(e){
-	var a = document.createElement('a')
-	a.href = $(this).attr('href')
-	var hostname = a.hostname
-	console.log($(this).attr('href'))
-	$('#now-leaving.modal-content .website-link').attr('href', $(this).attr('href'))
-	$('#now-leaving.modal-content .website-name').html(hostname)
+$(document).on('mousedown','.modal-trigger',function(e){
+	function openModal(elem){
+		var a = document.createElement('a')
+		a.href = $(elem).attr('href')
+		var hostname = a.hostname
+		console.log($(elem).attr('href'))
+		$('#now-leaving.modal-content .website-link').attr('href', $(elem).attr('href'))
+		$('#now-leaving.modal-content .website-name').html(hostname)
+	}
+	if( e.which <= 2 ){
+		e.preventDefault();
+		openModal(this);
+	}
+	return true
+})
+$('.website-link').click(function(){
+	mr.modals.closeActiveModal()
 })
