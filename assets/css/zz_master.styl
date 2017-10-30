@@ -372,7 +372,7 @@ table
 
 // ---- Home page
 #home-hero, #hero-cover
-	min-height 80vh
+	//min-height 80vh
 .hamburger-toggle > i
 	color $blue
 	//line-height 100px
@@ -386,22 +386,27 @@ table
 		max-width 200px
 		margin 0 auto
 
-
-#steeve
-	.text-content
-		padding 10vh
-		height 50vh
-
 // ---- media queries
 
 
 
 
 
-//@media (max-width: 992px) //tablet or small desktop
+@media (max-width: 992px) //tablet or small desktop
+	h1
+		font-size 7.5em
+	h2
+		font-size 4.5em
+	h3
+		font-size 3.5em
+	h4
+		font-size 2.5em
+	h5
+		font-size 2em
+	h6
+		font-size 1.5em
 
-
-@media (max-width:768px) //mobile
+@media (max-width:767px) //mobile
 	body
 		padding-top 60px
 	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
@@ -481,7 +486,7 @@ table
 		h6
 			font-size 1.5em
 	#home-hero, #hero-cover
-		min-height 100vh
+		//min-height 100vh
 @media (max-height: 730px)
 	#hero-cover
 		padding 9em 0 1em 0
