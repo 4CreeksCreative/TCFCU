@@ -1,100 +1,118 @@
-extends layout
+extends /layout
 
 
 block content
 	- var blogPosts = 3;
 	//- Main Hero Header
-	section#home-hero.cover.height-80.imagebg.parallax.text-center(data-overlay="5")
+	section#home-hero.cover.height-80.imagebg.parallax.overlay-blue(data-overlay="5")
 		//- background image
 		div.background-image-holder(style="background: url(/img/header/home.jpg); opacity: 1;") 
 			//-background image for smaller devices
 			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/home.jpg" alt="" srcset="/img/header/home.jpg 1600w, /img/header/home.jpg 300w, /img/header/home.jpg 768w, /img/header/home.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
-		div#home-hero-content.container.pos-vertical-center
+		div.container.pos-vertical-center
 			div.row
 				div.col-sm-12
-					h1.text-center= contentful.Home[0].headerText
-						//-div.wpb_single_image.wpb_content_element.vc_align_center
-						//-figure.wpb_wrapper.vc_figure
-							div.vc_single_image-wrapper.vc_box_border_grey
-								img.vc_single_image-img.attachment-full(width="1634" height="448" src="/img/stack/headline-1.png" alt="" srcset="/img/stack/headline-1.png 1634w, /img/stack/headline-1.png 300w, /img/stack/headline-1.png 768w, /img/headline-1.png 1024w" sizes="(max-width: 1634px) 100vw, 1634px")
-			div.vc_empty_space(style="height: 32px")
-				span.vc_empty_space_inner
-			div.wpb_text_column.wpb_content_element
-				div.wpb_wrapper
-					h3(style="text-align: center;")= contentful.Home[0].headerSubtext
+					h1.hr-green-after.text-left More than a member, you are a partner
+
+	section#home-landing
+		.container
+			.row.text-center
+				.col-sm-12
+					h3.color--blue A simple start to dreaming big
+			.row
+				.col-sm-12
+					p.
+						As a member, you mean the world to us. Together we will work with you to build a bright financial future for you and your family and give you the peace of mind of having a partner to guide you through the challenges and changes of life. 
+					p.
+						We strive to be more than facilitiators, we want to engage and take action to improve the lives of our members and everybody in our community. Apply to become a member, visit a branch and talk to our experts, connect with us through our website and see what it's like to bank with a credit union that is designed to do more.
+
+	section#full-width-ads.unpad--bottom
+		.row.text-center.unmarg
+			a(href='/loans/auto-loans')
+				.col-sm-6.imagebg.height-60.overlay-green(data-overlay="5")
+					.background-image-holder
+						img(src="/img/test3.jpg")
+					.pos-vertical-center
+						h3 Low Auto Rates
+						a.btn.btn-white(href="/loans/auto-loans")
+							span.btn__text Learn More
+			a(href='#')
+				.col-sm-6.imagebg.height-60.overlay-blue(data-overlay="5")
+					.background-image-holder
+						img(src="/img/test2.jpg")
+					.pos-vertical-center
+						h3 Holiday Skip-A-Pay
+						a.btn.btn-white(href="https://middlestate.typeform.com/to/kDEven")
+							span.btn__text Learn More
+
+	section#our-services
+		.container
+			.row.text-center
+				.col-sm-12.mb--3
+					h3.color--blue Banking made easy
+			.row
+				a(href='/checking')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/checking-icon.png")
+						h6.text-center CHECKING
+				a(href='/savings')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/savings-icon.png")
+						h6.text-center SAVINGS
+				a(href='/loans/credit-cards')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/credit-card-icon.png")
+						h6.text-center CREDIT CARD
+				a(href='/loans/auto-loans')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/auto-loan-icon.png")
+						h6.text-center AUTO LOANS
+			.row
+				a(href='/calculators')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/home-loan-icon.png")
+						h6.text-center CALCULATOR
+				a(href='/digital-banking')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/digital-banking-icon.png")
+						h6.text-center DIGITAL BANKING
+				a(href='/loans/home-loans')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/mortgage-icon.png")
+						h6.text-center MORTGAGE
+				a(href='/calculators')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/budget-tool-icon.png")
+						h6.text-center BUDGETING TOOL
+
+
+	section.imagebg.parallax.height-60.overlay-green(data-overlay="5")
+		.background-image-holder
+			img(src="/img/phs.jpg")
+		.container.pos-vertical-center
+			.row.text-center
+				.col-sm-12
+					h3 Our Vision for the Future
+					p.large.
+						We built the first on campus / student-run credit union branch on a high school campus in Tulare County. <br/> 
+						This is our commitment to the next generation of Valley leaders.
+					a.btn.btn-white(href="http://tularefederal.org/")
+						span.btn__text Learn More
+						
+	section#customer-comments
+		.container
+			.row.text-center
+				.col-xs-12.mb--1.unpad--bottom
+					h3.home.color--grey See what everyone's talking about
 					
-				//-p(style="text-align: center;")
-					a.btn.btn--primary.type--uppercase(href="#")
-						span.btn__text VIEW THE DEMOS
-	
-
-		//- home login
-		//-include partial/home_login
-
-	//- Icon Navigation
-	- var date = new Date
-	if (contentful.Alerts[0] != undefined)
-		div.container.mt--3
-			div.row
-				div.col-md-12
-					for alert in contentful.Alerts
-						- var dateFrom = new Date(alert.dateFrom)
-						- var dateTo = new Date(alert.dateTo)
-						if (date >= dateFrom && date <= dateTo)
-							div.alert.bg--error
-								div.alert__body
-									h5= alert.title
-									p= alert.content
-									//-p #{alert.dateFrom} - #{alert.dateTo}
-								div.alert__close ×
-
-	section#icon-nav
-		div.container
-			div.row
-				div.col-lg-3.text-center
-					i.icon.icon--lg.fa.fa-money
-					a.btn.btn--primary-2.block(href="/loans") 
-						span.btn__text Loans
-				div.col-lg-3.text-center
-					i.icon.icon--lg.fa.fa-mobile-phone
-					a.btn.btn--primary-2.block(href="/mobile") 
-						span.btn__text Mobile
-				div.col-lg-3.text-center
-					i.icon.icon--lg.fa.fa-thumbs-o-up
-					a.btn.btn--primary-2.block(href="/about") 
-						span.btn__text About
-				div.col-lg-3.text-center
-					i.icon.icon--lg.fa.fa-envelope-o
-					a.btn.btn--primary-2.block(href="/contact") 
-						span.btn__text Contact
-
-	//- news slider
-	section#news-title
-		div.container
-				div.row
-					div.col-lg-12.text-center
-						h2.text-center.color--primary Latest News
-		include partial/_blog_slider
-		div.container
-			div.row.text-center
-					a.btn.btn--primary-2(href="/all-posts") 
-						span.btn__text View More
-	
-	//- parallax section
-	section.text-center
-		div.container
-			div.row
-				div.col-sm-12
-					!= contentful.Home[0].homePageVideo
-					//-iframe(src="https://player.vimeo.com/video/86148358" width="1140" height="641" frameborder="0" title="The Pismo Preserve" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="")
-
-	//- "steeve likes us" section
-	div#steeve.row(style="margin:0;")
-		div.container
-			div.row
-				div.col-lg-6.img-responsive.height-50(style="background-image:url(/img/steeve.jpg)")
-				div.text-content.col-lg-6.text-left
-					h1.color--primary= contentful.Home[0].storyTitle
-					//-Steeve Likes Us
-					p= contentful.Home[0].storyContent
-					//- When he found himself in a sticky situation, Tulare Federal member Steve Wiliams turned his credit union guidance. What happened next shocked him and turned his troubling time into a true learning opportunity.
+			.row.text-center.slider(data-paging="true")
+				ul.slides
+					li.col-xs-12.mb--3
+						h3.color--green "Snazzy quote goes here from a member"
+						p.color--green Member Name
+					li.col-xs-12.mb--3
+						h3.color--green "Snazzy quote goes here from a member"
+						p.color--green Member Name
+					li.col-xs-12.mb--3
+						h3.color--green "Snazzy quote goes here from a member"
+						p.color--green Member Name

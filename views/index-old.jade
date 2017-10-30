@@ -1,0 +1,180 @@
+extends /layout
+
+
+block content
+	- var blogPosts = 3;
+	//- Main Hero Header
+	section#home-hero.cover.height-80.imagebg.parallax.overlay-blue(data-overlay="5")
+		//- background image
+		div.background-image-holder(style="background: url(/img/header/home.jpg); opacity: 1;") 
+			//-background image for smaller devices
+			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/home.jpg" alt="" srcset="/img/header/home.jpg 1600w, /img/header/home.jpg 300w, /img/header/home.jpg 768w, /img/header/home.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+		div.container.pos-vertical-center
+			div.row
+				div.col-sm-12
+					h1.hr-green-after.text-left COMING HOME IS A DREAM WE MAKE COME TRUE
+						//-div.wpb_single_image.wpb_content_element.vc_align_center
+						//-figure.wpb_wrapper.vc_figure
+							div.vc_single_image-wrapper.vc_box_border_grey
+								img.vc_single_image-img.attachment-full(width="1634" height="448" src="/img/stack/headline-1.png" alt="" srcset="/img/stack/headline-1.png 1634w, /img/stack/headline-1.png 300w, /img/stack/headline-1.png 768w, /img/headline-1.png 1024w" sizes="(max-width: 1634px) 100vw, 1634px")
+			//-div.wpb_text_column.wpb_content_element
+				div.wpb_wrapper
+					h5.text-left= contentful.Home[0].headerSubtext
+					
+				//-p(style="text-align: center;")
+					a.btn.btn--primary.type--uppercase(href="#")
+						span.btn__text VIEW THE DEMOS
+	
+
+		//- home login
+		//-include partial/home_login
+
+	//- Icon Navigation
+	
+	//-if (contentful.Alerts[0] != undefined)
+		- var date = new Date
+		div.container.mt--3
+			div.row
+				div.col-md-12
+					for alert in contentful.Alerts
+						- var dateFrom = new Date(alert.dateFrom)
+						- var dateTo = new Date(alert.dateTo)
+						if (date >= dateFrom && date <= dateTo)
+							div.alert.bg--error
+								div.alert__body
+									h5= alert.title
+									p= alert.content
+									//-p #{alert.dateFrom} - #{alert.dateTo}
+								div.alert__close ×
+	section
+		.container
+			.row
+				//-.col-sm-4
+					img(src="img/icons/piggybank.png" alt="piggy bank")
+				.col-sm-12
+					h3.color--blue A simple start to dreaming big
+			.row
+				.col-sm-12
+					p.
+						As a customer, you’re everything to us. So we’ve built a new kind of bank for you and the way you live now. Amazing new technology. Products and services that feel effortless. And smart people to help you meet your goals. TFED is more than a bank, it’s a state of mind.
+
+					//-a.btn.btn-blue(href="/loans") 
+						span.btn__text Loans
+
+	section
+		.container
+			.row
+				.col-sm-6
+					img(src="/img/test3.jpg")
+				.col-sm-6
+					h3.color--blue  Our story
+					p.
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+	
+	section#our-services
+		.container
+			.row
+				.col-sm-12.mb--3
+					h3.color--blue Banking made easy
+			.row
+				a(href='#')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/icon-1.png")
+						h6.text-center CHECKING
+				a(href='#')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/icon-2.png")
+						h6.text-center SAVINGS
+				a(href='#')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/icon-3.png")
+						h6.text-center MANAGEMENT
+				a(href='#')
+					.col-sm-3.col-xs-6.inline-block-xs
+						img.block(src="img/icons/icon-4.png")
+						h6.text-center LOANS
+
+
+	section#full-width-ads.unpad--bottom
+		.row.text-center
+			a(href='#')
+				.col-sm-6.imagebg.height-40.overlay-green(data-overlay="5")
+					.background-image-holder
+						img(src="/img/test3.jpg")
+					.pos-vertical-center
+						h3 Low Auto Rates
+			a(href='#')
+				.col-sm-6.imagebg.height-40.overlay-blue(data-overlay="5")
+					.background-image-holder
+						img(src="/img/test2.jpg")
+					.pos-vertical-center
+						h3 Holiday Skip-A-Pay
+				
+			
+	
+	//-section#become-a-member
+		.container
+			.row.pos-relative
+				.col-sm-6
+					h3 Hear How We Make Finances Simple
+					p.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit lorem, ornare ut sem in, pharetra placerat massa. Etiam facilisis nisi nec imperdiet suscipit. Cras malesuada leo non ligula tincidunt, sed tristique eros ultricies. Fusce faucibus neque ac dui tempus, et egestas lectus mattis. Praesent a quam mattis, maximus neque sit amet, faucibus turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ultrices a purus a pharetra. Morbi fermentum lobortis ex, vel ullamcorper risus tristique vitae. Nulla ornare elit sit amet mauris ultrices, nec ultricies dolor consequat. Suspendisse vel hendrerit erat. Quisque semper sem a odio vestibulum aliquam. In ut facilisis diam, sed fermentum enim. Aliquam posuere leo at dignissim cursus.
+
+					a.btn.btn-green(href="/loans") 
+						span.btn__text Become A Member
+				.col-sm-6.imagebg.col-right-full-height
+					.background-image-holder
+						img(src="img/header/test1.jpg")
+					.container
+
+
+	//- section#icon-nav
+	//- 	div.container
+	//- 		div.row
+	//- 			div.col-lg-3.text-center
+	//- 				i.icon.icon--lg.fa.fa-money
+	//- 				a.btn.btn--primary-2.block(href="/loans") 
+	//- 					span.btn__text Loans
+	//- 			div.col-lg-3.text-center
+	//- 				i.icon.icon--lg.fa.fa-mobile-phone
+	//- 				a.btn.btn--primary-2.block(href="/mobile") 
+	//- 					span.btn__text Mobile
+	//- 			div.col-lg-3.text-center
+	//- 				i.icon.icon--lg.fa.fa-thumbs-o-up
+	//- 				a.btn.btn--primary-2.block(href="/about") 
+	//- 					span.btn__text About
+	//- 			div.col-lg-3.text-center
+	//- 				i.icon.icon--lg.fa.fa-envelope-o
+	//- 				a.btn.btn--primary-2.block(href="/contact") 
+	//- 					span.btn__text Contact
+
+	//- //- news slider
+	//- section#news-title
+	//- 	div.container
+	//- 			div.row
+	//- 				div.col-lg-12.text-center
+	//- 					h2.text-center.color--primary Latest News
+	//- 	include partial/_blog_slider
+	//- 	div.container
+	//- 		div.row.text-center
+	//- 				a.btn.btn--primary-2(href="/all-posts") 
+	//- 					span.btn__text View More
+	
+	//- //- parallax section
+	//- section.text-center
+	//- 	div.container
+	//- 		div.row
+	//- 			div.col-sm-12
+	//- 				!= contentful.Home[0].homePageVideo
+	//- 				//-iframe(src="https://player.vimeo.com/video/86148358" width="1140" height="641" frameborder="0" title="The Pismo Preserve" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="")
+
+	//- //- "steeve likes us" section
+	//- div#steeve.row(style="margin:0;")
+	//- 	div.container
+	//- 		div.row
+	//- 			div.col-lg-6.img-responsive.height-50(style="background-image:url(/img/steeve.jpg)")
+	//- 			div.text-content.col-lg-6.text-left
+	//- 				h1.color--primary= contentful.Home[0].storyTitle
+	//- 				//-Steeve Likes Us
+	//- 				p= contentful.Home[0].storyContent
+	//- 				//- When he found himself in a sticky situation, Tulare Federal member Steve Wiliams turned his credit union guidance. What happened next shocked him and turned his troubling time into a true learning opportunity.

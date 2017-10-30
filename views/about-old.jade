@@ -1,0 +1,143 @@
+extends /layout
+
+block content
+	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+		//- background image
+		div.background-image-holder(style="background-image: url(/img/header/about.jpg); background-position:center bottom; opacity: 1;") 
+			//-background image for smaller devices
+			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/about.jpg" alt="" srcset="/img/header/about.jpg 1600w, /img/header/about.jpg 300w, /img/header/about.jpg 768w, /img/header/about.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+		div#hero-content.container.pos-vertical-center
+			div.row
+				div.col-sm-12
+					h1.text-center About TCFCU
+			div.vc_empty_space(style="height: 32px")
+				span.vc_empty_space_inner
+	section
+		div.container
+
+			div.row.margin-bottom-30.margin-bottom-30
+
+				div.col-md-12.text-center.margin-bottom-30
+					h4.color--primary Our History
+					
+				div.col-md-12.margin-bottom-30
+
+					!= contentful.About[0].ourHistory
+					//-p.
+						Tulare County Federal Credit Union has been serving the financial needs of Tulare County for over 75 years. Tulare Federal was founded on April 15, 1939, as the Tulare County Teachers Federal Credit Union. In 2002, the Credit Union expanded to include the entire county, and our name was changed to Tulare County Federal Credit Union.
+
+					//-p.
+						As a not-for-profit, member-owned financial institutions, all of our profits are returned to members in the form of higher earnings on savings, lower rates on loans and fewer fees. Every member has a voice in the credit union’s operations, and our leadership is made up of volunteers have the membership’s best interests in mind. Once you are a member of Tulare Federal, you are a member for life.
+
+					//-p.
+						As a valued member, Tulare Federal is dedicated to providing the financial products and quality service that meet your specific needs. No matter what your lifestyle or financial situation, you can be confident that you, our member, come first.
+
+			hr
+
+			div.row
+
+				div.col-md-6
+					img(src="/img/about/about.jpg")
+
+				div.col-md-6
+					h4.color--primary Our Mission Statement
+					!= contentful.About[0].ourMissionStatement
+					//- p.
+					//- 	“Building valuable relationships with our members to create lifelong financial success.”
+					//- p.unmarg.
+					//- 	Here at Tulare Federal, these are our daily promises to you:
+					//- p.unmarg.
+					//- 	I promise to earn your trust and keep it
+					//- p.unmarg.
+					//- 	I promise to make it easy to do business with us
+					//- p.unmarg.
+					//- 	I promise to treat you as an honored guest
+					//- p.unmarg.
+					//- 	I promise to take ownership of your request
+					//- p.unmarg.
+					//- 	I promise to respond to your request in a timely manner
+					//- p.unmarg.
+					//- 	I promise to identify your needs and suggest a solution that will improve your financial life
+					//- p.unmarg.
+					//- 	I promise to show my appreciation for allowing me to serve you
+			hr
+
+			div.row.text-center
+
+				div.col-md-12
+					h4.color--primary Career Opportunities
+
+					!= contentful.About[0].careerOpportunities
+
+					//- p.
+					//- 	You may print, complete, and mail or deliver this application along with a copy of your resume to any Tulare Federal branch:
+
+					//- p.
+					//- 	Applications are also available at any Tulare Federal branch.
+					//- p.
+					//- 	You may submit your resume by e-mail to #[a(href="ymagana@tularefcu.org") ymagana@tularefcu.org] (our preferred formats are Microsoft Word or Text), drop it off at any Tulare Federal branch, or mail your resume to the following address: 300 North K St. Tulare, CA 93274
+				div.col-md-12.text-center
+					a.btn.btn--primary-2(href="#")
+						span.btn__text Apply Now
+			hr
+			div.row
+				div.col-md-12
+					h4.color--primary.text-center Privacy Policy
+					
+					!= contentful.About[0].privacyPolicy
+
+					//- p.
+					//- 	Protecting member personal financial information is a priority for Tulare Federal. The credit union will regard all member nonpublic personal information as highly confidential and will thereby protect all member information within its custody and control. Members’ nonpublic personal information will only be used by the credit union to provide quality products, services and pricing. The credit union will not disclose, share, and/or discuss member nonpublic personal information and personal financial data except as permitted by law.
+
+					//- p.
+					//- 	It is the policy of Tulare Federal to be committed to making available financial products and services that enable members to meet their financial needs and reach their financial goals. In order to accomplish this goal, the credit union may collect only the nonpublic personal information about its members necessary to successfully conduct the credit unions’ lending, operational, and business activities with the membership.
+
+					//- p.unmarg.
+					//- 	The credit union will collect member nonpublic personal information from the following sources:
+					//- p.unmarg.
+					//- 	• Information obtained from a member, whether on loan applications or other forms
+					//- p.unmarg.
+					//- 	• Information provided by others (i.e. references) authorized by the member
+					//- p.unmarg.
+					//- 	• Information from the members’ financial transactions
+					//- p.unmarg.
+					//- 	• Information from consumer reporting agencies
+					//- p.
+					//- 	• Information from federal and state law enforcement agencies
+
+					//- p.
+					//- 	The credit union will restrict access to members’ nonpublic personal information to only those employees requiring access in order to provide quality products and service to the membership. The credit union will provide appropriate and adequate procedures and practices to protect the privacy and confidentiality of all member nonpublic personal information within its control and custody. The appropriate levels of physical, electronic, and procedural safeguards to comply with all federal regulations relating to protecting member nonpublic information will be maintained. The credit union will only allow access to member nonpublic information as required by federal, state and local law enforcement, and as allowed by federal regulations.
+
+					//- p.
+					//- 	Effective: 6/23/05
+
+
+			hr
+			div.row
+				div.col-md-12
+					h4.color--primary.text-center Member Conduct Policy
+
+
+					!= contentful.About[0].memberConductPolicy
+
+					//- p.
+					//- 	Tulare County Federal Credit Union is dedicated to providing a safe and pleasant facility, with helpful and knowledgeable staff, in which to conduct members consumer financial business. Tulare Federal is equally dedicated to providing all its employees safe and harassment free work environment.
+
+					//- p.unmarg.
+					//- 	It is a fact of today’s “fast paced” society that there are moments when a few normally polite and friendly members forget courtesy and tact. Regrettably, a very few members present intimidated behavior and demeanor, threats or acts of violence, and unwelcome sexual advances and/or comments while conducting their banking at Tulare Federal. Some examples of such unacceptable conduct include, but are not limited to, the following:
+
+					//- p.unmarg.
+					//- 	• Use of profane, abusive, intimidating or threatening language toward employees or fellow members.
+					//- p.unmarg.
+					//- 	• Actual or threatening violence against any employee or fellow member.
+					//- p.unmarg.
+					//- 	• Unwelcome sexual overtures or advances.
+					//- p.
+					//- 	• Using or being under the influence of drugs and/or alcohol on Credit Union premises.
+
+					//- p.
+					//- 	If a member’s conduct, as listed above, rises to an inappropriate level, then the Credit Union management at its sole discretion may take such actions necessary to protect the staff and fellow members. This includes asking the offending individual to immediately leave the premises, summoning police for assistance, and/or denial of Credit Union services. This denial of services and/or access to Credit Union facilities & staff could require the member to use only electronic services or mail to conduct their Credit Union banking thereby eliminating any contact with our employees.
+
+					//- p.
+					//- 	Creating and maintaining a safe and secure environment for both employees and members is an effort requiring everyone’s help. So, if you observe or become aware of a potentially unsafe situation at the Credit Union please contact the manager of your branch immediately by calling (559) 686-1791.
+

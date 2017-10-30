@@ -1,0 +1,71 @@
+extends /layout
+
+block content
+	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+		//- background image
+		div.background-image-holder(style="background-image: url(/img/header/loans-solar.jpg); background-position:center bottom; opacity: 1;") 
+			//-background image for smaller devices
+			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/loans-solar.jpg" alt="" srcset="/img/header/loans-solar.jpg 1600w, /img/header/loans-solar.jpg 300w, /img/header/loans-solar.jpg 768w, /img/header/loans-solar.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+		div#hero-content.container.pos-vertical-center
+			//-div.row.text-center
+				div.col-sm-12
+					h1 Credit Cards
+	//-section
+		div.container
+			div.row
+				div.col-md-12.text-center
+					a.btn.btn-blue.type--uppercase(href="/loans")
+						i.icon.icon--xs.fa.fa-arrow-left.color--blue(style="margin-right:20px;")
+						span.btn__text Back to Loans
+
+	section.unpad--bottom
+		.container
+			.row
+				.col-sm-12
+					h2.color--blue Solar Loans
+	section
+		div.container
+
+			div.row
+				div.col-md-12
+					h5.color--blue Secure Solar Deed of Trust
+					p.
+						Yes, it’s a mortgage, and it’s awesome. Fund the installation of your solar panels with a loan secured by your home in order to pay super low interest.
+			
+			div.row.mt--2
+				div.col-md-12
+					p.unmarg.
+						• No payments for 90-days to allow time for construction
+					p.unmarg.
+						• One-time reamortization option to reduce your payment for the remaining life of the loan
+					p.unmarg.
+						• Low, fixed interest rates for terms up to 20 years
+					p.unmarg.
+						• Minimal fees due upon credit approval
+					p.unmarg.
+						• Traditional equity restrictions may not apply advances up to 5% more than your home’s value
+
+				div.col-md-12
+					a.btn.btn-blue(href="https://uat-internetloanapplication.cudl.com/tulare/")
+						span.btn__text Apply Now!			
+			
+			div.row.mt--1
+				div.col-md-12
+					h5.color--blue Unsecure Solar
+					p.
+						Don’t have equity? Don’t want to add a lien to your home? No worries, just promise to pay it back.
+			
+			div.row.mt--2.final
+				div.col-md-12
+					p.unmarg.
+						• No payments for 90-days to allow time for construction
+					p.unmarg.
+						• No upfront fees, ever
+					p.unmarg.
+						• Low unsecure interest rates
+					p.unmarg.
+						• Terms up to 15 years
+			
+				div.col-md-12
+					a.btn.btn-blue(href="https://uat-internetloanapplication.cudl.com/tulare/")
+						span.btn__text Apply Now!

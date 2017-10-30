@@ -1,0 +1,118 @@
+#menu2.nav-container
+	.bar.bar--sm.visible-xs
+		.container.header
+			.row(style="position:relative;")
+				.float-left
+					a(href='/')
+						img.logo.logo-dark(alt='logo', src='/img/logo/icon-blue.png')
+						img.logo.logo-light(alt='logo', src='/img/logo/icon-blue.png')
+				.float-right.text-right
+					a.hamburger-toggle(href='#', data-toggle-class='#menu1;hidden-xs')
+						i.icon.icon--sm.stack-interface.stack-menu
+			
+	nav#menu1.bar.bar--sm.bar-1.hidden-xs
+		.container.header
+			.row(style="position:relative;")
+				.float-left.hidden-sm.hidden-xs
+					.bar__module
+						a(href='/')
+							img.logo.logo-dark(alt='logo', src='/img/logo/logo-blue.png')
+							img.logo.logo-light(alt='logo', src='/img/logo/logo-blue.png')
+				.float-left.hidden-xs.hidden-md.hidden-lg
+					.bar__module
+						a(href='/')
+							img.logo.logo-dark(alt='logo', src='/img/logo/icon-blue.png')
+							img.logo.logo-light(alt='logo', src='/img/logo/icon-blue.png')
+					// end module
+				.float-right.text-right
+					.bar__module
+						ul.menu-horizontal.text-left.text-center-xs
+							li.dropdown
+								span.dropdown__trigger Services
+								.dropdown__container.megamenu
+									.container
+										.row
+											.col-sm-12.dropdown__content.dropdown__content--lg
+												.pos-absolute.col-md-6.imagebg.hidden-sm.hidden-xs(data-overlay='4')
+													.background-image-holder
+														img(alt='background', src='/img/loans/recreational-loans.jpg')
+													.container.pos-vertical-center
+														.row
+															.col-md-8.col-md-offset-2
+																h5.hr-white-after.color--white GET STARTED ON YOUR NEXT ADVENTURE TODAY
+																
+														
+												.col-sm-6.col-md-3.col-md-offset-6
+													h6.megamenu-subhead.hr-blue-after Bank
+													ul.menu-vertical
+														li
+															a(href='/checking')
+																| Checking
+														li
+															a(href='/savings')
+																| Savings
+														li
+															a(href='/digital-banking')
+																| Digital Banking
+														li
+															a(href='/hsa')
+																| HSA Accounts
+														li
+															a(href='/retire')
+																| Retire
+
+												.col-sm-6.col-md-3
+													h6.megamenu-subhead.hr-blue-after
+														a(href='/loans') Borrow
+													ul.menu-vertical
+														li
+															a(href='/loans/auto-loans')
+																| Auto/Recreational Loans
+														li
+															a(href='/loans/home-loans')
+																| Home Loans
+														li
+															a(href='/loans/personal-loans')
+																| Perosnal Loans
+														li
+															a(href='/loans/credit-cards')
+																| Credit Card
+														li
+															a(href='/loans/solar-loans')
+																| Solar Loans
+
+							li.dropdown
+								span.dropdown__trigger Educate
+								.dropdown__container.megamenu
+									.container
+										.row
+											.col-sm-8.dropdown__content.dropdown__content--lg
+												.pos-absolute.col-md-6.imagebg.hidden-sm.hidden-xs(data-overlay='4')
+													.background-image-holder
+														img(alt='background', src='/img/header/home2.jpg')
+													.container.pos-vertical-center
+														.row
+															.col-md-8.col-md-offset-2
+																span.h2.color--white So much more than just a bank
+																
+														
+												.col-md-6.col-md-offset-6.col-sm-6
+													h6.megamenu-subhead.hr-blue-after Helpful Tools
+													ul.menu-vertical
+														li
+															a(href='/calculators')
+																| Calculators
+														li
+															a(href='/resources')
+																| Resources
+														li
+															a(href="/blog")
+																| Blog
+									
+											
+							li
+								a(href="https://middlestate.typeform.com/to/Va7Cog") Join
+
+											
+							li.dropdown.bg--green
+								a.color--white(href="https://tularefcu.online-cu.com/ISuite5/Features/Auth/MFA/Default.aspx" target="_blank" rel="noopener") Online Banking

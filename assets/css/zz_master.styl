@@ -3,144 +3,348 @@
 //normalize-css()
 //base()
 
-h1, h2, h3, h4, h5, h6, span, .h1, .h2, .h3, .h4, .h5, .h6
-	font-family $garamond
-	color $gray
-	font-weight bold
-	margin-bottom 10px
+body
+	padding-top 100px //for the sticky header
 
-p
-	font-family $openSans
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+	font-family $futura
 	color $gray
-	font-size 0.8em
+	//text-transform uppercase
+	margin-bottom 10px !important
+	letter-spacing 0px
+	font-weight 400
+
+
+h1
+	font-size 9.5em
+	text-transform uppercase
+	letter-spacing 5px
+
+h2
+	font-size 5em
+	letter-spacing -2px
+	font-weight 500
+h3
+	font-size 4em
+	font-weight	500
+h4
+	font-size 3em
+h5
+	font-size 2.5em
+	font-weight 600
+	line-height 1.0em
+h5.footer
+	font-size 1.8em
+	font-weight 800
+
+h6
+	font-size 1.5em
+
+p, span, input, select, textarea
+	font-family $futura
+	color $gray
+	font-size 1.6em
+	line-height 1.6em
+p > span
+	font-size 1em
+p a,
+span a,
+label a {
+	color	$green;
+	}
 input
-	font-size 0.8em
-::selection 
-	background $navy /* WebKit/Blink Browsers */
-	color #fff
+	font-size 1em
+a:hover
+	text-decoration none !important
+::selection
+	background $blue /* WebKit/Blink Browsers */
+	color $white
 
 ::-moz-selection
-	background: $navy /* Gecko Browsers */
-	color #fff
+	background: $blue /* Gecko Browsers */
+	color $white
 
-  
+*[class*='hr-'][class*='-after']::after, *[class*='hr-'][class*='-before']::before
+	height 5px
+	content ""
+	display block
+	width 75%
+	margin 15px 0
+[class*='hr-green']::after, [class*='hr-green']::before
+	background-color $green
+[class*='hr-blue']::after, [class*='hr-blue']::before
+	background-color $blue
+[class*='hr-white']::after, [class*='hr-white']::before
+	background-color $white
 
+
+.col-right-full-height
+	position absolute
+	right 0
+	top 0
+	height 100%
+
+
+.megamenu-subhead
+	padding-left 25px
 
 // ---- misc
-// #testing-bg
-// 	height 100%
-// 	width 100%
-// 	position fixed
-// 	z-index 0
-// 	opacity .1
-// 	background-image url("/img/header/loans-solar.jpg")
-// 	background-position center center
-// 	background-repeat no-repeat
-// 	background-size cover
-// 	background-attachment fixed
-.btn--primary-2
-	background-color $navy !important
-	background $navy !important
-	border none !important
-	border-radius 0px !important
-.btn--primary-2:hover
-	background-color $navyHover
+section
+	padding-top 50px
+	padding-bottom 40px
 
-.img-responsive
-	background-size cover
-	background-repeat no-repeat
-	background-position center center
-.icon 
-	margin 20px auto
-.tabs li.active .tab__title span
-	color $navy
-	
-.margin-bottom-30
-	margin-bottom 30px
-.margin-top-30
-	margin-top 30px
+section#footer
+	padding-top 100px
 
-a.btn
-	width auto
-	text-align center
-	margin 20px auto 
+.btn
+	border-radius 0px
+	span
+		font-size 1em !important
+		text-transform uppercase
+		letter-spacing 2px
+		font-family $futura
+		font-weight	600
 
-hr 
-	margin 5em auto
-	border-color rgba(87, 129, 138,0.4)
-	//opacity 0.4
+	&.btn-blue
+		border 4px $blue solid !important
+		background $blue !important
+		margin-top	25px
+		margin-bottom 25px
+		span
+			color $white !important
+		&:hover
+			background $white !important
+			border 4px $blue solid !important
+			span
+				color $blue !important
 
-.center-column
-	margin 0 auto !important
-	float none !important
-	
+	&.btn-green
+		border 4px $green solid !important
+		background $green !important
+		margin-top	25px
+		margin-bottom	25px
+		span
+			color $white !important
+		&:hover
+			border 4px $green solid !important
+			background $white !important
+			span
+				color $green !important
+	&.btn-white
+		background $transparent
+		border 2px $white solid !important
+		span
+			color $white !important
+		&:hover
+			background $white
+			border 2px $white solid !important
+			span
+				color $blue !important
+[data-tooltip]
+	border-bottom dotted 1px rgba(0,0,0,0.5)
+[data-tooltip]:after
+	background $blue
+	padding 5px 10px
+	max-width 200%
+	// &.btn-blue
+	// 	border 4px $blue solid !important
+	// 	span
+	// 		color $blue !important
+	// 	&:hover
+	// 		border 4px $blue solid !important
+	//
+	// &.btn-green
+	// 	border 4px $green solid !important
+	// 	span
+	// 		color $green !important
+	// 	&:hover
+	// 		border 4px $green solid !important
+	// &.btn-white
+	// 	border 4px $white solid !important
+	// 	span
+	// 		color $white !important
+	// 	&:hover
+	// 		border 4px $white solid !important
 
-.map-container
-	min-height 500px
-ul.tabs
-	margin 3em auto
-	border none
-	text-align center
+.pt--1
+	padding-top 1.85714286em
+.pt--2
+	padding-top 3.71428571em
+.pt--3
+	padding-top 5.57142857em
+.pb--1
+	padding-bottom 1.85714286em
+.pb--2
+	padding-bottom 3.71428571em
+.pb--3
+	padding-bottom 5.57142857em
+
+.col-center
+	float none
+	margin 0 auto
+
+// ---- Colors
+
+.bg--gray
+	background $gray4
+.bg--blue
+	background $blue
+.bg--green
+	background $green
+.color--white
+	color $white
+.color--blue
+	color $blue
+.color--green
+	color $green
+a
+	transition 0.2s
+	color $blue
+	&:hover,&:active
+		transition 0.2s
+		color $blueHover
+.overlay-green[data-overlay]:before
+	background $green
+.overlay-blue[data-overlay]:before
+	background $blue
+// ---- header
+#menu2
+	position fixed
+	top 0
+	left 0
+	background $white
+	z-index 99
+	padding 0 0 0 50px
 	width 100%
-	
-//#hero-cover
+	height 100px
+	box-shadow 0px 0px 5px rgba(0,0,0,0.5)
+	.logo
+		max-height 75% !important
+		top 0
+		bottom 0
+		margin auto
+		position absolute
+
+#menu1
+	font-family	$futura
+	text-transform	none
+	padding 0px
+	.menu-horizontal
+		top 0
+		>li
+			margin 0
+			>span, >a
+				line-height 100px
+				padding 0px 35px
+				display block
+				text-transform	none
+				color #58595b
+				font-size	1.4em
+				transition 0.2s
+			&:not(.separate)::after
+				padding 10px 0 0 0
+			&:hover
+				background $blue
+				transition 0.2s
+				//color $white
+				>span, >a
+					color $white !important
+	.dropdown__trigger::after
+		display none
+	.dropdown__content
+			padding 0 !important
+			border-radius 0px !important
+	.menu-vertical
+		padding-left 25px
+		li
+
+			a
+				font-size	1.3em
+				display block
+				padding 5px 0px
+				margin 0
+				&.color--white
+					color $white
+				&:not(.separate)::after
+					padding 10px 0 0 0
+				&:hover
+					//background $blue
+					color $blue
+					>span, >a
+						color $white !important
+	.logo
+		max-height 75% !important
+		top 0
+		bottom 0
+		margin auto
+		position absolute
+	.megamenu
+		.col-sm-12
+			padding 0px !important
+		div[class*='col-']
+			padding 25px 10px
+
+.menu-horizontal > li, .menu-vertical > li
+	font-family $futura
+
+
+.container.header
+	width 100%
+
+
+// ---- Home page
+
+#our-services
+	.col-sm-3
+		padding 0 5% 25px 5%
+		img
+			padding 0 35px
+
+section#home-landing
+	padding-top 100px
+
+section#our-services
+	padding-top 150px
+	padding-bottom 150px
+
+section#map
+	padding-bottom 0px
 
 // ---- Tables
 
 table
-	font-size 0.8em
-	text-align center
+	border $blue 4px solid
+	font-size 1.2em
+	text-align left
 	thead
 		tr
-			th 
+			th
 				text-align center
-				background-color $navy
-				color #fff
+				background-color $blue
+				color $white
 	tbody
 		tr:nth-child(even)
 			background-color rgba(0,0,0,.04) !important
-		
 
 
-// ---- header
 
-#header
-	position absolute
-	z-index 10
-	background rgba(255,255,255,1)
-	width 100%
-	border-bottom 0.5px rgba(255,255,255,0.4) solid
-	//height 120px
-	
-	#menu1
-		padding 0
-		
-		.bar__module
-			a
-				height inherit
-				display block
-		.menu-horizontal
-			top 0
-			font-size 16px			
-			a
-				color $navy !important
-				padding 20px 10px
-				opacity 1
-				display block
-				&:hover
-					opacity 0.5
-.logo.logo-light
-	max-height 120px
-	top 0
-#login-button
-	position absolute
-	top 30px
-	right 20px
-	z-index 20
-// ---- footer
+// ---- Loans
+#loan-nav
+	.loan-type
+		overflow hidden
+		.background-image-holder
+			transition 0.5s ease-in-out
+		&:hover
+			.background-image-holder
+				transition 0.5s ease-in-out
+				transform scale(1.1)
 
-//#footer
-	//background-color #525252
+
+// ---- Masonry
+.masonry
+	.masonry__item
+		margin-bottom 0
+
 
 
 // ---- Partials
@@ -153,7 +357,7 @@ table
 	width 100%
 	h1, h2, h3, h4, h5, h6
 		margin 0
-		color #fff
+		color $white
 
 
 #blog-slider
@@ -161,14 +365,14 @@ table
 		height 300px !important
 	li
 		list-style-type none
-		
+
 
 
 // ---- Home page
 #home-hero, #hero-cover
 	min-height 80vh
-.hamburger-toggle > i	
-	color $navy
+.hamburger-toggle > i
+	color $blue
 	//line-height 100px
 
 #icon-nav
@@ -192,67 +396,130 @@ table
 
 
 
-@media (max-width: 992px) //tablet or small desktop
-	img.logo.logo-light
-		margin 0 auto
-	#menu1
-		//background $navy
-		
-		.float-right
-			float none
-		.menu-horizontal a
-			color $gray
-			//padding 10px 5px
-		.bar__module
-			margin-bottom 0px
-	#steeve
-		.text-content
-			padding 25px;
-	div[class*='col-']:not([class*='-12'])
-		margin-top 30px
-		
-	h1, h2, h3, h4, h5, h6
-		text-align center
-		
-	img
-		margin 0 auto
-		display block
-	#login-button
-		right 20px
-	// #home-login
-	// 	position relative
+//@media (max-width: 992px) //tablet or small desktop
+
 
 @media (max-width:768px) //mobile
-	.logo.logo-light
-		max-height 100px	
-		margin-bottom 20px !important
-		max-width 90%
-	#home-hero-content
-		top 125px
-	#home-login
-		input
-			margin 0 0 20px 0
-	#header 
-		//height 100px
-		.bar
-			padding 0
-	#mobile-hamburger
-		float right !important
-	#mobile-logo
-		float left !important
-	#login-button
+	body
+		padding-top 60px
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+		letter-spacing 5px
+	h1
+		font-size 4em
+	h2
+		font-size 3.5em
+	h3
+		font-size 3em
+	h4
+		font-size 2.5em
+	h5
+		font-size 2em
+	h6
+		font-size 1.5em
+	.inline-block-xs
+		width 49%
+		display inline-block
+		float none
+	.col-right-full-height
+		margin-top 30px
 		position relative
-		right 0px
-		left 0px
-		top 0px
-		width 100%
+		height 500px
+	div[class*='col-'] > div[class*='col-']
+		padding 0
+	#footer
+		.logo
+			margin-top 50px
+	#menu2
+		padding 0px 25px
+		height 60px
 
-@media (max-height: 900px) 
+	#menu1
+		overflow-y auto
+		background $white
+		max-height 90vh
+		.megamenu-subhead
+			padding 0
+		[class*='hr-']:after, [class*='hr-']:before
+			width 100%
+		.menu-horizontal
+			>li
+				margin 0
+				&:hover
+					background unset
+					//color $white
+					>span, >a
+						color $gray !important
+		.dropdown__content
+				padding 0 !important
+				border-radius 0px !important
+		.menu-vertical
+			padding 0px
+			li
+				padding 10px 25px
+				margin 0
+				&:not(.separate)::after
+					padding 10px 0 0 0
+				&:hover
+					background unset
+					color $gray
+					>span, >a
+						color $gray !important
+@media (max-height: 900px) //for smaller laptops
+	@media (min-width: 992px)
+		h1
+			font-size 7.5em
+		h2
+			font-size 4.5em
+		h3
+			font-size 3.5em
+		h4
+			font-size 2.5em
+		h5
+			font-size 2em
+		h6
+			font-size 1.5em
 	#home-hero, #hero-cover
 		min-height 100vh
-@media (max-height: 730px) 
+@media (max-height: 730px)
 	#hero-cover
 		padding 9em 0 1em 0
-@media (max-height: 600px)
-	#home-hero-content
-		top 95px
+// @media (max-height: 600px)
+// 	#home-hero-content
+// 		top 95px
+.mt--2
+	margin-top	.5em
+.final
+	margin-bottom 5em !important
+.mt--1
+	margin-top	3.5em
+
+//.container.header
+	//margin-right 0px
+	//margin-left	0px
+p.large
+	font-size	2.0em
+
+h3.home
+	font-size	3.5em
+	font-weight	800
+.col-sm-3.footer
+
+	img {
+		max-width 100%
+		margin-bottom 0px
+	}
+
+.row.mt--3.footer
+	margin-bottom 4.0em
+	margin-top 1.2em
+
+p.smaller.footer
+	font-size 1.3em
+p.smallest.footer
+	font-size .9em
+
+div.row.loans
+	padding-bottom 30px
+
+div#loan-rates
+	padding-bottom 100px

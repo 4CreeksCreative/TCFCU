@@ -1,98 +1,121 @@
-extends layout
+extends /layout
 
 block content
-	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+	section.cover.height-30.imagebg.parallax(data-overlay="5")
 		//- background image
 		div.background-image-holder(style="background-image: url(/img/header/loans-index.jpg); background-position:center bottom; opacity: 1;") 
 			//-background image for smaller devices
 			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/loans-index.jpg" alt="" srcset="/img/header/loans-index.jpg 1600w, /img/header/loans-index.jpg 300w, /img/header/loans-index.jpg 768w, /img/header/loans-index.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
 		div#hero-content.container.pos-vertical-center
-			div.row
+			//-div.row
 				div.col-sm-12
-					h1.text-center Loans
-			div.vc_empty_space(style="height: 32px")
-				span.vc_empty_space_inner
-	section
+					h1 Loans
+	section.unpad--bottom
+		.container
+			.row
+				.col-sm-12
+					h2.color--blue Loans
+	section#loan-nav
 		div.container
-			
-
-			div.row.margin-bottom-30
+			div.row.mb--3
 				div.col-sm-12
-					h4.color--primary.text-center Low Rates, Flexible Terms. Apply Today!
+					h5.color--blue Low Rates, Flexible Terms. Apply Today!
 					p.
 						With busy lifestyles, you can turn to Tulare Federal as the best choice for your borrowing needs. You will find a variety of loans including, Auto, Recreational, Mortgage, Personal, and Credit Cards. Take advantage of our low rates, no hassle applications process, and flexible terms, and apply today.
+
+			div.row.masonry.mb--3
+				.masonry__container
+					a(href="/loans/auto-loans")
+						.loan-type.col-md-4.imagebg.masonry__item(data-overlay="5")
+						
+							.background-image-holder
+								img(src="/img/header/loans-auto.jpg")
+							//-i.icon.icon--large.fa.fa-car.block
+							.container.pt--1.pb--2
+								h4.color--white Auto / Recreational Loans
+								p.hr-white-before.
+									Get pre-approved at the Credit Union before visiting the dealership.
+
+					//-a(href="/loans/recreational-loans")
+						.loan-type.col-md-4.imagebg.masonry__item(data-overlay="5")
+						
+						
+							.background-image-holder
+								img(src="/img/header/loans-recreational.jpg")
+							//-i.icon.icon--large.fa.fa-car.block
+							.container.pt--1.pb--2
+								h4.color--white Recreational Loans
+								p.hr-white-before.
+									Finance an ATV, motorcycle, boat, travel trailer, RV and more at Tulare Federal.
+					a(href="/loans/home-loans")
+						.loan-type.col-md-4.imagebg.masonry__item(data-overlay="5")
+						
+							.background-image-holder
+								img(src="/img/header/loans-mortgage.jpg")
+							//-i.icon.icon--large.fa.fa-car.block
+							.container.pt--1.pb--2
+								h4.color--white Home Loans
+								p.hr-white-before.
+									We’ve helped thousands of members realize their home ownership dream.
+
+
+					a(href="/loans/personal-loans")
+						.loan-type.col-md-4.imagebg.masonry__item(data-overlay="5")
+						
+						
+							.background-image-holder
+								img(src="/img/header/loans-personal.jpg")
+							.container.pt--1.pb--2
+								h4.color--white Personal
+								p.hr-white-before.
+									A variety of personal loans are available to members who need additional cash.
+
+					a(href="/loans/credit-cards")
+						.loan-type.col-md-4.imagebg.masonry__item(data-overlay="5")
+						
+						
+							.background-image-holder
+								img(src="/img/header/loans-credit-cards.jpg")
+							.container.pt--1.pb--2
+								h4.color--white Credit Cards
+								p.hr-white-before.
+									The convenience and buying power of Visa for less than most other financial institutions.
+
+					a(href="/loans/solar-loans")
+						.loan-type.col-md-4.imagebg.masonry__item(data-overlay="5")
+						
+							.background-image-holder
+								img(src="/img/header/loans-solar.jpg")
+							.container.pt--1.pb--2
+								h4.color--white Solar
+								p.hr-white-before.
+									Add solar panels to your home. Lower your energy bills and earn tax credits.
+
 			
 
-			hr
-
-			
-			div.row.margin-bottom-30
-
-				div.col-md-4.text-center
-					i.icon.icon--large.fa.fa-car.block
-					a.btn.btn--primary-2(href="/autoloans")
-						span.btn__text Auto
-					p.
-						Get pre-approved at the Credit Union before visiting the dealership.
-
-				div.col-md-4.text-center
-					i.icon.icon--large.fa.fa-motorcycle.block
-					a.btn.btn--primary-2(href="/recreationalloans")
-						span.btn__text Recreational
-					p.
-						Finance an ATV, motorcycle, boat, travel trailer, RV and more at Tulare Federal.
-
-				div.col-md-4.text-center
-					i.icon.icon--large.fa.fa-home.block
-					a.btn.btn--primary-2(href="/mortgages")
-						span.btn__text Mortgage
-					p.
-						We’ve helped thousands of members realize their home ownership dream.
-
-			div.row.margin-bottom-30
-
-				div.col-md-4.text-center
-					i.icon.icon--large.fa.fa-file.block
-					a.btn.btn--primary-2(href="personalloans")
-						span.btn__text Personal
-					p.
-						A variety of personal loans are available to members who need additional cash.
-
-				div.col-md-4.text-center
-					i.icon.icon--large.fa.fa-credit-card.block
-					a.btn.btn--primary-2(href="creditcards")
-						span.btn__text Credit Cards
-					p.
-						The convenience and buying power of Visa for less than most other financial institutions.
-
-				div.col-md-4.text-center
-					i.icon.icon--large.fa.fa-sun-o.block
-					a.btn.btn--primary-2(href="solarloans")
-						span.btn__text Solar
-					p.
-						Add solar panels to your home. Lower your energy bills and earn tax credits.
-
-			hr
-
-			div.row.margin-bottom-30
+			div.row
 				div.col-sm-12
-					h4.color--primary.text-center Rates
+					h5.color--blue Rates
 					p.
 						Let Tulare Federal do the leg work for you! We consistently shop the local rates in order to offer our Member-Owners competitively priced rates that fit your needs. Please contact the Credit Union for the most recent information. This schedule is subject to change at any time, without notice. APR=Annual Percentage Rates
-			div.row.text-center
+			div.row.mt--1.mb--1
 				div.col-sm-12
-					a.btn.btn--primary-2(href="/rates")
+					a.btn.btn-blue(href="/rates")
 						span.btn__text View Loan Rates Chart
 
-			hr
 					
-			div.row.text-center
+			div.row
 				div.col-sm-12
-					h4.color--primary Loan Calculators
-
-					a.btn.btn--primary-2(href="#")
+					h5.color--blue Loan Calculators
+			div.row.mb--1
+				div.col-sm-12
+					a.btn.btn-blue(href="#")
 						span.btn__text View Loan Rates Chart
-					a.btn.btn--primary-2(href="#")
+			div.row.mb--1
+				div.col-sm-12
+					a.btn.btn-blue(href="#")
 						span.btn__text Retirement Planning Claculator
-					a.btn.btn--primary-2(href="#")
+			div.row.mb--1
+				div.col-sm-12
+					a.btn.btn-blue(href="#")
 						span.btn__text Home Loan Calculator

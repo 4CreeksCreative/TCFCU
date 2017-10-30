@@ -1,24 +1,24 @@
-extends layout
+extends /layout
 
 block content
-	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		//- background image
 		div.background-image-holder(style="background-image: url(/img/header/about.jpg); background-position:center bottom; opacity: 1;") 
 			//-background image for smaller devices
 			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/about.jpg" alt="" srcset="/img/header/about.jpg 1600w, /img/header/about.jpg 300w, /img/header/about.jpg 768w, /img/header/about.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
-		div#hero-content.container.pos-vertical-center
-			div.row
-				div.col-sm-12
-					h1.text-center About TCFCU
-			div.vc_empty_space(style="height: 32px")
-				span.vc_empty_space_inner
+
+	section.unpad--bottom
+		.container
+			.row
+				.col-sm-12
+					h2.color--blue About TCFCU
+					
 	section
 		div.container
-
-			div.row.margin-bottom-30.margin-bottom-30
-
-				div.col-md-12.text-center.margin-bottom-30
-					h4.color--primary Our History
+			div.row
+				div.col-md-12
+					h5.color--blue.
+						Our History
 					
 				div.col-md-12.margin-bottom-30
 
@@ -31,16 +31,16 @@ block content
 
 					//-p.
 						As a valued member, Tulare Federal is dedicated to providing the financial products and quality service that meet your specific needs. No matter what your lifestyle or financial situation, you can be confident that you, our member, come first.
-
+			section
 			hr
-
+			section
 			div.row
 
 				div.col-md-6
 					img(src="/img/about/about.jpg")
 
 				div.col-md-6
-					h4.color--primary Our Mission Statement
+					h5.color--blue Our Mission Statement
 					!= contentful.About[0].ourMissionStatement
 					//- p.
 					//- 	“Building valuable relationships with our members to create lifelong financial success.”
@@ -60,12 +60,13 @@ block content
 					//- 	I promise to identify your needs and suggest a solution that will improve your financial life
 					//- p.unmarg.
 					//- 	I promise to show my appreciation for allowing me to serve you
+			section
 			hr
-
+			section
 			div.row.text-center
 
 				div.col-md-12
-					h4.color--primary Career Opportunities
+					h5.color--blue Career Opportunities
 
 					!= contentful.About[0].careerOpportunities
 
@@ -77,12 +78,14 @@ block content
 					//- p.
 					//- 	You may submit your resume by e-mail to #[a(href="ymagana@tularefcu.org") ymagana@tularefcu.org] (our preferred formats are Microsoft Word or Text), drop it off at any Tulare Federal branch, or mail your resume to the following address: 300 North K St. Tulare, CA 93274
 				div.col-md-12.text-center
-					a.btn.btn--primary-2(href="#")
+					a.btn.btn-blue(href="#")
 						span.btn__text Apply Now
+			section
 			hr
+			section
 			div.row
 				div.col-md-12
-					h4.color--primary.text-center Privacy Policy
+					h5.color--blue Privacy Policy
 					
 					!= contentful.About[0].privacyPolicy
 
@@ -111,11 +114,12 @@ block content
 					//- p.
 					//- 	Effective: 6/23/05
 
-
+			section
 			hr
+			section
 			div.row
 				div.col-md-12
-					h4.color--primary.text-center Member Conduct Policy
+					h5.color--blue Member Conduct Policy
 
 
 					!= contentful.About[0].memberConductPolicy
@@ -140,4 +144,4 @@ block content
 
 					//- p.
 					//- 	Creating and maintaining a safe and secure environment for both employees and members is an effort requiring everyone’s help. So, if you observe or become aware of a potentially unsafe situation at the Credit Union please contact the manager of your branch immediately by calling (559) 686-1791.
-
+			section

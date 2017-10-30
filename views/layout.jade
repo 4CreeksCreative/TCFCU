@@ -4,24 +4,29 @@ html
 	head
 		meta(charset='utf8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
-		meta(name='description', content='description of your site')
-		meta(name='author', content= "author of the site")
-		link(rel="icon" href="/img/logo/favicon_dark.png")
-		link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+		meta(name='description', content='Tulare County Federal Credit Union')
+		meta(name='author', content= "4Creeks Creative - JJ Fry")
+		link(rel="icon" href="/img/logo/icon-blue.png")
+		//- link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
 
 		//- uncomment if your site is responsive!
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		title Tulare County Federal Credit Union
 		
+		script(src="https://use.typekit.net/hfm6mfu.js")
+		script.
+			try{Typekit.load({ async: true });}catch(e){}
+
 		block head
 
 		!= css("/")
 
 	body
 		//-div#testing-bg
-		include partial/header
+		include /partial/_header
 		block content
-		include partial/footer
+		include /partial/_footer
+		include /partial/_nowLeaving
 		//-a.btn.btn--primary-2.testing
 			span.btn__text TEST
 		//-!= config_js()
