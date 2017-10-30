@@ -2,9 +2,7 @@ extends /layout
 
 block content
 	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
-		//- background image
 		div.background-image-holder(style="background-image: url(/img/header/contact.jpg); background-position:center bottom; opacity: 1;") 
-			//-background image for smaller devices
 			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/contact.jpg" alt="" srcset="/img/header/contact.jpg 1600w, /img/header/contact.jpg 300w, /img/header/contact.jpg 768w, /img/header/contact.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
 
 	section.unpad--bottom
@@ -48,12 +46,6 @@ block content
 							.col-sm-12
 								label Message:
 								textarea.validate-required(rows='6', name='Message')
-							//-.col-xs-12
-								.recaptcha
-									div(style='width: 304px; height: 78px;')
-										div
-											iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LewhCIUAAAAACSwFvBDhgtTbw6EnW6e9dip8o2u&co=ZmlsZTo.&hl=en&v=r20170717162708&theme=light&size=normal&cb=coh2ewdoi7po', title='recaptcha widget', width='304', height='78', frameborder='0', scrolling='no', sandbox='allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation')
-										textarea#g-recaptcha-response.g-recaptcha-response(name='g-recaptcha-response', style='width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ')
 							.col-sm-5.col-md-4.center-column
 								a.btn.btn-blue(type='submit', data-text='Send Enquiry')
 									span.btn__text Send Enquiry

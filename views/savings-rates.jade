@@ -1,28 +1,28 @@
-extends /layout
-
-block content
-	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
-		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/rates.jpg); background-position:center bottom; opacity: 1;") 
-			//-background image for smaller devices
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/rates.jpg" alt="" srcset="/img/header/rates.jpg 1600w, /img/header/rates.jpg 300w, /img/header/rates.jpg 768w, /img/header/rates.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
-
-	section.unpad--bottom
-		.container
-			.row
-				.col-sm-12
-					h2.color--blue Savings Rates
-					
-	section
-		div.container
-			div.row.loans
-				div.col-md-12
-					h5.color--blue= contentful.Rates[0].savingsRatesEffective
-
-			div#loan-rates.row.margin-bottom-100.text-center
-				div.col-md-12
-					//-Effective August 1, 2017
-					!=contentful.Rates[0].savingsRates
-			
-					
-					
+//- extends /layout
+//- 
+//- block content
+//- 	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+//- 		//- background image
+//- 		div.background-image-holder(style="background-image: url(/img/header/rates.jpg); background-position:center bottom; opacity: 1;") 
+//- 			//-background image for smaller devices
+//- 			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/rates.jpg" alt="" srcset="/img/header/rates.jpg 1600w, /img/header/rates.jpg 300w, /img/header/rates.jpg 768w, /img/header/rates.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+//- 
+//- 	section.unpad--bottom
+//- 		.container
+//- 			.row
+//- 				.col-sm-12
+//- 					h2.color--blue Savings Rates
+//- 					
+//- 	section
+//- 		div.container
+//- 			div.row.loans
+//- 				div.col-md-12
+//- 					//-h5.color--blue= contentful.Rates[0].savingsRatesEffective
+//- 
+//- 			div#loan-rates.row.margin-bottom-100.text-center
+//- 				div.col-md-12
+//- 					//-Effective August 1, 2017
+//- 					//-!=contentful.Rates[0].savingsRates
+//- 			
+//- 					
+//- 					

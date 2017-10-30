@@ -1,170 +1,167 @@
-extends /layout
-
-block content
-	//- header section
-	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
-		//- background image
-		div.background-image-holder(style="background: url(/img/header/products-and-services.jpg); opacity: 1;") 
-			//-background image for smaller devices
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/products-and-services.jpg" alt="" srcset="/img/header/products-and-services.jpg 1600w, /img/header/products-and-services.jpg 300w, /img/header/products-and-services.jpg 768w, /img/header/products-and-services.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
-		div#hero-content.container.pos-vertical-center
-			div.row
-				div.col-sm-12
-					h1.text-center Products and Services
-			div.vc_empty_space(style="height: 32px")
-				span.vc_empty_space_inner
-
-	//- Main content section
-	
-	section#content
-		div.container
-			div.row.mb--3
-				div.col-sm-12.text-center
-					!= contentful.Products[0].intro
-					//-p.
-						When you become a member and open a checking or savings account at Tulare Federal you are making a statement. You are telling the world you expect more out of your financial institution and you don’t want to be a number — you want to be a part of something. Tulare Federal empowers its members with tools and education that will maximize the your ability to achieve your personal financial goals and in turn do good in the community we all love.
-
-
-			hr
-
-			div.row
-				div.col-sm-12
-					div.tabs-container(data-content-align="center")
-						ul.tabs
-							
-							//- TAB 1
-							li.active
-								div.tab__title
-									span.h6.text-center Checking Accounts
-								div.tab__content
-									div.row.text-center
-										
-										div.col-sm-12.margin-bottom-30
-											h4.color--primary Checking Accounts
-									
-									div.row.text-center
-										div.col-sm-12
-
-											a.btn.btn--primary-2(href="#") 
-												span.btn__text Apply Now
-
-									div.row
-										
-										div.col-sm-12.margin-bottom-30
-											!= contentful.Products[0].checkingInfo
-											//-p.
-												Tulare Federal offers you the convenience of a checking account that features easy access. There are no minimum balance requirements and no monthly fees*. With the convenience of a Visa® Debit Card you can make purchases or withdraw cash at ATMs and merchants nationwide. Contact Tulare Federal at 559-686-1791 or visit one of our branches today to open your account.
-									
-									div.row.margin-top-30
-										div.col-sm-12
-											!= contentful.Products[0].checkingInfoList
-										div.col-sm-12.margin-top-30.text-center
-											img(src="/img/products-and-services/checking-accounts.jpg")
-										
-											//-h5.color--primary.unmarg--bottom Monthly Service Fee
-											//- p.
-											//- 	We believe that your checking account should not cost you money. It should be simply … free.
-											//- h5.color--primary.unmarg--bottom No Minimum Balance
-											//- p.
-											//- 	It’s your account. It’s your money. Don’t stress about the balance requirements. Simple as that.
-											//- h5.color--primary.unmarg--bottom Direct Deposit
-											//- p.
-											//- 	Getting paid is the best. Let’s make it convenient with free Direct Deposit.
-											//- h5.color--primary.unmarg--bottom Visa® Debit Card
-											//- p.
-											//- 	You’ll never be far from your money with Tulare Federal’s Visa® Debit Card.
-											//- h5.color--primary.unmarg--bottom Overdraft Protection †
-											//- p.
-											//- 	Peace of mind comes standard with The Simple Checking Account. 
-											//- h5.color--primary.unmarg--bottom Payroll Deduction
-											//- p.
-											//- 	Your account should make your career needs more simple. Now it does.
-											//- h5.color--primary.unmarg--bottom Mobile Banking & Mobile App
-											//- p.
-											//- 	Free Mobile Banking app for full control. Available on the Apple® & Google Play® stores now!
-											//- h5.color--primary.unmarg--bottom Free 24-Hour Automated Telephone Account Access
-											//- p.
-											//- 	Access any account info from your phone 24 hours a day.
-
-										
-							//- TAB 2
-							li
-								div.tab__title
-									span.h6.text-center Savings Accounts
-								div.tab__content
-									div.row.text-center
-										div.col-sm-12.margin-bottom-30
-											h4.color--primary Savings Accounts
-											
-
-									div.row.text-center
-										div.col-sm-12
-
-											a.btn.btn--primary-2(href="#") 
-												span.btn__text Apply Now
-									div.row
-										div.col-sm-12.margin-bottom-30
-											!= contentful.Products[0].savingsInfo
-											//-p.
-												The cornerstone of any strong and sound savings program begins with The Savings Account. Here at Tulare Federal, our Savings Account comes fully loaded.
-
-									
-									div.row.margin-top-30
-										div.col-sm-12
-											!= contentful.Products[0].savingsInfoList
-										div.col-sm-12.margin-top-30.text-center
-											img(src="/img/products-and-services/savings-accounts.jpg")
-										
-											//- p.
-											//- 	Earns competitive monthly dividends with a balance of just $25.00
-											//- p.
-											//- 	Can be used as loan collateral
-											//- p.
-											//- 	Must have a minimum balance of $25.00 that is required for Credit Union lifetime membership
-											//- p.
-											//- 	Deposits can be made in person, by mail, by allotment or direct deposit
-											//- p.
-											//- 	Offers flexibility with withdrawals at a branch, requested over the phone to be mailed, or by using a Tulare Federal Visa Debit Card
-
-										
-										
-							//- TAB 3
-							li
-								div.tab__title
-									span.h6.text-center Investments
-								div.tab__content
-									div.row.text-center
-										div.col-sm-12.margin-bottom-30
-											h4.color--primary Investments
-											
-
-									div.row.text-center
-										div.col-sm-12
-
-											a.btn.btn--primary-2(href="#") 
-												span.btn__text Apply Now
-									div.row
-										div.col-sm-12.margin-bottom-30
-											!= contentful.Products[0].investmentInfo
-											//-p.
-												If you want to earn more money for your retirement, the Individual Retirement Account (IRA) Investment Accounts have the same requirements and limitations as regular IRAs. At Tulare Federal, your IRA:
-
-									
-									div.row.margin-top-30
-										div.col-sm-12
-											!= contentful.Products[0].investmentInfoList
-										div.col-sm-12.margin-top-30.text-center
-											img(src="/img/products-and-services/investments.jpg")
-										
-											//- p.
-											//- 	Minimum balance required is $5
-											//- p.
-											//- 	Has no setup or maintenance fees
-											//- p.
-											//- 	Allows direct deposit each pay period
-											//- p.
-											//- 	Earns daily dividends, which are paid monthly
-											//- p.
-											//- 	Choose from Traditional or Roth based on your special needs
-
-										
+//- extends /layout
+//- 
+//- block content
+//- 	//- header section
+//- 	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+//- 		//- background image
+//- 		div.background-image-holder(style="background: url(/img/header/products-and-services.jpg); opacity: 1;") 
+//- 			//-background image for smaller devices
+//- 			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/products-and-services.jpg" alt="" srcset="/img/header/products-and-services.jpg 1600w, /img/header/products-and-services.jpg 300w, /img/header/products-and-services.jpg 768w, /img/header/products-and-services.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+//- 		div#hero-content.container.pos-vertical-center
+//- 			div.row
+//- 				div.col-sm-12
+//- 					h1.text-center Products and Services
+//- 			div.vc_empty_space(style="height: 32px")
+//- 				span.vc_empty_space_inner
+//- 
+//- 	//- Main content section
+//- 	
+//- 	section#content
+//- 		div.container
+//- 			div.row.mb--3
+//- 				div.col-sm-12.text-center
+//- 					p.
+//- 						When you become a member and open a checking or savings account at Tulare Federal you are making a statement. You are telling the world you expect more out of your financial institution and you don’t want to be a number — you want to be a part of something. Tulare Federal empowers its members with tools and education that will maximize the your ability to achieve your personal financial goals and in turn do good in the community we all love.
+//- 
+//- 
+//- 			hr
+//- 
+//- 			div.row
+//- 				div.col-sm-12
+//- 					div.tabs-container(data-content-align="center")
+//- 						ul.tabs
+//- 							
+//- 							//- TAB 1
+//- 							li.active
+//- 								div.tab__title
+//- 									span.h6.text-center Checking Accounts
+//- 								div.tab__content
+//- 									div.row.text-center
+//- 										
+//- 										div.col-sm-12.margin-bottom-30
+//- 											h4.color--primary Checking Accounts
+//- 									
+//- 									div.row.text-center
+//- 										div.col-sm-12
+//- 
+//- 											a.btn.btn--primary-2(href="#") 
+//- 												span.btn__text Apply Now
+//- 
+//- 									div.row
+//- 										
+//- 										div.col-sm-12.margin-bottom-30
+//- 											p.
+//- 												Tulare Federal offers you the convenience of a checking account that features easy access. There are no minimum balance requirements and no monthly fees*. With the convenience of a Visa® Debit Card you can make purchases or withdraw cash at ATMs and merchants nationwide. Contact Tulare Federal at 559-686-1791 or visit one of our branches today to open your account.
+//- 									
+//- 									div.row.margin-top-30
+//- 										div.col-sm-12
+//- 											//-!= contentful.Products[0].checkingInfoList
+//- 										div.col-sm-12.margin-top-30.text-center
+//- 											img(src="/img/products-and-services/checking-accounts.jpg")
+//- 										
+//- 											h5.color--primary.unmarg--bottom Monthly Service Fee
+//- 											p.
+//- 												We believe that your checking account should not cost you money. It should be simply … free.
+//- 											h5.color--primary.unmarg--bottom No Minimum Balance
+//- 											p.
+//- 												It’s your account. It’s your money. Don’t stress about the balance requirements. Simple as that.
+//- 											h5.color--primary.unmarg--bottom Direct Deposit
+//- 											p.
+//- 												Getting paid is the best. Let’s make it convenient with free Direct Deposit.
+//- 											h5.color--primary.unmarg--bottom Visa® Debit Card
+//- 											p.
+//- 												You’ll never be far from your money with Tulare Federal’s Visa® Debit Card.
+//- 											h5.color--primary.unmarg--bottom Overdraft Protection †
+//- 											p.
+//- 												Peace of mind comes standard with The Simple Checking Account. 
+//- 											h5.color--primary.unmarg--bottom Payroll Deduction
+//- 											p.
+//- 												Your account should make your career needs more simple. Now it does.
+//- 											h5.color--primary.unmarg--bottom Mobile Banking & Mobile App
+//- 											p.
+//- 												Free Mobile Banking app for full control. Available on the Apple® & Google Play® stores now!
+//- 											h5.color--primary.unmarg--bottom Free 24-Hour Automated Telephone Account Access
+//- 											p.
+//- 												Access any account info from your phone 24 hours a day.
+//- 
+//- 										
+//- 							//- TAB 2
+//- 							li
+//- 								div.tab__title
+//- 									span.h6.text-center Savings Accounts
+//- 								div.tab__content
+//- 									div.row.text-center
+//- 										div.col-sm-12.margin-bottom-30
+//- 											h4.color--primary Savings Accounts
+//- 											
+//- 
+//- 									div.row.text-center
+//- 										div.col-sm-12
+//- 
+//- 											a.btn.btn--primary-2(href="#") 
+//- 												span.btn__text Apply Now
+//- 									div.row
+//- 										div.col-sm-12.margin-bottom-30
+//- 											p.
+//- 												The cornerstone of any strong and sound savings program begins with The Savings Account. Here at Tulare Federal, our Savings Account comes fully loaded.
+//- 
+//- 									
+//- 									div.row.margin-top-30
+//- 										div.col-sm-12
+//- 											//-!= contentful.Products[0].savingsInfoList
+//- 										div.col-sm-12.margin-top-30.text-center
+//- 											img(src="/img/products-and-services/savings-accounts.jpg")
+//- 										
+//- 											p.
+//- 												Earns competitive monthly dividends with a balance of just $25.00
+//- 											p.
+//- 												Can be used as loan collateral
+//- 											p.
+//- 												Must have a minimum balance of $25.00 that is required for Credit Union lifetime membership
+//- 											p.
+//- 												Deposits can be made in person, by mail, by allotment or direct deposit
+//- 											p.
+//- 												Offers flexibility with withdrawals at a branch, requested over the phone to be mailed, or by using a Tulare Federal Visa Debit Card
+//- 
+//- 										
+//- 										
+//- 							//- TAB 3
+//- 							li
+//- 								div.tab__title
+//- 									span.h6.text-center Investments
+//- 								div.tab__content
+//- 									div.row.text-center
+//- 										div.col-sm-12.margin-bottom-30
+//- 											h4.color--primary Investments
+//- 											
+//- 
+//- 									div.row.text-center
+//- 										div.col-sm-12
+//- 
+//- 											a.btn.btn--primary-2(href="#") 
+//- 												span.btn__text Apply Now
+//- 									div.row
+//- 										div.col-sm-12.margin-bottom-30
+//- 											//-!= contentful.Products[0].investmentInfo
+//- 											p.
+//- 												If you want to earn more money for your retirement, the Individual Retirement Account (IRA) Investment Accounts have the same requirements and limitations as regular IRAs. At Tulare Federal, your IRA:
+//- 
+//- 									
+//- 									div.row.margin-top-30
+//- 										div.col-sm-12
+//- 											//-!= contentful.Products[0].investmentInfoList
+//- 										div.col-sm-12.margin-top-30.text-center
+//- 											img(src="/img/products-and-services/investments.jpg")
+//- 										
+//- 											p.
+//- 												Minimum balance required is $5
+//- 											p.
+//- 												Has no setup or maintenance fees
+//- 											p.
+//- 												Allows direct deposit each pay period
+//- 											p.
+//- 												Earns daily dividends, which are paid monthly
+//- 											p.
+//- 												Choose from Traditional or Roth based on your special needs
+//- 
+//- 										

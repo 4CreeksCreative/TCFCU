@@ -26,12 +26,12 @@ module.exports =
 		##		post: {template:'views/partial/_blog_post.jade'}
 		templates
 			base:'views/templates'
-		contentful
-			access_token: 'e75ea3d56e9c47e422e060239a57fa84d6e0dea64478f3edae4e674f65308a60'
-			space_id: 'kzkzhu5buy40'
-			content_types:
-				Rates:
-					id: 'loanRates'
+		#contentful
+			# access_token: 'e75ea3d56e9c47e422e060239a57fa84d6e0dea64478f3edae4e674f65308a60'
+			# space_id: 'kzkzhu5buy40'
+			# content_types:
+				# Rates:
+				# 	id: 'loanRates'
 					##template: 'views/partial/_cf_post.jade'
 					##filters: { 'fields.environment[in]': ['staging', 'production'] }
 					##path: (e) -> "blogging/#{e.category}/#{slugify(e.title)}"
@@ -40,39 +40,39 @@ module.exports =
 					##transform: transformFunction
 				##press_links:
 				##	id: 'xxxxxx'
-				Home:
-					id: 'homePage'
-					##template: 'views/partial/_cf_post.jade'
-				About:
-					id: 'aboutPage'
-					##template: 'views/partial/_cf_post.jade'
-				Products:
-					id: 'productsAndServices'
-					##template: 'views/partial/_cf_post.jade'
-				Footer:
-					id: 'footer'
-					##template: 'views/partial/_cf_post.jade'
-				Alerts:
-					id: 'alert'
-					##template: 'views/partial/_cf_post.jade'
-				Posts:
-					id: 'blogPost'
-					template: 'views/partial/_cf_blog_post.jade'
+				# Home:
+				# 	id: 'homePage'
+				# 	##template: 'views/partial/_cf_post.jade'
+				# About:
+				# 	id: 'aboutPage'
+				# 	##template: 'views/partial/_cf_post.jade'
+				# Products:
+				# 	id: 'productsAndServices'
+				# 	##template: 'views/partial/_cf_post.jade'
+				# Footer:
+				# 	id: 'footer'
+				# 	##template: 'views/partial/_cf_post.jade'
+				# Alerts:
+				# 	id: 'alert'
+				# 	##template: 'views/partial/_cf_post.jade'
+				# Posts:
+				# 	id: 'blogPost'
+				# 	template: 'views/partial/_cf_blog_post.jade'
 	]
-	
+
 	stylus:
 		use: [axis(), rupture(), autoprefixer()]
 		sourcemap: true
-	
+
 	'coffee-script':
 		sourcemap: true
-	
+
 	jade:
 		pretty: true
-	
+
 	server:
 		clean_urls:true
-	
+
 	locals:
 		testing:'testing'
 		basedir: 'views'
