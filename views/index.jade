@@ -13,44 +13,10 @@ block content
 			div.row
 				div.col-sm-12
 					h1.hr-green-after.text-left More than a member, you are a partner
-						//-div.wpb_single_image.wpb_content_element.vc_align_center
-						//-figure.wpb_wrapper.vc_figure
-							div.vc_single_image-wrapper.vc_box_border_grey
-								img.vc_single_image-img.attachment-full(width="1634" height="448" src="/img/stack/headline-1.png" alt="" srcset="/img/stack/headline-1.png 1634w, /img/stack/headline-1.png 300w, /img/stack/headline-1.png 768w, /img/headline-1.png 1024w" sizes="(max-width: 1634px) 100vw, 1634px")
-			//-div.wpb_text_column.wpb_content_element
-				div.wpb_wrapper
-					h5.text-left= contentful.Home[0].headerSubtext
-					
-				//-p(style="text-align: center;")
-					a.btn.btn--primary.type--uppercase(href="#")
-						span.btn__text VIEW THE DEMOS
-	
 
-		//- home login
-		//-include partial/home_login
-
-	//- Icon Navigation
-	
-	//-if (contentful.Alerts[0] != undefined)
-		- var date = new Date
-		div.container.mt--3
-			div.row
-				div.col-md-12
-					for alert in contentful.Alerts
-						- var dateFrom = new Date(alert.dateFrom)
-						- var dateTo = new Date(alert.dateTo)
-						if (date >= dateFrom && date <= dateTo)
-							div.alert.bg--error
-								div.alert__body
-									h5= alert.title
-									p= alert.content
-									//-p #{alert.dateFrom} - #{alert.dateTo}
-								div.alert__close ×
 	section#home-landing
 		.container
 			.row.text-center
-				//-.col-sm-4
-					img(src="img/icons/piggybank.png" alt="piggy bank")
 				.col-sm-12
 					h3.color--blue A simple start to dreaming big
 			.row
@@ -59,11 +25,9 @@ block content
 						As a member, you mean the world to us. Together we will work with you to build a bright financial future for you and your family and give you the peace of mind of having a partner to guide you through the challenges and changes of life. 
 					p.
 						We strive to be more than facilitiators, we want to engage and take action to improve the lives of our members and everybody in our community. Apply to become a member, visit a branch and talk to our experts, connect with us through our website and see what it's like to bank with a credit union that is designed to do more.
-					//-a.btn.btn-blue(href="/loans") 
-						span.btn__text Loans
 
 	section#full-width-ads.unpad--bottom
-		.row.text-center
+		.row.text-center.unmarg
 			a(href='/loans/auto-loans')
 				.col-sm-6.imagebg.height-60.overlay-green(data-overlay="5")
 					.background-image-holder
@@ -103,7 +67,6 @@ block content
 					.col-sm-3.col-xs-6.inline-block-xs
 						img.block(src="img/icons/auto-loan-icon.png")
 						h6.text-center AUTO LOANS
-		.container
 			.row
 				a(href='/calculators')
 					.col-sm-3.col-xs-6.inline-block-xs
@@ -123,7 +86,7 @@ block content
 						h6.text-center BUDGETING TOOL
 
 
-	section#full-width-ads.imagebg.parallax.height-60.overlay-green(data-overlay="5")
+	section.imagebg.parallax.height-60.overlay-green(data-overlay="5")
 		.background-image-holder
 			img(src="/img/phs.jpg")
 		.container.pos-vertical-center
@@ -153,95 +116,3 @@ block content
 					li.col-xs-12.mb--3
 						h3.color--green "Snazzy quote goes here from a member"
 						p.color--green Member Name
-
-			
-			//-row.text-center
-				.col-sm-12.mb--3
-					h3.color--green "Snazzy quote goes here from a member"
-					p.color--green.
-						NAME OF MEMBER
-					
-							
-	//-section#home-hero.cover.height-40.imagebg.parallax.overlay-green(data-overlay="5")
-		div.background-image-holder(style="background: url(/img/phs.jpg); opacity: 1;") 
-			img.attachment-full.size-full(width="1920" height="1280" src="/img/phs.jpg" alt="" srcset="/img/header/home.jpg 1600w, /img/header/home.jpg 300w, /img/header/home.jpg 768w, /img/header/home.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
-		div.container.pos-vertical-center
-			div.row
-				div.col-sm-12
-						h3 Our Vision for the Future
-						p.
-							We built the first on campus / student-run credit union branch on a high school campus in Tulare County. This is our commitment to the next generation of Valley leaders.
-						a.btn.btn-white(href="#")
-							span.btn__text Learn More
-
-						
-
-				
-			
-	
-	//-section#become-a-member
-		.container
-			.row.pos-relative
-				.col-sm-6
-					h3 Hear How We Make Finances Simple
-					p.
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elit lorem, ornare ut sem in, pharetra placerat massa. Etiam facilisis nisi nec imperdiet suscipit. Cras malesuada leo non ligula tincidunt, sed tristique eros ultricies. Fusce faucibus neque ac dui tempus, et egestas lectus mattis. Praesent a quam mattis, maximus neque sit amet, faucibus turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ultrices a purus a pharetra. Morbi fermentum lobortis ex, vel ullamcorper risus tristique vitae. Nulla ornare elit sit amet mauris ultrices, nec ultricies dolor consequat. Suspendisse vel hendrerit erat. Quisque semper sem a odio vestibulum aliquam. In ut facilisis diam, sed fermentum enim. Aliquam posuere leo at dignissim cursus.
-
-					a.btn.btn-green(href="/loans") 
-						span.btn__text Become A Member
-				.col-sm-6.imagebg.col-right-full-height
-					.background-image-holder
-						img(src="img/header/test1.jpg")
-					.container
-
-
-	//- section#icon-nav
-	//- 	div.container
-	//- 		div.row
-	//- 			div.col-lg-3.text-center
-	//- 				i.icon.icon--lg.fa.fa-money
-	//- 				a.btn.btn--primary-2.block(href="/loans") 
-	//- 					span.btn__text Loans
-	//- 			div.col-lg-3.text-center
-	//- 				i.icon.icon--lg.fa.fa-mobile-phone
-	//- 				a.btn.btn--primary-2.block(href="/mobile") 
-	//- 					span.btn__text Mobile
-	//- 			div.col-lg-3.text-center
-	//- 				i.icon.icon--lg.fa.fa-thumbs-o-up
-	//- 				a.btn.btn--primary-2.block(href="/about") 
-	//- 					span.btn__text About
-	//- 			div.col-lg-3.text-center
-	//- 				i.icon.icon--lg.fa.fa-envelope-o
-	//- 				a.btn.btn--primary-2.block(href="/contact") 
-	//- 					span.btn__text Contact
-
-	//- //- news slider
-	//- section#news-title
-	//- 	div.container
-	//- 			div.row
-	//- 				div.col-lg-12.text-center
-	//- 					h2.text-center.color--primary Latest News
-	//- 	include partial/_blog_slider
-	//- 	div.container
-	//- 		div.row.text-center
-	//- 				a.btn.btn--primary-2(href="/all-posts") 
-	//- 					span.btn__text View More
-	
-	//- //- parallax section
-	//- section.text-center
-	//- 	div.container
-	//- 		div.row
-	//- 			div.col-sm-12
-	//- 				!= contentful.Home[0].homePageVideo
-	//- 				//-iframe(src="https://player.vimeo.com/video/86148358" width="1140" height="641" frameborder="0" title="The Pismo Preserve" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="")
-
-	//- //- "steeve likes us" section
-	//- div#steeve.row(style="margin:0;")
-	//- 	div.container
-	//- 		div.row
-	//- 			div.col-lg-6.img-responsive.height-50(style="background-image:url(/img/steeve.jpg)")
-	//- 			div.text-content.col-lg-6.text-left
-	//- 				h1.color--primary= contentful.Home[0].storyTitle
-	//- 				//-Steeve Likes Us
-	//- 				p= contentful.Home[0].storyContent
-	//- 				//- When he found himself in a sticky situation, Tulare Federal member Steve Wiliams turned his credit union guidance. What happened next shocked him and turned his troubling time into a true learning opportunity.
