@@ -13,7 +13,7 @@ block content
 	//-section
 		div.container
 			div.row
-				div.col-md-12.text-center
+				div.col-sm-12.text-center
 					a.btn.btn-blue.type--uppercase(href="/loans")
 						i.icon.icon--xs.fa.fa-arrow-left.color--blue(style="margin-right:20px;")
 						span.btn__text Back to Loans
@@ -27,24 +27,36 @@ block content
 		div.container
 
 			div.row
-				div.col-md-12
+				div.col-sm-12
 					h5.color--blue Budget Calculator
 					p.
 						Need some help putting together a budget? We've got you covered.
 						
-				div.col-md-12
+				div.col-sm-12
 					a.btn.btn-blue(href="https://www.quicken.com/budget-calculator" target="_blank")
 						span.btn__text Budget Calculator
 	section
 		div.container
 
 			div.row
-				div.col-md-12
+				div.col-sm-12
 					h5.color--blue Home Loan Calculator
 					p.
 						How much of a mortgage can you afford? What other fees should I budget for? Let us help you figure it out.
 						
-				div.col-md-12
+				
+				.col-sm-12
+					.calculator.bg--gray.clearfix
+						script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+						script(src='/customjs/jquery.accrue.min.js')
+						script.
+							$(document).ready(function(){
+								$(".calculator").accrue();
+							});
+
+
+				
+				div.col-sm-12
 					a.btn.btn-blue(href="https://host.visualcalc.com/calcs/calhost.jsp" target="_blank")
 						span.btn__text Home Loan Calculator
 
@@ -52,12 +64,12 @@ block content
 		div.container
 
 			div.row
-				div.col-md-12
+				div.col-sm-12
 					h5.color--blue Auto Loan Calculator
 					p.
 						Not sure how much of a car payment you can afford? Let us help.
 						
-				div.col-md-12
+				div.col-sm-12
 					a.btn.btn-blue(href="https://host.visualcalc.com/calcs/calhost.jsp" target="_blank")
 						span.btn__text Auto Loan Calculator
 
@@ -65,12 +77,12 @@ block content
 		div.container
 
 			div.row
-				div.col-md-12
+				div.col-sm-12
 					h5.color--blue Retirement Calculator
 					p.
 						Don't want to work for the rest of your life? We'll help you plan for a secure tomorrow.
 						
-				div.col-md-12
+				div.col-sm-12
 					a.btn.btn-blue(href="https://host.visualcalc.com/calcs/calhost.jsp" target="_blank")
 						span.btn__text Retirement Calculator
 			
