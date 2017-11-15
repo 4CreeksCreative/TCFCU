@@ -1,0 +1,16 @@
+extends /layout
+
+block content
+	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+		//- background image
+		div.background-image-holder(style="background-image: url(/img/header/loans-mortgage.jpg); background-position:center bottom; opacity: 1;") 
+			//-background image for smaller devices
+			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/loans-mortgage.jpg" alt="" srcset="/img/header/loans-mortgage.jpg 1600w, /img/header/loans-mortgage.jpg 300w, /img/header/loans-mortgage.jpg 768w, /img/header/loans-mortgage.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+		div#hero-content.container.pos-vertical-center
+
+
+	section.unpad--bottom
+		.container
+			.row
+				.col-sm-12
+					iframe(src="https://uat-internetloanapplication.cudl.com/tulare/" style="height:auto;")
