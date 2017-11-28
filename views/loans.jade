@@ -1,11 +1,11 @@
 extends /layout
 
 block content
-	section.cover.height-30.imagebg.parallax(data-overlay="5")
+	section.cover.height-50.imagebg.parallax(data-overlay="5")
 		//- background image
 		div.background-image-holder(style="background-image: url(/img/header/loans-index.jpg); background-position:center bottom; opacity: 1;") 
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/loans-index.jpg" alt="" srcset="/img/header/loans-index.jpg 1600w, /img/header/loans-index.jpg 300w, /img/header/loans-index.jpg 768w, /img/header/loans-index.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+			img.attachment-full.size-full(width="1920" height="1280" src="/img/header/loans-index.jpg" alt="header image" srcset="/img/header/loans-index.jpg 1600w, /img/header/loans-index.jpg 300w, /img/header/loans-index.jpg 768w, /img/header/loans-index.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
 		div#hero-content.container.pos-vertical-center
 			//-div.row
 				div.col-sm-12
@@ -27,7 +27,7 @@ block content
 				.masonry__container
 					a.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(data-overlay="5", href="/loans/auto-loans")
 						.background-image-holder
-							img(src="/img/header/loans-auto.jpg")
+							img(alt="Auto / Recreational Loans" src="/img/header/loans-auto.jpg")
 						//-i.icon.icon--large.fa.fa-car.block
 						.container.pt--1.pb--2
 							h4.color--white Auto / Recreational Loans
@@ -35,7 +35,7 @@ block content
 								Get pre-approved at the Credit Union before visiting the dealership.
 					a.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(data-overlay="5", href="/loans/home-loans")
 						.background-image-holder
-							img(src="/img/header/loans-mortgage.jpg")
+							img(alt="home loans" src="/img/header/loans-mortgage.jpg")
 						//-i.icon.icon--large.fa.fa-car.block
 						.container.pt--1.pb--2
 							h4.color--white Home Loans
@@ -45,7 +45,7 @@ block content
 
 					a.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(href="/loans/personal-loans", data-overlay="5")
 						.background-image-holder
-							img(src="/img/header/loans-personal.jpg")
+							img(alt="Personal loans" src="/img/header/loans-personal.jpg")
 						.container.pt--1.pb--2
 							h4.color--white Personal
 							p.hr-white-before.
@@ -53,7 +53,7 @@ block content
 
 					a.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(href="/loans/credit-cards", data-overlay="5")
 						.background-image-holder
-							img(src="/img/header/loans-credit-cards.jpg")
+							img(alt="Credit cards" src="/img/header/loans-credit-cards.jpg")
 						.container.pt--1.pb--2
 							h4.color--white Credit Cards
 							p.hr-white-before.
@@ -61,7 +61,7 @@ block content
 
 					a.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(href="/loans/solar-loans", data-overlay="5")
 						.background-image-holder
-							img(src="/img/header/loans-solar.jpg")
+							img(alt="Solar Loans" src="/img/header/loans-solar.jpg")
 						.container.pt--1.pb--2
 							h4.color--white Solar
 							p.hr-white-before.
