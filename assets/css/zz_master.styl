@@ -39,6 +39,7 @@ h5.footer
 
 h6
 	font-size 1.5em
+	font-weight 800
 
 p, span, input, select, textarea
 	font-family $futura
@@ -115,6 +116,18 @@ section
 
 section#footer
 	padding-top 100px
+	.social
+		li
+			display inline-block
+			margin-right 15px
+			a
+				display block
+				i
+					transition 0.2s
+					font-size 30px
+					&:hover
+						color $green
+						transition 0.2s
 
 .btn
 	border-radius 0px
@@ -345,7 +358,7 @@ table
 	thead
 		tr
 			th
-				text-align center
+				text-align left
 				background-color $blue
 				color $white
 	tbody
