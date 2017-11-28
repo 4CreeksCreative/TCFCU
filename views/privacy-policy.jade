@@ -3,17 +3,17 @@ extends /layout
 block content
 	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/dog.jpg); background-position:center bottom; opacity: 1;") 
+		.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/dog.jpg" alt="Header Image" srcset="/img/header/dog.jpg 1600w, /img/header/dog.jpg 300w, /img/header/dog.jpg 768w, /img/header/dog.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+			img(src="/img/header/dog.jpg" alt="Header Image" )
 		div#hero-content.container.pos-vertical-center
-			//-div.row.text-center
-				div.col-sm-12
+			//-.row.text-center
+				.col-sm-12
 					h1 Credit Cards
 	//-section
-		div.container
-			div.row
-				div.col-sm-12.text-center
+		.container
+			.row
+				.col-sm-12.text-center
 					a.btn.btn-blue.type--uppercase(href="/loans")
 						i.icon.icon--xs.fa.fa-arrow-left.color--blue(style="margin-right:20px;")
 						span.btn__text Back to Loans
@@ -27,10 +27,10 @@ block content
 					a.btn.btn-blue(href="/pdf/tcfcu-annual-privacy.pdf" target="_blank")
 						span.btn__text Privacy Policy PDF
 	section
-		div.container
+		.container
 
-			div.row
-				div.col-sm-12
+			.row
+				.col-sm-12
 					h3.color--blue.mb--2.
 						WHAT DOES TULARE COUNTY FEDERAL CREDIT UNION DO WITH YOUR PERSONAL INFORMATION?
 					h5.color--blue Why?
@@ -54,10 +54,10 @@ block content
 					p.
 						All financial companies need to share members’ personal information to run their everyday business. In the section below, we list the reasons financial companies can share their customers’ personal information; the reasons Tulare County Federal Credit Union chooses to share; and whether you can limit this sharing.
 	section
-		div.container
+		.container
 
-			div.row
-				div.col-sm-12
+			.row
+				.col-sm-12
 					table
 						thead
 							tr
@@ -92,10 +92,10 @@ block content
 					
 
 	section
-		div.container
+		.container
 
-			div.row
-				div.col-sm-12
+			.row
+				.col-sm-12
 					h3.color--blue.mb--2 What We Do
 					h5.color--blue How Does TCFCU protect my personal information?
 					p.
@@ -119,10 +119,10 @@ block content
 						
 						
 	section
-		div.container
+		.container
 
-			div.row
-				div.col-sm-12
+			.row
+				.col-sm-12
 					h3.color--blue.mb--2 Definitions
 					h5.color--blue Affiliates
 					p.

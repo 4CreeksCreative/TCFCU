@@ -3,20 +3,14 @@ extends /layout
 block content
 	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/rates.jpg); background-position:center bottom; opacity: 1;") 
+		.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/rates.jpg" alt="Header Image" srcset="/img/header/rates.jpg 1600w, /img/header/rates.jpg 300w, /img/header/rates.jpg 768w, /img/header/rates.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
-		//- div#hero-content.container.pos-vertical-center
-		//- 	div.row.text-center
-		//- 		div.col-sm-12
-		//- 			h1 Rates
-		//- 	div.vc_empty_space(style="height: 32px")
-		//- 		span.vc_empty_space_inner
+			img(src="/img/header/rates.jpg" alt="Header Image")
 	section
-		div.container
+		.container
 
 			div#loan-rates.row.margin-bottom-30.text-center
-				div.col-md-12
+				.col-md-12
 					h4.color--primary EFFECTIVE August 1, 2017
 					//-EFFECTIVE August 1, 2017
 					//-!=contentful.Rates[0].loanRates
@@ -403,7 +397,7 @@ block content
 			
 			div#savings-rates.row.margin-bottom-30.text-center
 
-				div.col-md-12
+				.col-md-12
 					h4.color--primary Savings Rates
 					p EFFECTIVE August 1, 2017
 					//- = contentful.Rates[0].savingsRatesEffective
@@ -471,7 +465,7 @@ block content
 
 			div#ira.row.margin-bottom-30.text-center
 
-				div.col-md-12
+				.col-md-12
 					h4.color--primary Share and IRA Certificates
 					p EFFECTIVE August 1, 2017
 						//-= contentful.Rates[0].iraRatesEffective

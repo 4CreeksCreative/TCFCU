@@ -3,9 +3,9 @@ extends /layout
 block content
 	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/checking.jpg); background-position:center bottom; opacity: 1;") 
+		.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1920" height="1280" src="/img/header/checking.jpg" alt="Header image" srcset="/img/header/checking.jpg 1600w, /img/header/checking.jpg 300w, /img/header/hecking.jpg 768w, /img/header/checking.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+			img.attachment-full.size-full(src="/img/header/checking.jpg" alt="Header image")
 		div#hero-content.container.pos-vertical-center
 
 	section.unpad--bottom
@@ -14,16 +14,16 @@ block content
 				.col-sm-12
 					h2.color--blue Checking
 	section
-		div.container
+		.container
 
-			div.row
-				div.col-md-12
+			.row
+				.col-md-12
 					h5.color--blue The Simple Checking Account
 					p.
 						A convenient checking account that features easy access - no minimum balance and no monthly fees*.
 			
-			div.row.mt--2
-				div.col-md-12
+			.row.mt--2
+				.col-md-12
 					p.unmarg.
 						• $25 opening deposit
 					p.unmarg.
@@ -43,14 +43,14 @@ block content
 					p.unmarg.
 						
 				
-			div.row.mt--1
-				div.col-md-12
+			.row.mt--1
+				.col-md-12
 					h5.color--blue Student Checking Account
 					p.
 						A simple and convenient checking account to get students started with banking.
 			
-			div.row.mt--2
-				div.col-md-12
+			.row.mt--2
+				.col-md-12
 					p.unmarg.
 						• $1 opening deposit
 					p.unmarg.

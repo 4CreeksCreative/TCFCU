@@ -4,29 +4,29 @@ block content
 	//- header section
 	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background: url(/img/header/mobile.jpg); opacity: 1;") 
+		.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/mobile.jpg" alt="Header Image" srcset="/img/header/mobile.jpg 1600w, /img/header/mobile.jpg 300w, /img/header/mobile.jpg 768w, /img/header/mobile.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+			img(src="/img/header/mobile.jpg" alt="Header Image")
 		div#hero-content.container.pos-vertical-center
-			div.row
-				div.col-sm-12
+			.row
+				.col-sm-12
 					h1.text-center Mobile
-			div.vc_empty_space(style="height: 32px")
+			.vc_empty_space(style="height: 32px")
 				span.vc_empty_space_inner
 
 	//- Main content section
 	section#content
-		div.container
-			div.row.text-center.margin-bottom-30
-				div.col-md-12
+		.container
+			.row.text-center.margin-bottom-30
+				.col-md-12
 					h4.color--primary Put the power of banking in the palm of your hand
 					p.
 						No matter where you travel or what time zone you’re in, get access to your accounts when you need it most! With the Tulare Federal mobile app you can conveniently and securely check your account balances, view recent transactions, transfer money between accounts, pay bills, find ATMs & branch locations.
 
-			div.row
-				div.col-md-6
+			.row
+				.col-md-6
 					img(src="/img/mobile/mobile.jpg")
-				div.col-md-6
+				.col-md-6
 					h4.color--primary Remote Deposit
 					p.
 						Remote Deposit Capture Download the app and deposit in a snap! Depositing checks has never been easier! Save time and money by depositing your checks into your account from wherever you are, whenever you want. Not only is it secure, but it’s also FREE!
@@ -54,8 +54,8 @@ block content
 					p.unmarg.
 						•Make sure the entire check image is visible and in focus.
 
-			div.row.margin-top-30.text-center
-				div.col-md-12
+			.row.margin-top-30.text-center
+				.col-md-12
 					p.
 						No login. No waiting. Want to take a peek at your account balance? Our mobile banking app’s new Instant Balance feature lets you view up to six accounts from the login screen of our mobile app—no password necessary. Just tap the new Instant Balance button on the login screen to begin the setup process.
 					h4.color--primary Download the latest version of our mobile app to get started!

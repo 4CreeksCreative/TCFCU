@@ -2,8 +2,8 @@ extends /layout
 
 block content
 	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
-		div.background-image-holder(style="background-image: url(/img/header/contact.jpg); background-position:center bottom; opacity: 1;") 
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/contact.jpg" alt="Header Image" srcset="/img/header/contact.jpg 1600w, /img/header/contact.jpg 300w, /img/header/contact.jpg 768w, /img/header/contact.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+		.background-image-holder
+			img(src="/img/header/contact.jpg" alt="Header Image")
 
 	section.unpad--bottom
 		.container
@@ -12,9 +12,9 @@ block content
 					h2.color--blue Contact
 				
 	section
-		div.container
-			div.row
-				div.col-md-12
+		.container
+			.row
+				.col-md-12
 					h5.color--blue.
 						Tulare Federal Call Center
 					p.
@@ -22,9 +22,9 @@ block content
 					p.
 						Utilize the Call Center today – (559) 686-1791
 	section
-		div.container
-			div.row
-				div.col-md-12
+		.container
+			.row
+				.col-md-12
 					h5.color--blue Contact Us
 					p.
 						Email us at: #[a(href="mailto:questions@tcfcu.org") questions@tcfcu.org]
@@ -45,9 +45,9 @@ block content
 								a.btn.btn-blue(type='submit', data-text='Send Enquiry')
 									span.btn__text Send Enquiry
 	section
-		div.container
-			div.row.text-center
-				div.col-md-6.mb--2
+		.container
+			.row.text-center
+				.col-md-6.mb--2
 					h5.color--blue Telephone Hours
 
 					p.unmarg.
@@ -55,33 +55,33 @@ block content
 					p.unmarg.
 						9:00AM – 6:00PM, Friday
 
-				div.col-md-6.mb--2
+				.col-md-6.mb--2
 					h5.color--blue Branch Hours
 
 					p.unmarg.
 						10:00AM – 5:00PM, Mon – Thurs
 					p.unmarg.
 						10:00AM – 6:00PM, Friday
-			div.row.text-center
+			.row.text-center
 				
-				div.col-md-4.mb--1
+				.col-md-4.mb--1
 					h5.color--blue Visalia
 					p.
 						5133 West Walnut Visalia, CA 93277 <br/>
 						(559) 636-7400
-				div.col-md-4.mb--1
+				.col-md-4.mb--1
 					h5.color--blue Tulare
 					p.
 						300 North K. Street Tulare, CA 93274 <br/>
 						(559) 686-1791
-				div.col-md-4.mb--1
+				.col-md-4.mb--1
 					h5.color--blue Porterville
 					p.
 						617 N Main St. Porterville, CA 93257 <br/>
 						(559) 781-0159
 
-			div.row.text-center
-				div.col-md-12
+			.row.text-center
+				.col-md-12
 					a.btn.btn-blue(href="/about")
 						span.btn__text About TCFCU
 

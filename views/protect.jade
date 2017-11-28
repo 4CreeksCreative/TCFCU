@@ -3,17 +3,17 @@ extends /layout
 block content
 	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/protect.jpg); background-position:center bottom; opacity: 1;")
+		.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1920" height="1280" src="/img/header/protect.jpg" alt="header image" srcset="/img/header/protect.jpg 1600w, /img/header/protect.jpg 300w, /img/header/protect.jpg 768w, /img/header/protect.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+			img(src="/img/header/protect.jpg" alt="header image")
 		div#hero-content.container.pos-vertical-center
-			//-div.row.text-center
-				div.col-sm-12
+			//-.row.text-center
+				.col-sm-12
 					h1 Credit Cards
 	//-section
-		div.container
-			div.row
-				div.col-md-12.text-center
+		.container
+			.row
+				.col-md-12.text-center
 					a.btn.btn-blue.type--uppercase(href="/loans")
 						i.icon.icon--xs.fa.fa-arrow-left.color--blue(style="margin-right:20px;")
 						span.btn__text Back to Loans
@@ -24,31 +24,31 @@ block content
 				.col-sm-12
 					h2.color--blue Protect
 	section
-		div.container
+		.container
 
-			div.row.final
-				div.col-md-12
+			.row.final
+				.col-md-12
 					h5.color--blue GAP (Guaranteed Auto Protection)
 					p.
 						Coverage bridges the gap between what is owed on a vehicle and what the insurance company will pay in the case of a total loss.
 
-			div.row.mt--1.final
-				div.col-md-12
+			.row.mt--1.final
+				.col-md-12
 					h5.color--blue MBI( Mechanical Breakdown Insurance) / Extended Warranty
 					p.
 						Comprehensive mechanical breakdown coverage for all makes and models of automobiles.
 			
 
-			div.row.mt--1.final
-				div.col-md-12
+			.row.mt--1.final
+				.col-md-12
 					h5.color--blue Debt Protection
 					p.
 						Protects loans to reduce or payoff a loan if the member is totally disabled by a covered sickness or accident.
 			
 			
 			
-			div.row.mt--1.final
-				div.col-md-12
+			.row.mt--1.final
+				.col-md-12
 					h5.color--blue TruStage 
 					p.
 						#[a(href="https://www.trustage.com/add/no-cost-coverage?orgIdentifier=000000001493&marketingCampaignCode=CCAD000002&utm_source=000000001493&utm_medium=CULK_Copy&utm_campaign=CCAD000002&utm_content=CM000626" target="_blank" rel="noopener") $2,000 Accidental Death & Dismemberment Insurance]

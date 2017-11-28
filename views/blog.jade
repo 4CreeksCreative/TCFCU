@@ -3,12 +3,12 @@ extends /layout
 block content
 	section.cover.height-50.imagebg.parallax(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/loans-index.jpg); background-position:center bottom; opacity: 1;") 
+		.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/loans-index.jpg" alt="Header Image" srcset="/img/header/loans-index.jpg 1600w, /img/header/loans-index.jpg 300w, /img/header/loans-index.jpg 768w, /img/header/loans-index.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+			img(src="/img/header/loans-index.jpg" alt="Header Image")
 		div#hero-content.container.pos-vertical-center
-			//-div.row
-				div.col-sm-12
+			//-.row
+				.col-sm-12
 					h1 Loans
 	section.unpad--bottom
 		.container
@@ -16,9 +16,9 @@ block content
 				.col-sm-12
 					h2.color--blue Blog
 	section#loan-nav
-		div.container
-			div.row.mb--3
-				div.col-sm-12
+		.container
+			.row.mb--3
+				.col-sm-12
 					h5.color--blue Keep up with our latest news!
 					p.
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit, quam sed venenatis vehicula, lacus metus vehicula orci, vitae sagittis odio felis sit amet dolor
@@ -26,7 +26,7 @@ block content
 		.row
 			.col-sm-12
 				iframe(src="https://www.onlinebanktours.com/m/?b=2393" style="width:100%;height:auto;min-height:100vh;")
-			//-div.row.masonry.mb--3
+			//-.row.masonry.mb--3
 				.masonry__container
 					a(href="/blog/blog1")
 						.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(data-overlay="5")

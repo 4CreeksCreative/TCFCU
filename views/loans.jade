@@ -3,12 +3,12 @@ extends /layout
 block content
 	section.cover.height-50.imagebg.parallax(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/loans-index.jpg); background-position:center bottom; opacity: 1;") 
+		.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1920" height="1280" src="/img/header/loans-index.jpg" alt="header image" srcset="/img/header/loans-index.jpg 1600w, /img/header/loans-index.jpg 300w, /img/header/loans-index.jpg 768w, /img/header/loans-index.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+			img(src="/img/header/loans-index.jpg" alt="header image")
 		div#hero-content.container.pos-vertical-center
-			//-div.row
-				div.col-sm-12
+			//-.row
+				.col-sm-12
 					h1 Loans
 	section.unpad--bottom
 		.container
@@ -16,14 +16,14 @@ block content
 				.col-sm-12
 					h2.color--blue Loans
 	section#loan-nav
-		div.container
-			div.row.mb--3
-				div.col-sm-12
+		.container
+			.row.mb--3
+				.col-sm-12
 					h5.color--blue Low Rates, Flexible Terms. Apply Today!
 					p.
 						With busy lifestyles, you can turn to Tulare Federal as the best choice for your borrowing needs. You will find a variety of loans including, Auto, Recreational, Mortgage, Personal, and Credit Cards. Take advantage of our low rates, no hassle applications process, and flexible terms, and apply today.
 
-			div.row.masonry.mb--3
+			.row.masonry.mb--3
 				.masonry__container
 					a.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(data-overlay="5", href="/loans/auto-loans")
 						.background-image-holder
@@ -69,29 +69,29 @@ block content
 
 			
 
-			div.row
-				div.col-sm-12
+			.row
+				.col-sm-12
 					h5.color--blue Rates
 					p.
 						Let Tulare Federal do the leg work for you! We consistently shop the local rates in order to offer our Member-Owners competitively priced rates that fit your needs. Please contact the Credit Union for the most recent information. This schedule is subject to change at any time, without notice. APR=Annual Percentage Rates
-			div.row.mt--1.mb--1
-				div.col-sm-12
+			.row.mt--1.mb--1
+				.col-sm-12
 					a.btn.btn-blue(href="/rates")
 						span.btn__text View Loan Rates Chart
 
 					
-			div.row
-				div.col-sm-12
+			.row
+				.col-sm-12
 					h5.color--blue Loan Calculators
-			div.row.mb--1
-				div.col-sm-12
+			.row.mb--1
+				.col-sm-12
 					a.btn.btn-blue(href="#")
 						span.btn__text View Loan Rates Chart
-			div.row.mb--1
-				div.col-sm-12
+			.row.mb--1
+				.col-sm-12
 					a.btn.btn-blue(href="#")
 						span.btn__text Retirement Planning Claculator
-			div.row.mb--1
-				div.col-sm-12
+			.row.mb--1
+				.col-sm-12
 					a.btn.btn-blue(href="#")
 						span.btn__text Home Loan Calculator

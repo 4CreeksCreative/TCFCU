@@ -3,17 +3,17 @@ extends /layout
 block content
 	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/celebrate.jpg); background-position:center bottom; opacity: 1;") 
+		.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/celebrate.jpg" alt="Header Image" srcset="/img/header/celebrate.jpg 1600w, /img/header/celebrate.jpg 300w, /img/header/celebrate.jpg 768w, /img/header/celebrate.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+			img(src="/img/header/celebrate.jpg" alt="Header Image")
 		div#hero-content.container.pos-vertical-center
-			//-div.row.text-center
-				div.col-sm-12
+			//-.row.text-center
+				.col-sm-12
 					h1 Credit Cards
 	//-section
-		div.container
-			div.row
-				div.col-md-12.text-center
+		.container
+			.row
+				.col-md-12.text-center
 					a.btn.btn-blue.type--uppercase(href="/loans")
 						i.icon.icon--xs.fa.fa-arrow-left.color--blue(style="margin-right:20px;")
 						span.btn__text Back to Loans
@@ -24,14 +24,14 @@ block content
 				.col-sm-12
 					h2.color--blue Resources
 	section
-		div.container
+		.container
 
-			div.row
-				div.col-md-12
+			.row
+				.col-md-12
 					h5.color--blue Frequently Requested Forms
 			
-			div.row.mt--2
-				div.col-md-12
+			.row.mt--2
+				.col-md-12
 					p.unmarg.
 						• #[a(href='/pdf/membership-application.pdf', target='_blank') Membership Application]
 					p.unmarg.
@@ -51,12 +51,12 @@ block content
 					p.unmarg.
 						• #[a(href='https://getawaytoday.com/?referrerid=3321', target='_blank') Discounted Theme Park Tickets]
 			
-			div.row.mt--1
-				div.col-md-12
+			.row.mt--1
+				.col-md-12
 					h5.color--blue Disclosures
 			
-			div.row.mt--2
-				div.col-md-12
+			.row.mt--2
+				.col-md-12
 					p.unmarg.
 						• USA Patriot Act
 					p.unmarg.
