@@ -1,0 +1,143 @@
+extends /layout
+
+block content
+	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+		//- background image
+		div.background-image-holder(style="background-image: url(/img/header/dog.jpg); background-position:center bottom; opacity: 1;") 
+			//-background image for smaller devices
+			img.attachment-full.size-full(width="1600" height="1067" src="/img/header/dog.jpg" alt="" srcset="/img/header/dog.jpg 1600w, /img/header/dog.jpg 300w, /img/header/dog.jpg 768w, /img/header/dog.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
+		div#hero-content.container.pos-vertical-center
+			//-div.row.text-center
+				div.col-sm-12
+					h1 Credit Cards
+	//-section
+		div.container
+			div.row
+				div.col-sm-12.text-center
+					a.btn.btn-blue.type--uppercase(href="/loans")
+						i.icon.icon--xs.fa.fa-arrow-left.color--blue(style="margin-right:20px;")
+						span.btn__text Back to Loans
+
+	section.unpad--bottom
+		.container
+			.row
+				.col-sm-12
+					h2.color--blue Privacy Policy
+				.col-sm-12
+					a.btn.btn-blue(href="/pdf/tcfcu-annual-privacy.pdf" target="_blank")
+						span.btn__text Privacy Policy PDF
+	section
+		div.container
+
+			div.row
+				div.col-sm-12
+					h3.color--blue.mb--2.
+						WHAT DOES TULARE COUNTY FEDERAL CREDIT UNION DO WITH YOUR PERSONAL INFORMATION?
+					h5.color--blue Why?
+					p.
+						Financial companies choose how they share your personal information. Federal law gives consumers
+						the right to limit some but not all sharing. Federal law also requires us to tell you how we collect, share,
+						and protect your personal information. Please read this notice carefully to understand what we do.
+						
+					h5.color--blue What?
+					p.
+						The types of personal information we collect and share depend on the product or service you have with us. This information can include:
+						#[br]• Social Security number
+						#[br]• Credit history
+						#[br]• Credit score
+						#[br]• Income
+						#[br]• Account balance
+						#[br]• Account history
+					p.
+						When you are no longer our member, we continue to share your information as described in this notice
+					h5.color--blue How?
+					p.
+						All financial companies need to share members’ personal information to run their everyday business. In the section below, we list the reasons financial companies can share their customers’ personal information; the reasons Tulare County Federal Credit Union chooses to share; and whether you can limit this sharing.
+	section
+		div.container
+
+			div.row
+				div.col-sm-12
+					table
+						thead
+							tr
+								th Reasons we can share your personal information
+								th Does TCFCU share?
+								th Can you limit this sharing?
+						tbody
+							tr
+								td #[strong For our everyday business purposes -]#[br] such as to process your transactions, maintain your account(s), respond to court orders and legal investigations, or report to credit bureaus
+								td Yes
+								td No
+							tr
+								td #[strong For our marketing purposes -]#[br] To offer our products and services to you
+								td Yes
+								td No
+							tr
+								td #[strong For joint marketing with other financial companies]#[br]
+								td No
+								td
+							tr
+								td #[strong For our affiliates’ everyday business purposes -]#[br] Information about your transactions and experiences
+								td No
+								td
+							tr
+								td #[strong For our affiliates’ everyday business purposes -]#[br] Information about you creditworthiness
+								td No
+								td
+							tr
+								td #[strong For non-affiliates to market to you]#[br]
+								td No
+								td
+					
+
+	section
+		div.container
+
+			div.row
+				div.col-sm-12
+					h3.color--blue.mb--2 What We Do
+					h5.color--blue How Does TCFCU protect my personal information?
+					p.
+						To protect your personal information from unauthorized access and use, we use security measures that comply with federal law. These measures include computer safeguards and secured files and buildings. 
+					h5.color--blue How does TCFCU collect my personal information?
+					p.
+						We Collect your personal information, for example, when you:
+						#[br]• Open an account
+						#[br]• Apply for a loan
+						#[br]• Use your credit or debit card
+						#[br]• Use PSCU or Bill Payer
+						#[br]• Provide employment information
+					h5.color--blue Why can’t I limit all sharing?
+					p.
+						Federal Law gives you the right to limit only:
+						#[br]• Sharing for affiliates’ everyday business purposes – information about your creditworthiness
+						#[br]• Affiliates from using your information to market to you
+						#[br]• Sharing for non-affiliate’s to market to you
+					p.
+						State laws and individual companies may give you additional rights to limit
+						
+						
+	section
+		div.container
+
+			div.row
+				div.col-sm-12
+					h3.color--blue.mb--2 Definitions
+					h5.color--blue Affiliates
+					p.
+						Companies related by common ownership or control. They can be financial and nonfinancial companies.
+						#[br]• TCFCU has no affiliates. 
+					h5.color--blue Non-affiliates
+					p.
+						Companies not related by common ownership or control. They can be financial and nonfinancial companies.
+						#[br]• TCFCU does not share with non-affiliates so they can market to you. 
+					h5.color--blue Joint marketing 
+					p.
+						A formal agreement between non-affiliated financial companies that together market financial products or services to you.
+						#[br]• TCFCU does not market products or services jointly with nonaffiliated companies.*
+			.row.mt--3
+				.col-sm-12
+					p.
+						*When we let you know of a financial product or service offered by another company, we retain control of your information until you authorize its release by choosing to become a customer of the company or by requesting their product or service.
+				
