@@ -1,113 +1,113 @@
-extends /layout
-
-block content
-	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
-		//- background image
-		.background-image-holder
-			//-background image for smaller devices
-			img(src="/img/header/contact.jpg" alt="Header Image")
-		div#hero-content.container.pos-vertical-center
-			.row
-				.col-sm-12
-					h1.text-center About TCFCU
-			.vc_empty_space(style="height: 32px")
-				span.vc_empty_space_inner
-	section.unpad--bottom
-		.container
-
-			.row.margin-bottom-30.margin-bottom-30
-
-				.col-md-12.text-center.margin-bottom-30
-					h4.color--primary Tulare Federal Call Center
-					
-					p.
-						The Call Center staff can help you and take care of nearly anything that a branch can. With the Call Center you can apply for a loan, make payments, transfer funds, open a CD, check your balance and much more.
-
-					p.
-						Utilize the Call Center today – (559) 686-1791
-
-			hr
-
-			.row.text-center
-
-				
-
-				.col-md-12
-					h4.color--primary Contact Us
-					p.
-						Email us at: #[a(href="mailto:questions@tcfcu.org") questions@tcfcu.org]
-			.row.text-center
-				.col-sm-8.col-md-7.center-column
-					.row.text-center
-						form.text-left.form-email.attempted-submit(action="http://4cc.co/Test/mail.php" data-success="Thanks for your enquiry, we'll be in touch shortly.", data-error='Please fill in all fields correctly.', data-recaptcha-theme='light', novalidate='true')
-							.col-sm-6
-								label Your Name:
-								input.validate-required(type='text', name='Name')
-							.col-sm-6
-								label Email Address:
-								input.validate-required.validate-email(type='email', name='Email')
-							.col-sm-12
-								label Message:
-								textarea.validate-required(rows='6', name='Message')
-							//-.col-xs-12
-								.recaptcha
-									div(style='width: 304px; height: 78px;')
-										div
-											iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LewhCIUAAAAACSwFvBDhgtTbw6EnW6e9dip8o2u&co=ZmlsZTo.&hl=en&v=r20170717162708&theme=light&size=normal&cb=coh2ewdoi7po', title='recaptcha widget', width='304', height='78', frameborder='0', scrolling='no', sandbox='allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation')
-										textarea#g-recaptcha-response.g-recaptcha-response(name='g-recaptcha-response', style='width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ')
-							.col-sm-5.col-md-4.center-column
-								button.btn.btn--primary.type--uppercase(type='submit', data-text='Send Enquiry') Send Enquiry
-			
-			hr
-
-			.row.text-center
-
-				.col-md-6
-					h4.color--primary Telephone Hours
-
-					p.unmarg.
-						9:00AM – 5:00PM, Mon – Thurs
-					p.unmarg.
-						9:00AM – 6:00PM, Friday
-
-				.col-md-6
-					h4.color--primary Branch Hours
-
-					p.unmarg.
-						10:00AM – 5:00PM, Mon – Thurs
-					p.unmarg.
-						10:00AM – 6:00PM, Friday
-			hr
-			.row.text-center
-				
-				.col-md-4
-					h4.color--primary Visalia
-					p.
-						5133 West Walnut Visalia, CA 93277 <br/>
-						(559) 636-7400
-				.col-md-4
-					h4.color--primary Tulare
-					p.
-						300 North K. Street Tulare, CA 93274 <br/>
-						(559) 686-1791
-				.col-md-4
-					h4.color--primary Porterville
-					p.
-						617 N Main St. Porterville, CA 93257 <br/>
-						(559) 781-0159
-
-			.row.text-center
-				.col-md-12
-					a.btn.btn--primary-2(href="/about")
-						span.btn__text About TCFCU
-
-
-
-
-
-
-			hr
-		
-		.map-container.border--round.gmaps-active(data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U', data-address='5133 West Walnut Visalia, CA 93277; 300 North K. Street Tulare, CA 93274; 617 N Main St. Porterville, CA 93257', data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]', data-map-zoom='10', style='position: relative; overflow: hidden;')
-  
-					
+//- extends /layout
+//- 
+//- block content
+//- 	section#hero-cover.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+//- 		//- background image
+//- 		.background-image-holder
+//- 			//-background image for smaller devices
+//- 			img(src="/img/header/contact.jpg" alt="Header Image")
+//- 		div#hero-content.container.pos-vertical-center
+//- 			.row
+//- 				.col-sm-12
+//- 					h1.text-center About TCFCU
+//- 			.vc_empty_space(style="height: 32px")
+//- 				span.vc_empty_space_inner
+//- 	section.unpad--bottom
+//- 		.container
+//- 
+//- 			.row.margin-bottom-30.margin-bottom-30
+//- 
+//- 				.col-md-12.text-center.margin-bottom-30
+//- 					h4.color--primary Tulare Federal Call Center
+//- 
+//- 					p.
+//- 						The Call Center staff can help you and take care of nearly anything that a branch can. With the Call Center you can apply for a loan, make payments, transfer funds, open a CD, check your balance and much more.
+//- 
+//- 					p.
+//- 						Utilize the Call Center today – (559) 686-1791
+//- 
+//- 			hr
+//- 
+//- 			.row.text-center
+//- 
+//- 
+//- 
+//- 				.col-md-12
+//- 					h4.color--primary Contact Us
+//- 					p.
+//- 						Email us at: #[a(href="mailto:questions@tcfcu.org") questions@tcfcu.org]
+//- 			.row.text-center
+//- 				.col-sm-8.col-md-7.center-column
+//- 					.row.text-center
+//- 						form.text-left.form-email.attempted-submit(action="http://4cc.co/Test/mail.php" data-success="Thanks for your enquiry, we'll be in touch shortly.", data-error='Please fill in all fields correctly.', data-recaptcha-theme='light', novalidate='true')
+//- 							.col-sm-6
+//- 								label Your Name:
+//- 								input.validate-required(type='text', name='Name')
+//- 							.col-sm-6
+//- 								label Email Address:
+//- 								input.validate-required.validate-email(type='email', name='Email')
+//- 							.col-sm-12
+//- 								label Message:
+//- 								textarea.validate-required(rows='6', name='Message')
+//- 							//-.col-xs-12
+//- 								.recaptcha
+//- 									div(style='width: 304px; height: 78px;')
+//- 										div
+//- 											iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LewhCIUAAAAACSwFvBDhgtTbw6EnW6e9dip8o2u&co=ZmlsZTo.&hl=en&v=r20170717162708&theme=light&size=normal&cb=coh2ewdoi7po', title='recaptcha widget', width='304', height='78', frameborder='0', scrolling='no', sandbox='allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation')
+//- 										textarea#g-recaptcha-response.g-recaptcha-response(name='g-recaptcha-response', style='width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ')
+//- 							.col-sm-5.col-md-4.center-column
+//- 								button.btn.btn--primary.type--uppercase(type='submit', data-text='Send Enquiry') Send Enquiry
+//- 
+//- 			hr
+//- 
+//- 			.row.text-center
+//- 
+//- 				.col-md-6
+//- 					h4.color--primary Telephone Hours
+//- 
+//- 					p.unmarg.
+//- 						9:00AM – 5:00PM, Mon – Thurs
+//- 					p.unmarg.
+//- 						9:00AM – 6:00PM, Friday
+//- 
+//- 				.col-md-6
+//- 					h4.color--primary Branch Hours
+//- 
+//- 					p.unmarg.
+//- 						10:00AM – 5:00PM, Mon – Thurs
+//- 					p.unmarg.
+//- 						10:00AM – 6:00PM, Friday
+//- 			hr
+//- 			.row.text-center
+//- 
+//- 				.col-md-4
+//- 					h4.color--primary Visalia
+//- 					p.
+//- 						5133 West Walnut Visalia, CA 93277 <br/>
+//- 						(559) 636-7400
+//- 				.col-md-4
+//- 					h4.color--primary Tulare
+//- 					p.
+//- 						300 North K. Street Tulare, CA 93274 <br/>
+//- 						(559) 686-1791
+//- 				.col-md-4
+//- 					h4.color--primary Porterville
+//- 					p.
+//- 						617 N Main St. Porterville, CA 93257 <br/>
+//- 						(559) 781-0159
+//- 
+//- 			.row.text-center
+//- 				.col-md-12
+//- 					a.btn.btn--primary-2(href="/about")
+//- 						span.btn__text About TCFCU
+//- 
+//- 
+//- 
+//- 
+//- 
+//- 
+//- 			hr
+//- 
+//- 		.map-container.border--round.gmaps-active(data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U', data-address='5133 West Walnut Visalia, CA 93277; 300 North K. Street Tulare, CA 93274; 617 N Main St. Porterville, CA 93257', data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]', data-map-zoom='10', style='position: relative; overflow: hidden;')
+//- 
+//- 
