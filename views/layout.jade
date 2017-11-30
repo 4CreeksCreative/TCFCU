@@ -7,12 +7,9 @@ html(lang="en")
 		meta(name='description', content='Tulare County Federal Credit Union')
 		meta(name='author', content= "4Creeks Creative - JJ Fry")
 		link(rel="icon" href="/img/logo/icon-blue.png")
-		//- link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
-
-		//- uncomment if your site is responsive!
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		title Tulare County Federal Credit Union
-		
+		//- Typekit fonts
 		script(src="https://use.typekit.net/hfm6mfu.js")
 		script.
 			try{Typekit.load({ async: true });}catch(e){}
@@ -23,15 +20,26 @@ html(lang="en")
 		script(src="/customjs/01jquery-3.1.1.min.js")
 
 	body
-		//-div#testing-bg
+		//- Header
 		include /partial/_header
+		//- Content
 		block content
+		//- Footer
 		include /partial/_footer
+		//- Now-leaving modal
 		include /partial/_nowLeaving
-		//-a.btn.btn--primary-2.testing
-			span.btn__text TEST
-		//-!= config_js()
+
 		!= js("/")
+
+		//- Google Analytics
+		script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-106330513-4')
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-106330513-4');
+
+		//- FreshDesk Widget
 		script(type='text/javascript', src='http://assets.freshdesk.com/widget/freshwidget.js')
 		script(type='text/javascript').
 			FreshWidget.init("", {
@@ -46,5 +54,3 @@ html(lang="en")
 			"offset": "235px", 
 			"formHeight": "500px", 
 			"url": "https://tfed.freshdesk.com"} );
-
-		//-p= TESTING
