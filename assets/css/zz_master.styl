@@ -100,12 +100,19 @@ a:hover
 			width 100%
 			float none
 // ---- misc
-.background-image-holder
-	background-position center center !important
-	&.bg-cb
-		background-position center bottom !important
-	&.bg-ct
-		background-position center top !important
+#hero.parallax
+	.background-image-holder
+		min-height 100%
+		top 0
+.parallax
+	.background-image-holder
+		top -50vh
+		min-height 100vh
+		background-position center center !important
+		&.bg-cb
+			background-position center bottom !important
+		&.bg-ct
+			background-position center top !important
 
 @media (max-width:768px)
 	[class*="height-"]
