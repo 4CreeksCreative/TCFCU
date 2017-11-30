@@ -493,7 +493,7 @@ mr = (function (mr, $, window, document){
 
 	    $('.background-image-holder').each(function() {
 	        var imgSrc = $(this).children('img').attr('src');
-	        $(this).css('background', 'url("' + imgSrc + '")').css('background-position', 'initial').css('opacity','1');
+	        $(this).css('background-image', 'url("' + imgSrc + '")').css('opacity','1');//.css('background-position', 'initial')
 	    });
     };
 
@@ -2209,7 +2209,7 @@ mr = (function (mr, $, window, document){
             var parallaxHero = $('.parallax:nth-of-type(1)'),
                 parallaxHeroImage = $('.parallax:nth-of-type(1) .background-image-holder');
 
-            parallaxHeroImage.css('top', -(navHeight));
+            //parallaxHeroImage.css('top', -(navHeight));
             if(parallaxHero.outerHeight(true) === windowHeight){
                 parallaxHeroImage.css('height', windowHeight + navHeight);
             }
