@@ -127,10 +127,11 @@ a:hover
 section
 	padding-top 50px
 	padding-bottom 40px
-
+section#pre-footer
+	margin-top 50px
 section#footer
 	padding-top 100px
-	.social
+	ul.social
 		li
 			display inline-block
 			margin-right 15px
@@ -142,6 +143,14 @@ section#footer
 					&:hover
 						color $green
 						transition 0.2s
+	ul.sub-footer-nav
+		li
+			display inline-block
+			padding 0 12px 0 7px
+			&:first-child
+				padding 0 12px 0 0
+			&:not(:last-child)
+				border-right 1px solid $blue
 
 .btn
 	border-radius 0px
