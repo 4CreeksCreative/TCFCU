@@ -24,8 +24,6 @@ module.exports =
 		##	site:'http://tcfcu1.4cc.co'
 		##	post_types:
 		##		post: {template:'views/partial/_blog_post.jade'}
-		templates
-			base:'views/templates'
 		#contentful
 			# access_token: 'e75ea3d56e9c47e422e060239a57fa84d6e0dea64478f3edae4e674f65308a60'
 			# space_id: 'kzkzhu5buy40'
