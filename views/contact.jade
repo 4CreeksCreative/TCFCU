@@ -25,13 +25,18 @@ block content
 		.container
 			.row
 				.col-md-12
+					h5.color--blue ATM Locator
+					a.btn.btn-blue(href="https://co-opcreditunions.org/locator/" rel="noopener" target="_blank")
+						span.btn__text Locate ATMs
+			.row
+				.col-md-12
 					h5.color--blue Contact Us
 					p.
-						Email us at: #[a(href="mailto:questions@tcfcu.org") questions@tcfcu.org]
+						Email us at: #[a(href="mailto:info@tcfcu.org") info@tcfcu.org]
 			.row.text-center
 				.col-sm-8.col-md-7.center-column
 					.row.text-center
-						form.text-left.form-email.attempted-submit(action="http://4cc.co/Test/mail.php" data-success="Thanks for your enquiry, we'll be in touch shortly.", data-error='Please fill in all fields correctly.', data-recaptcha-theme='light', novalidate='true')
+						form.text-left.form-email.attempted-submit(action="/thankyou" data-success="Thanks for your enquiry, we'll be in touch shortly.", data-error='Please fill in all fields correctly.', data-recaptcha-theme='light', netlify='' novalidate='true')
 							.col-sm-6
 								label Your Name:
 								input.validate-required(type='text', name='Name')
