@@ -1,12 +1,11 @@
 extends /layout
 
 block content
-	section.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+	section#hero.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		//- background image
-		div.background-image-holder(style="background-image: url(/img/header/credit-card-update.jpg); background-position:center bottom; opacity: 1;") 
+		div.background-image-holder
 			//-background image for smaller devices
-			img.attachment-full.size-full(width="1920" height="1080" src="/img/header/credit-card-update.jpg" alt="Header Image" srcset="/img/header/credit-card-update.jpg 1600w, /img/header/credit-card-update.jpg 300w, /img/header/credit-card-update.jpg 768w, /img/header/credit-card-update.jpg 1024w" sizes="(max-width: 1600px) 100vw, 1600px")
-		div#hero-content.container.pos-vertical-center
+			img(src="/img/header/credit-card-update.jpg" alt="Header Image")
 
 	section.unpad--bottom
 		.container
