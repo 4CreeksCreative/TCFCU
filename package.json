@@ -12,16 +12,12 @@
     "client-templates": "^0.2.0",
     "coffee-script": "1.x",
     "css-pipeline": "0.3.x",
-    "fs": "0.0.1-security",
     "jade": "1.x",
     "js-pipeline": "0.2.x",
     "jstransformer-marked": "1.x",
     "marked": "0.3.x",
     "roots": "*",
-    "roots-config": "0.0.2",
     "roots-contentful": "0.0.9",
-    "roots-records": "^0.5.1",
-    "roots-wordpress": "^0.5.0",
     "rupture": "0.6.x",
     "stylus": "0.54.x"
   }
