@@ -28,22 +28,39 @@ block content
 
 	section#full-width-ads.unpad--bottom
 		.row.text-center.unmarg
-			a(href='/loans/auto-loans')
-				.col-sm-6.imagebg.height-60.overlay-green(data-overlay="5")
-					.background-image-holder
-						img(alt="Low Auto Rates" src="/img/header/low-auto-rates.jpg")
-					.pos-vertical-center
-						h3 Low Auto Rates
-						.btn.btn-white
-							span.btn__text Learn More
-			a(href='#')
-				.col-sm-6.imagebg.height-60.overlay-blue(data-overlay="5")
-					.background-image-holder
-						img(alt="Holiday Skip A Pay" src="/img/test2.jpg")
-					.pos-vertical-center
-						h3 Holiday Skip-A-Pay
-						.btn.btn-white
-							span.btn__text Learn More
+			
+			
+			if contentful.Promotions.length > 0
+				for item in contentful.Promotions
+					- var today = new Date()
+					- var startDate = new Date(item.dateStart)
+					- var endDate = new Date(item.dateEnd)
+					- if (today > startDate && today < endDate)
+						a(href='#{item._url}' id="#{item.slug}")
+							.col-sm-6.imagebg.height-60(data-overlay="5" class="overlay-#{item.overlay}")
+								.background-image-holder
+									img(alt="#{item.header.fields.title}" src="#{asset(item.header)}")
+								.pos-vertical-center
+									h3 #{item.title}
+									.btn.btn-white
+										span.btn__text Learn More
+						script.
+							$(document).ready(function(){
+								var today = new Date()
+								var startDate = new Date('#{item.dateStart}')
+								var endDate = new Date('#{item.dateEnd}')
+								if(today < startDate && today > endDate){
+									$('##{item.slug}').remove()
+								}
+							})
+			//- a(href='#')
+			//- 	.col-sm-6.imagebg.height-60.overlay-blue(data-overlay="5")
+			//- 		.background-image-holder
+			//- 			img(alt="Holiday Skip A Pay" src="/img/test2.jpg")
+			//- 		.pos-vertical-center
+			//- 			h3 Holiday Skip-A-Pay
+			//- 			.btn.btn-white
+			//- 				span.btn__text Learn More
 
 	section#our-services
 		.container
