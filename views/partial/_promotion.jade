@@ -1,0 +1,59 @@
+extends /layout
+
+block content
+	section#hero.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+		//- background image
+		.background-image-holder
+			//-background image for smaller devices
+			img.attachment-full.size-full(src="#{asset(entry.header)}" alt="Header image")
+		div#hero-content.container.pos-vertical-center
+
+	section.unpad--bottom
+		.container
+			.row
+				.col-sm-12
+					h2.color--blue= entry.title
+	section
+		.container
+			.row
+				.col-sm-12
+					- var start = new Date(entry.dateStart)
+					- var end = new Date(entry.dateEnd)
+					- var monthNames = ["January", "February", "March", "April", "May", "June",  "July", "August", "September", "October", "November", "December" ];
+					p.
+						Promotion valid through #{monthNames[start.getMonth()]} #{start.getDate()}, #{start.getFullYear()} - #{monthNames[end.getMonth()]} #{end.getDate()}, #{end.getFullYear()}
+	
+	if entry.promoSections.length > 0
+		section.unpad--top.final
+			.container
+				for item in entry.promoSections
+					.row
+						.col-sm-12
+							h4.color--blue.mb--2= item.fields.subhead
+							p= item.fields.body
+						
+	if entry.callToAction != undefined
+		if entry.callToAction.fields.backgroundImage != undefined
+			section.imagebg.unpad--top.final.height-50(data-overlay="5" class="overlay-#{entry.callToAction.fields.overlay}")
+				.background-image-holder
+					img(src="#{asset(entry.callToAction.fields.backgroundImage)}")
+				.container.pos-vertical-center
+					.row.text-center
+						.col-sm-12
+							h4.color--blue.mb--2= entry.callToAction.fields.title
+							p= entry.callToAction.fields.body
+							a.btn.btn-white(href="#{entry.callToAction.fields.buttonLink}")
+								span.btn__text= entry.callToAction.fields.buttonText
+		else
+			section.unpad--top.final
+				.container
+					.row
+						.col-sm-12
+							h4.color--blue.mb--2 poop
+							p poop
+	if entry.disclosure != undefined
+		section.unpad--top.final
+			.container
+				.row
+					.col-sm-12
+						p= entry.disclosure
