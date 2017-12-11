@@ -2,12 +2,9 @@ extends /layout
 
 block content
 	section#hero.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
-		//- background image
 		.background-image-holder
-			//-background image for smaller devices
 			img.attachment-full.size-full(src="#{asset(entry.header)}" alt="Header image")
 		div#hero-content.container.pos-vertical-center
-
 	section.unpad--bottom
 		.container
 			.row
@@ -22,7 +19,6 @@ block content
 					- var monthNames = ["January", "February", "March", "April", "May", "June",  "July", "August", "September", "October", "November", "December" ];
 					p.
 						Promotion valid through #{monthNames[start.getMonth()]} #{start.getDate()}, #{start.getFullYear()} - #{monthNames[end.getMonth()]} #{end.getDate()}, #{end.getFullYear()}
-	
 	if entry.promoSections.length > 0
 		section.unpad--top.final
 			.container
@@ -31,7 +27,6 @@ block content
 						.col-sm-12
 							h4.color--blue.mb--2= item.fields.subhead
 							p= item.fields.body
-						
 	if entry.callToAction != undefined
 		if entry.callToAction.fields.backgroundImage != undefined
 			section.imagebg.unpad--top.final.height-50(data-overlay="5" class="overlay-#{entry.callToAction.fields.overlay}")

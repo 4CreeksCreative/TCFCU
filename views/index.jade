@@ -2,12 +2,8 @@ extends /layout
 
 
 block content
-	- var blogPosts = 3;
-	//- Main Hero Header
 	section#hero.cover.height-80.imagebg.parallax.overlay-blue(data-overlay="5")
-		//- background image
 		.background-image-holder
-			//-background image for smaller devices
 			img(src="/img/header/home.jpg" alt="")
 		.container.pos-vertical-center
 			.row
@@ -28,8 +24,6 @@ block content
 
 	section#full-width-ads.unpad--bottom
 		.row.text-center.unmarg
-			
-			
 			if contentful.Promotions.length > 0
 				for item in contentful.Promotions
 					- var today = new Date()
@@ -53,15 +47,6 @@ block content
 									$('##{item.slug}').remove()
 								}
 							})
-			//- a(href='#')
-			//- 	.col-sm-6.imagebg.height-60.overlay-blue(data-overlay="5")
-			//- 		.background-image-holder
-			//- 			img(alt="Holiday Skip A Pay" src="/img/test2.jpg")
-			//- 		.pos-vertical-center
-			//- 			h3 Holiday Skip-A-Pay
-			//- 			.btn.btn-white
-			//- 				span.btn__text Learn More
-
 	section#our-services
 		.container
 			.row.text-center
@@ -102,7 +87,6 @@ block content
 						img.block(alt="Budgeting Tool" src="img/icons/budget-tool-icon.png")
 						h6.text-center BUDGETING TOOL
 
-
 	section.imagebg.parallax.height-60.overlay-green(data-overlay="5")
 		.background-image-holder
 			img(alt="Porterville Highschool Kids" src="/img/phs.jpg")
@@ -115,13 +99,11 @@ block content
 						This is our commitment to the next generation of Valley leaders.
 					a.btn.btn-white(href="http://tularefederal.org/")
 						span.btn__text Learn More
-						
 	section#customer-comments
 		.container
 			.row.text-center
 				.col-xs-12.mb--1.unpad--bottom
 					h3.home.color--grey See what everyone's talking about
-					
 			.row.text-center.slider(data-paging="true")
 				ul.slides
 					li.col-xs-12.mb--3

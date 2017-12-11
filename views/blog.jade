@@ -2,14 +2,9 @@ extends /layout
 
 block content
 	section#hero.cover.height-50.imagebg.parallax(data-overlay="5")
-		//- background image
 		.background-image-holder
-			//-background image for smaller devices
 			img(src="/img/header/blog.jpg" alt="Header Image")
 		div#hero-content.container.pos-vertical-center
-			//-.row
-				.col-sm-12
-					h1 Loans
 	section.unpad--bottom
 		.container
 			.row
@@ -20,38 +15,6 @@ block content
 			.row.mb--3
 				.col-sm-12
 					h5.color--blue Keep up with our latest news!
-
-
 		.row
 			.col-sm-12
 				iframe(src="https://www.onlinebanktours.com/m/?b=2393" style="width:100%;height:auto;min-height:100vh;")
-			//-.row.masonry.mb--3
-				.masonry__container
-					a(href="/blog/blog1")
-						.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(data-overlay="5")
-							.background-image-holder
-								img(src="/img/header/loans-auto.jpg")
-							//-i.icon.icon--large.fa.fa-car.block
-							.container.pt--1.pb--2
-								h4.color--white Blog Post 1
-								p.hr-white-before.
-									Don’t Let Credit Card Interest Cost You Money
-					a(href="/blog/blog2")
-						.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(data-overlay="5")
-							.background-image-holder
-								img(src="/img/header/home2.jpg")
-							//-i.icon.icon--large.fa.fa-car.block
-							.container.pt--1.pb--2
-								h4.color--white Blog Post 2
-								p.hr-white-before.
-									Advantages of Using a Credit Card
-					a(href="/blog/blog3")
-						.loan-type.col-md-4.col-sm-6.imagebg.masonry__item(data-overlay="5")
-						
-							.background-image-holder
-								img(src="/img/header/home3.jpg")
-							//-i.icon.icon--large.fa.fa-car.block
-							.container.pt--1.pb--2
-								h4.color--white Blog Post 3
-								p.hr-white-before.
-									Making The Store Credit Card Decision
