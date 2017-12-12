@@ -6,10 +6,6 @@ css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
 date         = new Date()
 
-##fs.readdir 'views/pages', (err, data) ->
-##    navfiles.push(data)
-##   console.log(navfiles)
-
 module.exports =
 	ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
 
