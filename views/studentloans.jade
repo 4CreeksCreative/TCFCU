@@ -5,6 +5,28 @@ block content
 		.background-image-holder
 			img.attachment-full.size-full(src="/img/header/studentloans.jpg" alt="Header image")
 		div#hero-content.container.pos-vertical-center
+	section
+		.container
+			.row.text-center
+				.col-sm-12
+					video#video(controls='controls', preload='none', crossorigin='anonymous', poster='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/poster/StudentLoans_poster.png')
+						source(src='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans_encoded.mp4', type='video/mp4')
+						track(kind='subtitles', srclang='en', label='English', src='/mobile/captionProxy.php?file=https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans.vtt')
+						object#swfPlayer(style='z-index: 10000;', type='application/x-shockwave-flash', data='../m/swf/player.swf', width='512', height='288')
+							param(name='allowfullscreen', value='true')
+							param(name='allowscriptaccess', value='always')
+							param(name='flashvars', value='video=https%3A%2F%2Fx7i5t7v9.ssl.hwcdn.net%2Fcds%2FmoneyBasics%2F946%2Fvideos%2F222%2FStudentLoans_encoded.mp4&poster=https%3A%2F%2Fx7i5t7v9.ssl.hwcdn.net%2Fcds%2FmoneyBasics%2F946%2Fvideos%2F222%2Fposter%2FStudentLoans_poster.png')
+							param(name='wmode', value='opaque')
+							//if IE
+								param(name='movie', value='../m/swf/player.swf')
+							img(src='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/poster/StudentLoans_poster.png', width='510', height='288', alt='Things You Should Know About Student Loans')
+							p
+								| Your browser can&rsquo;t play HTML5 video. 
+								a.hoverZoomLink(href='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans_encoded.mp4')
+									| Download
+									| it
+								|  instead.
+
 	section.unpad--bottom
 		.container
 			.row
