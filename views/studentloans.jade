@@ -3,63 +3,119 @@ extends /layout
 block content
 	section#hero.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
 		.background-image-holder
-			img.attachment-full.size-full(src="/img/header/checking.jpg" alt="Header image")
+			img.attachment-full.size-full(src="/img/header/studentloans.jpg" alt="Header image")
 		div#hero-content.container.pos-vertical-center
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue Info About Student Loans
+					h2.color--blue Paying for your education doesn't have to be complicated
+	section
+		.container
+			.row
+				.col-sm-12
+					h5.color--blue 4 ways to paying for secondary education
+					p You've done the hard part and prepared yourself for secondary education, don't let task of paying for it become a roadblock to your future. Here's the five steps to applying and acquiring the funds you need to go to schoo.
+	section
+		.container
+			.row
+				.col-sm-12
+					h5.color--blue 1. Fill out the FAFSA
+					p.
+						FAFSA stands for Free Application for Federal Student Aid. It is the only way to apply for federal student aid. It is free to apply. You must fill out your FAFSA form at #[a(hrefe="https://fafsa.gov/" target="_blank" rel="noopener") fafsa.gov] every year that you are in college, university or career school.
+					p.
+						In addition, many states and colleges use your FAFSA data to determine your eligibility for state and school aid. Some private financial aid providers may use your FAFSA information to determine whether you qualify for their aid.
+					p.
+						Fill out your FAFSA form for free at #[a(hrefe="https://fafsa.gov/" target="_blank" rel="noopener") fafsa.gov].
+
+					p.
+						When you fill out your FASFA, you will also create an FSA ID. FSA ID stands for your Federal Student Aid Identification. It is a username and password that you create. You use your FSA ID to:
+					p.unmarg • get into the Federal Student Aid system.
+					p.unmarg • fill out your FAFSA form.
+					p • legally sign your student aid documents.
+					p.
+						Only you can create and use your FSA ID. Don’t share your FSA ID with anyone else. Dishonest people could use your FSA ID to get into your account and take control of your personal information.
+	section
+		.container
+			.row
+				.col-sm-12
+					h5.color--blue 2. Look for free money ... yeah that's right, it's free!
+					p.
+						Grants and scholarships are free money. They should be your first choice to finance your education. Why? Because you don’t have to pay them back. A good way to apply for a grant is through your FAFSA form. You  also can check out these other sources to find grant and scholarship opportunities:
+					p.unmarg • the financial aid office at a college or career school
+					p.unmarg • a high school or TRIO counselor
+					p.unmarg • the U.S. Department of Labor’s free scholarship search tool
+					p.unmarg • federal agencies
+					p.unmarg • your state
+					p.unmarg • your library
+					p.unmarg • foundations, religious or community organizations, local businesses, or civic groups
+					p.unmarg • organizations related to your field of interest, like professional associations
+					p.unmarg • ethnicity-based organizations
+					p • your employer or your parents’ employers
+	section
+		.container
+			.row
+				.col-sm-12
+					h5.color--blue 3. Get a loan, it's worth the investment
+					p.
+						Student loans fall into two categories: federal loans and private loans.
+					p.
+						Federal loans are Direct Loans, where the U.S. Department of Education is the lender;
+					p.unmarg • Federal Family Education Loans (FFEL), where private lenders make loans backed by the federal government;
+					p.unmarg • Federal Perkins Loans, low-interest federal student loans for undergraduate and graduate students with exceptional financial need; and
+					p • PLUS loans, federal loans that graduate or professional students and parents of dependent undergraduate students can use to help pay for college or career school.
+					p.
+						Private Loans, sometimes called “alternative loans,” are offered by private lenders, like banks and credit unions, and do not include the benefits and protections that come with federal loans.
 	section
 		.container
 			.row
 				.col-md-12
-					h5.color--blue The Simple Checking Account
-					p.
-						A convenient checking account that features easy access - no minimum balance and no monthly fees*.
-			.row.mt--2
-				.col-md-12
-					p.unmarg.
-						• $25 opening deposit
-					p.unmarg.
-						• Visa® Debit Card - <a href="https://4cc.typeform.com/to/RJfNey">Easy Replacement</a>
-					p.unmarg.
-						• #[span(data-tooltip="If your checking account balance drops to a zero balance, your transactions will go through, up to 6 transactions a month.") Overdraft Protection]
-					p.unmarg.
-						• <a href="/digital-banking">Digital Banking</a>
-					p.unmarg.
-						•  Access to over 30,000<a href="https://co-opcreditunions.org/locator/" target="_blank">Surcharge-free ATMs</a>
-					p.unmarg.
-						• Deposit checks from your cell phone via Mobile App (<a href="https://itunes.apple.com/us/app/tulare-county-federal-credit/id672861009"  target="_blank">iOS App </a> for Apple or <a href="https://play.google.com/store/apps/details?id=com.tularecountyfcu.mobile"  target="_blank">Andriod App</a> for Google)
-					p.unmarg.
-						• <a href="/pdf/direct-deposit-form.pdf" target="_blank">Direct Deposit</a>
-					p.unmarg.
-						• <a href="https://www.ordermychecks.com/login_a.jsp" target="_blank">Checks</a>
-					p.unmarg.
-			.row.mt--1
-				.col-md-12
-					h5.color--blue Student Checking Account
-					p.
-						A simple and convenient checking account to get students started with banking.
-			.row.mt--2
-				.col-md-12
-					p.unmarg.
-						• $1 opening deposit
-					p.unmarg.
-						• Visa® Debit Card - <a href="https://4cc.typeform.com/to/RJfNey">Easy Replacement</a>
-					p.unmarg.
-						• <a href="/digital-banking">Digital Banking</a>
-					p.unmarg.
-						• Access to over 30,000 <a href="https://co-opcreditunions.org/locator/" target="_blank">Surcharge-free ATMs</a>
-					p.unmarg.
-						• <a href="/pdf/direct-deposit-form.pdf" target="_blank">Direct Deposit</a> 
-					p.unmarg.
-						• <a href="https://www.ordermychecks.com/login_a.jsp" target="_blank">Checks</a>
-	section.unpad--top.final
+					table
+						thead
+							tr
+								th
+								th Federal Loans
+								th Private Loans
+						tbody
+							tr
+								td #[strong Applying for the loan]
+								td You won’t need a co-signer to get a federal student loan in most cases (except for PLUS loans).
+								td You may need a co-signer and a credit check. The cost to repay a private student loan will depend on your credit score and other factors.
+							tr
+								td #[strong Interest Rates (the cost of borrowing money)]
+								td Rates are fixed, and often lower than private loans.
+								td Private student loans can have variable interest rates.
+							tr
+								td(rowspan="7") #[strong Repayment terms]
+								td You will not have to start repaying your federal student loans until you graduate, leave school, or change your enrollment status to less than half-time.
+								td Many private student loans require payment while you are still in school.
+							tr
+								td Undergraduate students with financial need usually qualify for a subsidized loan. The government pays the interest while you are in school on at least a half-time basis.
+								td Private student loans are not subsidized. No one pays the interest on your loan but you.
+							tr
+								td Loans can be consolidated into a Direct Consolidation Loan for free. Learn about your consolidation options.
+								td There may be options for consolidation, depending on your lender. But there usually is a fee.
+							tr
+								td There is no fee to repay your loan more quickly – called a prepayment penalty fee.
+								td There may be prepayment penalty fees.
+							tr
+								td If you are having trouble repaying your loan, you may be able to temporarily postpone or lower your payments.
+								td Private student loans may not offer forbearance or deferment options.
+							tr
+								td There are several repayment options, including an option to tie your monthly payment to your income.
+								td You should check with your lender to find out about your repayment options.
+							tr
+								td You may be eligible to have some portion of your loans forgiven if you work in public service.
+								td It is unlikely that a private lender will offer a loan forgiveness program.
+	section
 		.container
 			.row
 				.col-sm-12
-					p
-						|*For fees, please refer to our #[a(href='/pdf/fee-schedule.pdf') Fee Schedule].
-						br
-						|** Based on Credit Union approval.
+					h5.color--blue 4. Get to work at school and at a job
+					p.
+						Federal work-study jobs are another way to help  pay for college. Work-study is a need-based grant that requires you to work part-time while you’re in school. To qualify for work-study, you’ll need to fill out the FASFA form and meet the needs-based criteria of the program. You are only paid for the hours that you work
+	section
+		.container
+			.row
+				.col-sm-12
+					p Source: FEDERAL TRADE COMMISSION (#[a(href="http://www.ftc.gov" target="_blank" rel="noopener") www.ftc.gov])
