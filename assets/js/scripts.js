@@ -1287,8 +1287,8 @@ mr = (function (mr, $, window, document){
         if($('.instafeed').length){
 
             // Replace with your own Access Token and Client ID
-            var token  = '4079540202.b9b1d8a.1d13c245c68d4a17bfbff87919aaeb14',
-                client = 'b9b1d8ae049d4153b24a6332f0088686',
+            var token  = '23584699.2c55b4c.20b278ea3252463899c2193946d4a4f4',
+                client = '2c55b4c5003240a9bc07119e674a4749',
                 elementToken, elementClient;
 
             if($('.instafeed[data-access-token][data-client-id]').length){
