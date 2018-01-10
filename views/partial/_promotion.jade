@@ -13,20 +13,27 @@ block content
 	section
 		.container
 			.row
-				.col-sm-12
-					- var start = new Date(entry.dateStart)
+				if entry.dateStart != undefined
+					.col-sm-12
+						- var start = new Date(entry.dateStart)
+						- var end = new Date(entry.dateEnd)
+						- var monthNames = ["January", "February", "March", "April", "May", "June",  "July", "August", "September", "October", "November", "December" ];
+						p.
+							Promotion valid through #{monthNames[start.getMonth()]} #{start.getDate()}, #{start.getFullYear()} - #{monthNames[end.getMonth()]} #{end.getDate()}, #{end.getFullYear()}
+				else
 					- var end = new Date(entry.dateEnd)
 					- var monthNames = ["January", "February", "March", "April", "May", "June",  "July", "August", "September", "October", "November", "December" ];
 					p.
-						Promotion valid through #{monthNames[start.getMonth()]} #{start.getDate()}, #{start.getFullYear()} - #{monthNames[end.getMonth()]} #{end.getDate()}, #{end.getFullYear()}
-	if entry.promoSections.length > 0
-		section.unpad--top.final
-			.container
-				for item in entry.promoSections
-					.row
-						.col-sm-12
-							h4.color--blue.mb--2= item.fields.subhead
-							p= item.fields.body
+						Promotion valid through #{monthNames[end.getMonth()]} #{end.getDate()}, #{end.getFullYear()}
+	if entry.promoSections != undefined
+		if entry.promoSections.length > 0
+			section.unpad--top.final
+				.container
+					for item in entry.promoSections
+						.row
+							.col-sm-12
+								h4.color--blue.mb--2= item.fields.subhead
+								p= item.fields.body
 	if entry.callToAction != undefined
 		if entry.callToAction.fields.backgroundImage != undefined
 			section.imagebg.unpad--top.final.height-50(data-overlay="5" class="overlay-#{entry.callToAction.fields.overlay}")
