@@ -3,7 +3,7 @@ $('a:not([type="submit"]):not([href*="mailto:"])').each(function(i,val){
 	if(!regex.test($(val).attr('href'))){
 		console.log('external link found ' + $(val).attr('href'))
 		$(val).addClass('modal-trigger')
-		$(val).attr('data-modal-index','0')
+		$(val).attr('data-modal-index','0').attr('data-modal-index','2')
 	}
 })
 $(document).on('mousedown','.modal-trigger',function(e){

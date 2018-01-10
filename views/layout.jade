@@ -29,7 +29,7 @@ html(lang="en")
 		include /partial/_footer
 		//- Now-leaving modal
 		include /partial/_nowLeaving
-
+		include /partial/_freshdesk
 		!= js("/")
 
 		//- Google Analytics
@@ -41,18 +41,18 @@ html(lang="en")
 			gtag('config', 'UA-106330513-4');
 
 		//- FreshDesk Widget
-		script(type='text/javascript', src='http://assets.freshdesk.com/widget/freshwidget.js')
-		script(type='text/javascript').
-			FreshWidget.init("", {
-			"queryString": "&widgetType=popup&submitTitle=Send+Request+&captcha=yes&submitTitle=Send+Message&submitThanks=Thank+you+for+contacting+us!+Be+sure+to+check+your+email+for+updates.",
-			"utf8": "✓",
-			"widgetType": "popup",
-			"buttonType": "text",
-			"buttonText": "Questions?",
-			"buttonColor": "white",
-			"buttonBg": "#10222b",
-			"alignment": "2",
-			"offset": "235px",
-			"formHeight": "500px",
-			"captcha": "no",
-			"url": "https://tularefcu.freshdesk.com"} );
+		//- script(type='text/javascript', src='http://assets.freshdesk.com/widget/freshwidget.js')
+		//- script(type='text/javascript').
+		//- 	FreshWidget.init("", {
+		//- 	"queryString": "&widgetType=popup&submitTitle=Send+Request+&captcha=yes&submitTitle=Send+Message&submitThanks=Thank+you+for+contacting+us!+Be+sure+to+check+your+email+for+updates.",
+		//- 	"utf8": "✓",
+		//- 	"widgetType": "popup",
+		//- 	"buttonType": "text",
+		//- 	"buttonText": "Questions?",
+		//- 	"buttonColor": "white",
+		//- 	"buttonBg": "#10222b",
+		//- 	"alignment": "2",
+		//- 	"offset": "235px",
+		//- 	"formHeight": "500px",
+		//- 	"captcha": "no",
+		//- 	"url": "https://tularefcu.freshdesk.com"} );
