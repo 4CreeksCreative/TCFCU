@@ -14,7 +14,7 @@ block content
 		.container
 			.row.text-center
 				.col-sm-12
-					h3.color--blue.freshdesk-trigger(data-modal-index='1') A simple start to dreaming big
+					h3.color--blue.modal-trigger(data-modal-index='1') A simple start to dreaming big
 			.row
 				.col-sm-12
 					p.
@@ -32,7 +32,7 @@ block content
 					- var endDate = new Date(item.dateEnd)
 					- if (today > startDate && today < endDate)
 						- num++
-						- console.log(num)
+						//- console.log(num)
 						a(href='#{item._url}' id="#{item.slug}")
 							.col-sm-6.imagebg.height-60(data-overlay="5" class="overlay-#{item.overlay}")
 								.background-image-holder
@@ -122,8 +122,8 @@ block content
 						h6.color--green "I was a first time car buyer and totally overwhelmed by the process. Tulare Federal took the time to educate me on the process and worked hard to get me the best loan possible so all I had to worry about was finding the perfect car."
 						p.color--green Cristina Gutierrez, Member since 2016
 					li.col-xs-12
-						h6.color--green "Everything should be made as simple as possible, but not simpler."
-						p.color--green Albert Einstein
+						h6.color--green TCFCU offered us the best rates for our solar, home and car loans. Their staff is friendly and always helpful. They make banking an enjoyable experience. 
+						p.color--green Travis Roebuck
 					li.col-xs-12
 						h6.color--green "If you can't explain it simply, you don't understand it well enough."
 						p.color--green Albert Einstein
