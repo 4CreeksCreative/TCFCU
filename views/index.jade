@@ -14,7 +14,7 @@ block content
 		.container
 			.row.text-center
 				.col-sm-12
-					h3.color--blue.modal-trigger(data-modal-index='1') A simple start to dreaming big
+					h3.color--blue A simple start to dreaming big
 			.row
 				.col-sm-12
 					p.
@@ -37,10 +37,10 @@ block content
 							.col-sm-6.imagebg.height-60(data-overlay="5" class="overlay-#{item.overlay}")
 								.background-image-holder
 									img(alt="#{item.header.fields.title}" src="#{asset(item.header)}")
-								.pos-vertical-center
+								.pos-vertical-center(style="padding: 0 15px;")
 									h3 #{item.title}
 									if item.subtitle != undefined
-										p= item.subtitle
+										p.mb--1= item.subtitle
 									.btn.btn-white
 										span.btn__text Learn More
 						script.
@@ -53,7 +53,7 @@ block content
 								}
 							})
 				if (num % 2) != 0
-					.col-sm-6.imagebg.height-60(data-overlay="5" class="overlay-green")
+					.hidden-xs.col-sm-6.imagebg.height-60(data-overlay="5" class="overlay-green")
 						.background-image-holder
 							img(alt="testing" src="/img/test3.jpg")
 						//-.pos-vertical-center
@@ -115,7 +115,7 @@ block content
 		.container
 			.row.text-center
 				.col-xs-12.mb--1.unpad--bottom
-					h3.home.color--grey See what everyone's talking about
+					h3.color--blue See what everyone's talking about
 			.row.text-center.slider(data-paging="true")
 				ul.slides
 					li.col-xs-12
