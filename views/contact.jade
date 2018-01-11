@@ -20,15 +20,19 @@ block content
 					p.
 						Utilize the Call Center today – (559) 686-1791
 
-			.row
+			.row.mt--1
 				.col-md-12
 					h5.color--blue Contact Us
-					p.
+					//-p.
 						Email us at: #[a(href="mailto:info@tcfcu.org") info@tcfcu.org]
 			.row.text-center
-				.col-sm-8.col-md-7.center-column
-					.row.text-center
-						form.text-left.form-email.attempted-submit(action="/thankyou" data-success="Thanks for your enquiry, we'll be in touch shortly.", data-error='Please fill in all fields correctly.', data-recaptcha-theme='light', netlify='' novalidate='true')
+				.col-sm-8.col-md-7
+					.row
+						script(type='text/javascript', src='http://assets.freshdesk.com/widget/freshwidget.js')
+						style(type='text/css', media='screen, projection').
+							@import url(http://assets.freshdesk.com/widget/freshwidget.css);
+						iframe#freshwidget-embedded-form.freshwidget-embedded-form(title='Feedback Form', src='https://tularefcu.freshdesk.com/widgets/feedback_widget/new?&widgetType=embedded&submitTitle=Send+Message&submitThanks=Thank+you+for+contacting+us!+Be+sure+to+check+your+email+for+updates.&screenshot=no&captcha=yes', scrolling='no', height='420', width='100%', frameborder='0' style="height:435px;width:600px;max-width:100%;")
+						//-form.text-left.form-email.attempted-submit(action="/thankyou" data-success="Thanks for your enquiry, we'll be in touch shortly.", data-error='Please fill in all fields correctly.', data-recaptcha-theme='light', netlify='' novalidate='true')
 							.col-sm-6
 								label Your Name:
 								input.validate-required(type='text', name='Name')
