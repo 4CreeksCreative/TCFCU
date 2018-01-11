@@ -33,7 +33,7 @@ block content
 						.row
 							.col-sm-12
 								h4.color--blue.mb--2= item.fields.subhead
-								p= item.fields.body
+								!= md(item.fields.body)
 	if entry.callToAction != undefined
 		if entry.callToAction.fields.backgroundImage != undefined
 			section.imagebg.unpad--top.final.height-50(data-overlay="5" class="overlay-#{entry.callToAction.fields.overlay}")

@@ -4,7 +4,7 @@ autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
-date         = new Date()
+md           = require 'marked'
 
 module.exports =
 	ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
@@ -43,3 +43,4 @@ module.exports =
 	locals:
 		testing:'testing'
 		basedir: 'views'
+		md:require 'marked'
