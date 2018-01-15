@@ -1,7 +1,7 @@
 extends /layout
 
 block content
-	section#hero.cover.height-50.imagebg.parallax.text-center(data-overlay="5")
+	section#hero.cover.height-60.imagebg.parallax.text-center(data-overlay="5")
 		.background-image-holder.bg-cb
 			img(src="/img/header/retire.jpg" alt="header image")
 	section.unpad--bottom
@@ -18,12 +18,18 @@ block content
 						Look at the different IRA options and see what's best for you to earn for retirement.
 			.row.mt--2.final
 				.col-md-12
-					p.unmarg.
-						• $50 opening balance
-					p.unmarg.
-						• Allows contributions (contribution/distribution forms) each pay period
-					p.unmarg.
-						• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded and earned monthly]
+					p.bullet.unmarg.
+						• Choose between a Traditional or Roth IRA
+					p.bullet.unmarg.
+						• Select a Certificate or Savings Accounts
+					p.
+						*We recommend you consult with your tax professional for more information on how to reach your retirement goals
+					//- p.unmarg.
+					//- 	• $50 opening balance
+					//- p.unmarg.
+					//- 	• Allows contributions (contribution/distribution forms) each pay period
+					//- p.unmarg.
+					//- 	• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded and earned monthly]
 			.row.mt--1
 				.col-md-12
 					h5.color--blue Traditional IRA
@@ -31,13 +37,13 @@ block content
 						Traditional IRA contributions can be tax deductible in the year the contributions are made. The taxes on these earnings are deferred until the time of withdrawal. Traditional IRAs are funded with pre-tax dollars.
 			.row.mt--2
 				.col-md-12
-					p.unmarg.
-						• $50 opening balance 
-					p.unmarg.
+					p.bullet.unmarg.
+						• $50 opening balance
+					p.bullet.unmarg.
 						• Allows contributions (contribution/distribution forms) each pay period
-					p.unmarg.
-						• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded and earned monthly]
-					
+					p.bullet.unmarg.
+						• #[span(data-tooltip="Only Interest compound") Interest compounded and earned monthly]
+
 				.col-md-12
 					a.btn.btn-blue(href="/pdf/traditional-ira-app.pdf" target="_blank")
 						span.btn__text Apply Now
@@ -48,12 +54,12 @@ block content
 						Roth IRAs allow only non-deductible contributions but feature tax-free withdrawals for certain distribution reasons after a five-year holding period.
 			.row.mt--2
 				.col-md-12
-					p.unmarg.
+					p.bullet.unmarg.
 						• $50 opening balance
-					p.unmarg.
+					p.bullet.unmarg.
 						• Allows contributions each pay period
-					p.unmarg.
-						• Earns daily dividends, which are paid monthly
+					p.bullet.unmarg.
+						• #[span(data-tooltip="Only Interest compound") Interest compounded and earned monthly]
 
 				.col-md-12
 					a.btn.btn-blue(href="/pdf/roth-ira-app.pdf" target="_blank")
