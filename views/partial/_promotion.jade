@@ -63,3 +63,6 @@ block content
 				.row
 					.col-sm-12
 						p= entry.disclosure
+						if entry.fullDisclosure != undefined
+							a.btn.btn-blue(href="#{asset(entry.fullDisclosure)}" target="_blank")
+								span.btn__text Full disclosure
