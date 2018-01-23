@@ -1,5 +1,5 @@
 $('a:not([type="submit"]):not([href*="mailto:"])').each(function(i,val){
-	var regex = new RegExp('(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://uat-internetloanapplication.cudl.com/tulare/$)|(^https://tularefcu.online-cu.com)|(^http://tularefederal.org/)','ig')
+	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://uat-internetloanapplication.cudl.com/tulare/$)|(^https://tularefcu.online-cu.com)|(^http://tularefederal.org/)','ig')
 	if(!regex.test($(val).attr('href'))){
 		console.log('external link found ' + $(val).attr('href'))
 		$(val).addClass('modal-trigger').addClass('externalLink')
@@ -26,12 +26,12 @@ $('.website-link').click(function(){
 	mr.modals.closeActiveModal()
 })
 
-$(document).on('click','a:not([type="submit"]',function(e){
-	if (this.attr('href').exec(/(#)/ig) === '#'){
-		e.preventDefault()
-		$('html, body').stop().animate({
-			scrollTop: ($($.attr(this, 'href')).offset().top -200),
-			easing: 'swing'
-		}, 500)
-	}
-})
+// $(document).on('click','a:not([type="submit"]',function(e){
+// 	if (this.attr('href').exec(/(#)/ig) === '#'){
+// 		e.preventDefault()
+// 		$('html, body').stop().animate({
+// 			scrollTop: ($($.attr(this, 'href')).offset().top -200),
+// 			easing: 'swing'
+// 		}, 500)
+// 	}
+// })
