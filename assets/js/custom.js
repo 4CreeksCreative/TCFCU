@@ -25,3 +25,13 @@ $(document).on('mousedown','.modal-trigger.externalLink',function(e){
 $('.website-link').click(function(){
 	mr.modals.closeActiveModal()
 })
+
+$(document).on('click','a:not([type="submit"]',function(e){
+	if (this.attr('href').exec(/(#)/ig) === '#'){
+		e.preventDefault()
+		$('html, body').stop().animate({
+			scrollTop: ($($.attr(this, 'href')).offset().top -200),
+			easing: 'swing'
+		}, 500)
+	}
+})
