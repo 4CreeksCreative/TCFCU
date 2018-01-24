@@ -28,8 +28,8 @@ $('.website-link').click(function(){
 
 $(document).ready(function(){
 	var headerHeight = $('#menu2').innerHeight()
-	var test = /(#+\w+$)/ig.exec(window.location.href);
-	if(/(#+\w+$)/ig.test(window.location.href)){
+	var test = /#+\w+(?:-?\w+)+/ig.exec(window.location.href);
+	if(/#+\w+(?:-?\w+)+/ig.test(window.location.href)){
 		$('html, body').stop().animate({
 			scrollTop: $(test[0]).offset().top -headerHeight,
 			easing: 'swing'
