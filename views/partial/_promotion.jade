@@ -27,7 +27,7 @@ block content
 						Promotion valid through #{monthNames[end.getMonth()]} #{end.getDate()}, #{end.getFullYear()}
 	if entry.promoSections != undefined
 		if entry.promoSections.length > 0
-			section.unpad--top.final
+			section#promo-section.unpad--top.final
 				.container
 					for item in entry.promoSections
 						.row
