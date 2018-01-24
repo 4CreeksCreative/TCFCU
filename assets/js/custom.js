@@ -26,12 +26,13 @@ $('.website-link').click(function(){
 	mr.modals.closeActiveModal()
 })
 
-// $(document).on('click','a:not([type="submit"]',function(e){
-// 	if (this.attr('href').exec(/(#)/ig) === '#'){
-// 		e.preventDefault()
-// 		$('html, body').stop().animate({
-// 			scrollTop: ($($.attr(this, 'href')).offset().top -200),
-// 			easing: 'swing'
-// 		}, 500)
-// 	}
-// })
+$(document).ready(function(){
+	var headerHeight = $('#menu2').innerHeight()
+	var test = /(#+\w+$)/ig.exec(window.location.href);
+	if(/(#+\w+$)/ig.test(window.location.href)){
+		$('html, body').stop().animate({
+			scrollTop: $(test[0]).offset().top -headerHeight,
+			easing: 'swing'
+		},500)
+	}
+})
