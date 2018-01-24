@@ -25,6 +25,8 @@ module.exports =
 						'limit': '2'
 					}
 					path: (e) -> "promo/#{e.slug}"
+				homePage:
+					id:'homePage'
 	]
 
 	stylus:
