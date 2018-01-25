@@ -653,19 +653,23 @@ mr = (function (mr, $, window, document){
                 if(jQuery(event.target).is('.dropdown--active > .dropdown__trigger')){
                     dropdown.siblings().removeClass('dropdown--active').find('.dropdown').removeClass('dropdown--active');
                     dropdown.toggleClass('dropdown--active');
+                    //dropdown.find('.dropdown__content').slideToggle();
                 }else{
                     $('.dropdown--active').removeClass('dropdown--active');
                     dropdown.addClass('dropdown--active');
+                    //dropdown.find('.dropdown__content').slideToggle();
                 }
             });
             jQuery(document).on('click touchstart', 'body:not(.dropdowns--hover)', function(event){
                 if(!jQuery(event.target).is('[class*="dropdown"], [class*="dropdown"] *')){
                     $('.dropdown--active').removeClass('dropdown--active');
+                    //$('.dropdown--active').find('.dropdown__content').slideUp();
                 }
             });
             jQuery('body.dropdowns--hover .dropdown').on('click', function(event){
                 event.stopPropagation();
                 var hoverDropdown = jQuery(this);
+                //hoverDropdown.find('.dropdown__content').slideToggle();
                 hoverDropdown.toggleClass('dropdown--active');
             });
 

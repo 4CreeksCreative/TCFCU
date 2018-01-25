@@ -104,7 +104,22 @@ a:hover
 		@media (max-width:768px)
 			width 100%
 			float none
-// ---- misc
+// // ---- misc
+// .dropdown
+// 	.dropdown__container
+// 		@media (max-width:767px)
+// 			opacity 0
+// 			display none
+// 			//height 0 !important
+// 			transition 0.3s
+// .dropdown.dropdown--active
+// 	.dropdown__container
+// 		@media (max-width:767px)
+// 			opacity 0
+// 			display block
+// 			//height auto !important
+// 			transition 0.3s
+
 .notification
 	box-shadow 0px 0px 5px rgba(0,0,0,0.5)
 	.notification-close-cross
@@ -348,11 +363,12 @@ a
 	height 100px
 	box-shadow 0px 0px 5px rgba(0,0,0,0.5)
 	.logo
-		max-height 75% !important
+		max-height 100% !important
 		top 0
 		bottom 0
 		margin auto
 		position absolute
+		image-rendering -webkit-optimize-contrast
 
 #menu1
 	font-family	$futura
