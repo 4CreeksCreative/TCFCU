@@ -1,9 +1,13 @@
 $('a:not([type="submit"]):not([href*="mailto:"])').each(function(i,val){
-	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://uat-internetloanapplication.cudl.com/tulare/$)|(^https://tularefcu.online-cu.com)|(^http://tularefederal.org/)','ig')
+	var regex2 = new RegExp('(^\/+(?!pdf))','ig')
+	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://internetloanapplication.cudl.com/tulare/$)|(^https://tularefcu.online-cu.com)|(^http://tularefederal.org/)','ig')
 	if(!regex.test($(val).attr('href'))){
 		console.log('external link found ' + $(val).attr('href'))
 		$(val).addClass('modal-trigger').addClass('externalLink')
 		$(val).attr('data-modal-index','0')
+	}
+	if(!regex2.test($(val).attr('href'))){
+		$(val).attr('target','_blank')
 	}
 })
 $(document).on('mousedown','.modal-trigger.externalLink',function(e){
