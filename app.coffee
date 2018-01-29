@@ -54,6 +54,11 @@ module.exports =
 					filters:{
 						'fields.pageName':'retire'
 					}
+				protect:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'protect'
+					}
 	]
 
 	stylus:
