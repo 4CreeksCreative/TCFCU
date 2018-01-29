@@ -39,6 +39,11 @@ module.exports =
 					filters:{
 						'fields.pageName':'savings'
 					}
+				digitalBanking:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'digitalBanking'
+					}
 	]
 
 	stylus:
