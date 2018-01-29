@@ -49,6 +49,11 @@ module.exports =
 					filters:{
 						'fields.pageName':'hsa'
 					}
+				retire:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'retire'
+					}
 	]
 
 	stylus:

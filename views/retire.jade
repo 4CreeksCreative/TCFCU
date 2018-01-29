@@ -2,69 +2,85 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		.background-image-holder
-			img(src="/img/header/retire.jpg" alt="header image")
+		if contentful.retire[0].headerPosition != undefined
+			.background-image-holder(class="#{contentful.retire[0].headerPosition}")
+				if contentful.retire[0].headerImage != undefined
+					img(src="#{asset(contentful.retire[0].headerImage)}" alt="header image")
+		else
+			.background-image-holder.bg-cc
+				if contentful.retire[0].headerImage != undefined
+					img(src="#{asset(contentful.retire[0].headerImage)}" alt="header image")
+				else
+					img(src="/img/header/retire.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue Retire
+					h2.color--blue= contentful.retire[0].pageTitle
 	section
 		.container
-			.row
-				.col-md-12
-					h5.color--blue IRA (Individual Retirement Accounts)
-					p.
-						Look at the different IRA options and see what's best for you to earn for retirement.
-			.row.mt--2.final
-				.col-md-12
-					p.bullet.unmarg.
-						• Choose between a Traditional or Roth IRA
-					p.bullet.
-						• Select a Certificate of Deposit or Savings Accounts
-					p.
-						We recommend you consult with your tax professional for more information on how to reach your retirement goals
-					//- p.unmarg.
-					//- 	• $50 opening balance
-					//- p.unmarg.
-					//- 	• Allows contributions (contribution/distribution forms) each pay period
-					//- p.unmarg.
-					//- 	• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded and earned monthly]
-			.row.mt--1
-				.col-md-12
-					h5.color--blue Traditional IRA
-					p.
-						Traditional IRA contributions can be tax deductible in the year the contributions are made. The taxes on these earnings are deferred until the time of withdrawal. Traditional IRAs are funded with pre-tax dollars.
-			.row.mt--2
-				.col-md-12
-					p.bullet.unmarg.
-						• $50 opening balance
-					p.bullet.unmarg.
-						• Allows #[a(href="/pdf/traditional-ira-contribution.pdf" target="_blank") contributions] each pay period
-					p.bullet.unmarg.
-						• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded] and earned monthly
-
-				.col-md-12
-					a.btn.btn-blue(href="/pdf/traditional-ira-app.pdf" target="_blank")
-						span.btn__text Apply Now
-			.row.mt--1
-				.col-md-12
-					h5.color--blue Roth IRA
-					p.
-						Roth IRAs allow only non-deductible contributions but feature tax-free withdrawals for certain distribution reasons after a five-year holding period.
-			.row.mt--2
-				.col-md-12
-					p.bullet.unmarg.
-						• $50 opening balance
-					p.bullet.unmarg.
-						• Allows #[a(href="/pdf/roth-contribution.pdf") contributions] each pay period
-					p.bullet.unmarg.
-						• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded] and earned monthly
-
-				.col-md-12
-					a.btn.btn-blue(href="/pdf/roth-ira-app.pdf" target="_blank")
-						span.btn__text Apply Now
-			.row.mt--2
-				.col-sm-12
-					p.unmarg.
-						*Quarterly administration fee of $5 applies
+			if contentful.retire[0].pageTitle != undefined
+				for item in contentful.retire[0].subPageSections
+					.row.mb--2
+						.col-sm-12
+							if item.fields.subhead != undefined
+								h5.color--blue= item.fields.subhead
+							if item.fields.body != undefined
+								.md!= md(item.fields.body)
+			//- .row
+			//- 	.col-md-12
+			//- 		h5.color--blue IRA (Individual Retirement Accounts)
+			//- 		p.
+			//- 			Look at the different IRA options and see what's best for you to earn for retirement.
+			//- .row.mt--2.final
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• Choose between a Traditional or Roth IRA
+			//- 		p.bullet.
+			//- 			• Select a Certificate of Deposit or Savings Accounts
+			//- 		p.
+			//- 			We recommend you consult with your tax professional for more information on how to reach your retirement goals
+			//- 		//- p.unmarg.
+			//- 		//- 	• $50 opening balance
+			//- 		//- p.unmarg.
+			//- 		//- 	• Allows contributions (contribution/distribution forms) each pay period
+			//- 		//- p.unmarg.
+			//- 		//- 	• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded and earned monthly]
+			//- .row.mt--1
+			//- 	.col-md-12
+			//- 		h5.color--blue Traditional IRA
+			//- 		p.
+			//- 			Traditional IRA contributions can be tax deductible in the year the contributions are made. The taxes on these earnings are deferred until the time of withdrawal. Traditional IRAs are funded with pre-tax dollars.
+			//- .row.mt--2
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• $50 opening balance
+			//- 		p.bullet.unmarg.
+			//- 			• Allows #[a(href="/pdf/traditional-ira-contribution.pdf" target="_blank") contributions] each pay period
+			//- 		p.bullet.unmarg.
+			//- 			• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded] and earned monthly
+			//- 
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="/pdf/traditional-ira-app.pdf" target="_blank")
+			//- 			span.btn__text Apply Now
+			//- .row.mt--1
+			//- 	.col-md-12
+			//- 		h5.color--blue Roth IRA
+			//- 		p.
+			//- 			Roth IRAs allow only non-deductible contributions but feature tax-free withdrawals for certain distribution reasons after a five-year holding period.
+			//- .row.mt--2
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• $50 opening balance
+			//- 		p.bullet.unmarg.
+			//- 			• Allows #[a(href="/pdf/roth-contribution.pdf") contributions] each pay period
+			//- 		p.bullet.unmarg.
+			//- 			• #[span(data-tooltip="Compounded interest is earned when interest is added to a balance and also earns interest.") Interest compounded] and earned monthly
+			//- 
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="/pdf/roth-ira-app.pdf" target="_blank")
+			//- 			span.btn__text Apply Now
+			//- .row.mt--2
+			//- 	.col-sm-12
+			//- 		p.unmarg.
+			//- 			*Quarterly administration fee of $5 applies
