@@ -2,8 +2,16 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		.background-image-holder.bg-cc
-			img(src="/img/header/savings.jpg" alt="header image")
+		if contentful.savings[0].headerPosition != undefined
+			.background-image-holder(class="#{contentful.savings[0].headerPosition}")
+				if contentful.savings[0].headerImage != undefined
+					img(src="#{asset(contentful.savings[0].headerImage)}" alt="header image")
+		else
+			.background-image-holder.bg-cc
+				if contentful.savings[0].headerImage != undefined
+					img(src="#{asset(contentful.savings[0].headerImage)}" alt="header image")
+				else
+					img(src="/img/header/savings.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row

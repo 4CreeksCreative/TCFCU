@@ -2,8 +2,16 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		.background-image-holder
-			img.attachment-full.size-full(src="/img/header/checking.jpg" alt="Header image")
+		if contentful.checking[0].headerPosition != undefined
+			.background-image-holder(class="#{contentful.checking[0].headerPosition}")
+				if contentful.checking[0].headerImage != undefined
+					img(src="#{asset(contentful.checking[0].headerImage)}" alt="header image")
+		else
+			.background-image-holder.bg-cc
+				if contentful.checking[0].headerImage != undefined
+					img(src="#{asset(contentful.checking[0].headerImage)}" alt="header image")
+				else
+					img(src="/img/header/checking.jpg" alt="header image")
 		div#hero-content.container.pos-vertical-center
 	section.unpad--bottom
 		.container
