@@ -64,6 +64,11 @@ module.exports =
 					filters:{
 						'fields.pageName':'loansAuto'
 					}
+				homeLoans:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'loansMortgage'
+					}
 	]
 
 	stylus:
