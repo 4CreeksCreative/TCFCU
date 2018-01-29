@@ -7,7 +7,7 @@ block content
 				.boxed.boxed--border.border--round.box-shadow
 					.text-block
 						h5= contentful.activeNotification[0].activeNotification.fields.title
-						p!=md(contentful.activeNotification[0].activeNotification.fields.body)
+						.md!=md(contentful.activeNotification[0].activeNotification.fields.body)
 	section#hero.home.cover.height-80.imagebg.parallax.overlay-blue(data-overlay="5")
 		.background-image-holder
 			img(src="/img/header/home.jpg" alt="")
@@ -23,7 +23,7 @@ block content
 					h3.color--blue= contentful.homePage[0].homeIntroParagraph.fields.subhead
 			.row
 				.col-sm-12
-					!= md(contentful.homePage[0].homeIntroParagraph.fields.body)
+					.md!= md(contentful.homePage[0].homeIntroParagraph.fields.body)
 	section#full-width-ads.unpad--bottom
 		.row.text-center.unmarg
 			if contentful.Promotions.length > 0
@@ -110,7 +110,7 @@ block content
 			.row.text-center
 				.col-sm-12
 					h3= contentful.homePage[0].phsCallToAction.fields.title
-					!= md(contentful.homePage[0].phsCallToAction.fields.body)
+					.md!= md(contentful.homePage[0].phsCallToAction.fields.body)
 					a.btn.btn-white(href="#{contentful.homePage[0].phsCallToAction.fields.buttonLink}" target="_blank")
 						span.btn__text= contentful.homePage[0].phsCallToAction.fields.buttonText
 	section#customer-comments
