@@ -29,6 +29,16 @@ module.exports =
 					id:'activeNotification'
 				homePage:
 					id:'homePage'
+				checking:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'checking'
+					}
+				savings:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'savings'
+					}
 	]
 
 	stylus:
