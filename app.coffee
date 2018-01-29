@@ -59,6 +59,11 @@ module.exports =
 					filters:{
 						'fields.pageName':'protect'
 					}
+				autoLoans:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'loansAuto'
+					}
 	]
 
 	stylus:

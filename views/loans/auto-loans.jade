@@ -2,75 +2,91 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		div.background-image-holder
-			img(src="/img/header/loans-auto2.jpg" alt="Header Image")
+		if contentful.autoLoans[0].headerPosition != undefined
+			.background-image-holder(class="#{contentful.autoLoans[0].headerPosition}")
+				if contentful.autoLoans[0].headerImage != undefined
+					img(src="#{asset(contentful.autoLoans[0].headerImage)}" alt="header image")
+		else
+			.background-image-holder.bg-cc
+				if contentful.autoLoans[0].headerImage != undefined
+					img(src="#{asset(contentful.autoLoans[0].headerImage)}" alt="header image")
+				else
+					img(src="/img/header/autoLoans.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue Auto/Recreational Loans
-					p.
+					h2.color--blue= contentful.autoLoans[0].pageTitle
+					//-p.
 						Purchase or Refinance a new or pre-owned auto or recreational loan (travel trailers, motorhomes, motorcycles, boats, ATV).
 	section
-		div.container
-			div.row
-				div.col-md-12
-					h5.color--blue.
-						Auto Loans
-			div.row.mt--2
-				div.col-md-12
-					p.bullet.unmarg.
-						• #[a(href="/rates") Low interest rates]
-					p.bullet.unmarg.
-						• Terms up to 84 months
-					p.bullet.unmarg.
-						• $0 down financing
-					p.bullet.unmarg.
-						• #[a(href="/protect#mbi") Mechanical Breakdown Insurance] (MBI) and #[a(href="/protect#gap") Guaranteed Asset Protection] (GAP) available
-					p.bullet.unmarg.
-						• On-site dealership financing available
-					p.bullet.unmarg.
-						• Find your #[a(href="https://tularefcu.cudlautosmart.com/" target="_blank") new car] today #[a(href="https://tularefcu.cudlautosmart.com/Finance" target="_blank" rel="noopener") and calculate your payments]!
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
-						span.btn__text Apply Now
-			div.row.mt--1
-				div.col-md-12
-					h5.color--blue.
-						Auto Starter Program
-			div.row.mt--2.final
-				div.col-md-12
-					p.bullet.unmarg.
-						• Rates as low as 7.99% APR*
-					p.bullet.unmarg.
-						• Terms up to 60 months
-					p.bullet.unmarg.
-						• Minimal cash down requirements
-					p.bullet.unmarg.
-						• Flexible approval criteria
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
-						span.btn__text Apply Now
-			div.row.mt--1
-				div.col-md-12
-					h5.color--blue.
-						Recreational Vehicle Loans
-					p.
-						Just starting out? No problem with our Auto Starter First Time Buyer Program.
-			div.row.mt--2.final
-				div.col-md-12
-					p.bullet.unmarg.
-						• #[a(href="/rates#recreational") Low interest rates]
-					//-p.unmarg.
-						• #[a(href="/rates") Low interest rates]
-					p.bullet.unmarg.
-						• Terms up to 120 months
-					p.bullet.unmarg.
-						• Competitive rates and discounts available with loyalty products
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
-						span.btn__text Apply Now
-			.row.mt--2.final
-				.col-sm-12
-					p.
-						*APR = Annual Percentage Rate. Rates vary by loan and term. Rates and Terms may change without notification. Not everyone will qualify for the "as low as" rate.
+		.container
+			if contentful.autoLoans[0].subPageSections != undefined
+				for item in contentful.autoLoans[0].subPageSections
+					.row.mb--2
+						.col-sm-12
+							if item.fields.subhead != undefined
+								h5.color--blue= item.fields.subhead
+							if item.fields.body != undefined
+								.md!= md(item.fields.body)
+			//- .row
+			//- 	.col-md-12
+			//- 		h5.color--blue.
+			//- 			Auto Loans
+			//- .row.mt--2
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• #[a(href="/rates") Low interest rates]
+			//- 		p.bullet.unmarg.
+			//- 			• Terms up to 84 months
+			//- 		p.bullet.unmarg.
+			//- 			• $0 down financing
+			//- 		p.bullet.unmarg.
+			//- 			• #[a(href="/autoLoans#mbi") Mechanical Breakdown Insurance] (MBI) and #[a(href="/autoLoans#gap") Guaranteed Asset autoLoansion] (GAP) available
+			//- 		p.bullet.unmarg.
+			//- 			• On-site dealership financing available
+			//- 		p.bullet.unmarg.
+			//- 			• Find your #[a(href="https://tularefcu.cudlautosmart.com/" target="_blank") new car] today #[a(href="https://tularefcu.cudlautosmart.com/Finance" target="_blank" rel="noopener") and calculate your payments]!
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
+			//- 			span.btn__text Apply Now
+			//- .row.mt--1
+			//- 	.col-md-12
+			//- 		h5.color--blue.
+			//- 			Auto Starter Program
+			//- .row.mt--2.final
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• Rates as low as 7.99% APR*
+			//- 		p.bullet.unmarg.
+			//- 			• Terms up to 60 months
+			//- 		p.bullet.unmarg.
+			//- 			• Minimal cash down requirements
+			//- 		p.bullet.unmarg.
+			//- 			• Flexible approval criteria
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
+			//- 			span.btn__text Apply Now
+			//- .row.mt--1
+			//- 	.col-md-12
+			//- 		h5.color--blue.
+			//- 			Recreational Vehicle Loans
+			//- 		p.
+			//- 			Just starting out? No problem with our Auto Starter First Time Buyer Program.
+			//- .row.mt--2.final
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• #[a(href="/rates#recreational") Low interest rates]
+			//- 		//-p.unmarg.
+			//- 			• #[a(href="/rates") Low interest rates]
+			//- 		p.bullet.unmarg.
+			//- 			• Terms up to 120 months
+			//- 		p.bullet.unmarg.
+			//- 			• Competitive rates and discounts available with loyalty products
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
+			//- 			span.btn__text Apply Now
+			//- .row.mt--2.final
+			//- 	.col-sm-12
+			//- 		p.
+			//- 			*APR = Annual Percentage Rate. Rates vary by loan and term. Rates and Terms may change without notification. Not everyone will qualify for the "as low as" rate.
