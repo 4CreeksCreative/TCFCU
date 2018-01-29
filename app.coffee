@@ -27,6 +27,8 @@ module.exports =
 					path: (e) -> "promo/#{e.slug}"
 				activeNotification:
 					id:'activeNotification'
+				homePage:
+					id:'homePage'
 	]
 
 	stylus:
