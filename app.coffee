@@ -44,6 +44,11 @@ module.exports =
 					filters:{
 						'fields.pageName':'digitalBanking'
 					}
+				hsa:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'hsa'
+					}
 	]
 
 	stylus:
