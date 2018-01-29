@@ -2,61 +2,77 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		div.background-image-holder
-			img(src="/img/header/loans-personal.jpg" alt="Header Image")
+		if contentful.personalLoans[0].headerPosition != undefined
+			.background-image-holder(class="#{contentful.personalLoans[0].headerPosition}")
+				if contentful.personalLoans[0].headerImage != undefined
+					img(src="#{asset(contentful.personalLoans[0].headerImage)}" alt="header image")
+		else
+			.background-image-holder.bg-cc
+				if contentful.personalLoans[0].headerImage != undefined
+					img(src="#{asset(contentful.personalLoans[0].headerImage)}" alt="header image")
+				else
+					img(src="/img/header/personalLoans.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue Personal Loans
+					h2.color--blue= contentful.personalLoans[0].pageTitle
 	section
-		div.container
-			div.row
-				div.col-md-12
-					h5.color--blue.
-						Signature Loan
-					p.
-						Your promise means a lot. That’s why we want to lend you money with no collateral, just your signature.
-			div.row.mt--2
-				div.col-md-12
-					p.bullet.unmarg.
-						• Low #[span(data-tooltip="Rates will not change") fixed ]#[a(href="/rates#signature-loan") rate]
-					p.bullet.unmarg.
-						• Loans available up to $10,000
-					p.bullet.unmarg.
-						• Fixed terms up to 36 months
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
-						span.btn__text Apply Now
-			div#oloc.row.mt--1
-				div.col-md-12
-					h5.color--blue.
-						Overdraft Line of Credit (LOC)
-					p.
-						Attached to your checking account, our Overdraft Line of Credit is easily accessed through your Visa Debit Card, check writing, or in-person withdrawals.
-			div.row.mt--2.final
-				div.col-md-12
-					p.bullet.unmarg.
-						• Low #[span(data-tooltip="Rates will not change") fixed ]#[a(href="/rates#line-of-credit") rate]
-					p.bullet.unmarg.
-						• Pay interest only on what you use
-					p.bullet.unmarg.
-						• Pay off your balance monthly or let it ride with low monthly payments
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
-						span.btn__text Apply Now
-			div.row.mt--1
-				div.col-md-12
-					h5.color--blue.
-						Deposit Secured
-					p.
-						Use your <a href="/savings">Savings Account</a> or <a href="/savings">Certificate of Deposit</a> as collateral in order to pay a low interest rate and borrow for whatever you need, you decide.
-			div.row.mt--2.final
-				div.col-md-12
-					p.bullet.unmarg.
-						• Earn dividends, pay a little interest, build your credit.
-					p.bullet.unmarg.
-						• Don’t be scared of the #[span(data-tooltip="Rates may change - determined by the Prime Rate") variable ]#[a(href="/rates#share-secured") rate], it’s just a smidge higher than the dividends you’re earning!
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
-						span.btn__text Apply Now
+		.container
+			if contentful.personalLoans[0].subPageSections != undefined
+				for item in contentful.personalLoans[0].subPageSections
+					.row.mb--2
+						.col-sm-12
+							if item.fields.subhead != undefined
+								h5.color--blue= item.fields.subhead
+							if item.fields.body != undefined
+								.md!= md(item.fields.body)
+			//- .row
+			//- 	.col-md-12
+			//- 		h5.color--blue.
+			//- 			Signature Loan
+			//- 		p.
+			//- 			Your promise means a lot. That’s why we want to lend you money with no collateral, just your signature.
+			//- .row.mt--2
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• Low #[span(data-tooltip="Rates will not change") fixed ]#[a(href="/rates#signature-loan") rate]
+			//- 		p.bullet.unmarg.
+			//- 			• Loans available up to $10,000
+			//- 		p.bullet.unmarg.
+			//- 			• Fixed terms up to 36 months
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
+			//- 			span.btn__text Apply Now
+			//- #oloc.row.mt--1
+			//- 	.col-md-12
+			//- 		h5.color--blue.
+			//- 			Overdraft Line of Credit (LOC)
+			//- 		p.
+			//- 			Attached to your checking account, our Overdraft Line of Credit is easily accessed through your Visa Debit Card, check writing, or in-person withdrawals.
+			//- .row.mt--2.final
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• Low #[span(data-tooltip="Rates will not change") fixed ]#[a(href="/rates#line-of-credit") rate]
+			//- 		p.bullet.unmarg.
+			//- 			• Pay interest only on what you use
+			//- 		p.bullet.unmarg.
+			//- 			• Pay off your balance monthly or let it ride with low monthly payments
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
+			//- 			span.btn__text Apply Now
+			//- .row.mt--1
+			//- 	.col-md-12
+			//- 		h5.color--blue.
+			//- 			Deposit Secured
+			//- 		p.
+			//- 			Use your <a href="/savings">Savings Account</a> or <a href="/savings">Certificate of Deposit</a> as collateral in order to pay a low interest rate and borrow for whatever you need, you decide.
+			//- .row.mt--2.final
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• Earn idends, pay a little interest, build your credit.
+			//- 		p.bullet.unmarg.
+			//- 			• Don’t be scared of the #[span(data-tooltip="Rates may change - determined by the Prime Rate") variable ]#[a(href="/rates#share-secured") rate], it’s just a smidge higher than the idends you’re earning!
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
+			//- 			span.btn__text Apply Now
