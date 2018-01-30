@@ -2,70 +2,86 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		div.background-image-holder
-			img(src="/img/header/credit-card-update.jpg" alt="Header Image")
+		if contentful.creditCards[0].headerPosition != undefined
+			.background-image-holder(class="#{contentful.creditCards[0].headerPosition}")
+				if contentful.creditCards[0].headerImage != undefined
+					img(src="#{asset(contentful.creditCards[0].headerImage)}" alt="header image")
+		else
+			.background-image-holder.bg-cc
+				if contentful.creditCards[0].headerImage != undefined
+					img(src="#{asset(contentful.creditCards[0].headerImage)}" alt="header image")
+				else
+					img(src="/img/header/creditCards.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue Credit Cards
+					h2.color--blue= contentful.creditCards[0].pageTitle
 	section
-		div.container
-			div.row
-				div.col-md-12
-					h5.color--blue Platinum Visa
-					p.
-						The card that earns you points!
-			div.row.mt--2
-				div.col-md-12
-					p.bullet.unmarg.
-						• Earn point on purchases that may be redeemed for cash, merchandise, and travel
-					p.bullet.unmarg.
-						• Preferred pricing with low, fixed interest rate
-					p.bullet.unmarg.
-						• Low cost #[a(href="/pdf/balance-transfer-form.pdf" target="_blank") balance transfer] fees
-					p.bullet.unmarg.
-						• Free annual transaction summary to help you analyze your spending!
-					p.bullet.unmarg.
-						• No annual fee
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
-						span.btn__text Get the Card
-			div.row.mt--1
-				div.col-md-12
-					h5.color--blue Classic Visa
-					p.
-						The everyday card for your everyday purchases.
-			div.row.mt--2
-				div.col-md-12
-					p.bullet.unmarg.
-						• Low interest #[a(href="/rates#credit-cards") rate]
-					p.bullet.unmarg.
-						• No annual fee
-					p.bullet.unmarg.
-						• Welcomed at millions of retailers
-					p.unmarg.
-						• Internet purchases protected by #[a(href="https://usa.visa.com/support/consumer/security.html") Verified by Visa]
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/")
-						span.btn__text Get the Card
-			div.row.mt--1
-				div.col-md-12
-					h5.color--blue Student Visa
-					p.
-						In school and need a convenient way to spend while establishing credit?
-			div.row.mt--2.final
-				div.col-md-12
-					p.bullet.unmarg.
-						• Low interest #[a(href="/rates#credit-cards") rate]
-					p.bullet.unmarg.
-						• Great way to build credit or improve your score
-					p.bullet.unmarg.
-						• Opportunity to establish financial independence
-					p.bullet.unmarg.
-						• Welcomed at millions of retailers
-					p.unmarg.
-						• Internet purchases protected by #[a(href="https://usa.visa.com/support/consumer/security.html") Verified by Visa]
-				div.col-md-12
-					a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/")
-						span.btn__text Get the Card
+		.container
+			if contentful.creditCards[0].subPageSections != undefined
+				for item in contentful.creditCards[0].subPageSections
+					.row.mb--2
+						.col-sm-12
+							if item.fields.subhead != undefined
+								h5.color--blue= item.fields.subhead
+							if item.fields.body != undefined
+								.md!= md(item.fields.body)
+			//- .row
+			//- 	.col-md-12
+			//- 		h5.color--blue Platinum Visa
+			//- 		p.
+			//- 			The card that earns you points!
+			//- .row.mt--2
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• Earn point on purchases that may be redeemed for cash, merchandise, and travel
+			//- 		p.bullet.unmarg.
+			//- 			• Preferred pricing with low, fixed interest rate
+			//- 		p.bullet.unmarg.
+			//- 			• Low cost #[a(href="/pdf/balance-transfer-form.pdf" target="_blank") balance transfer] fees
+			//- 		p.bullet.unmarg.
+			//- 			• Free annual transaction summary to help you analyze your spending!
+			//- 		p.bullet.unmarg.
+			//- 			• No annual fee
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/" target="_blank")
+			//- 			span.btn__text Get the Card
+			//- .row.mt--1
+			//- 	.col-md-12
+			//- 		h5.color--blue Classic Visa
+			//- 		p.
+			//- 			The everyday card for your everyday purchases.
+			//- .row.mt--2
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• Low interest #[a(href="/rates#credit-cards") rate]
+			//- 		p.bullet.unmarg.
+			//- 			• No annual fee
+			//- 		p.bullet.unmarg.
+			//- 			• Welcomed at millions of retailers
+			//- 		p.unmarg.
+			//- 			• Internet purchases protected by #[a(href="https://usa.visa.com/support/consumer/security.html") Verified by Visa]
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/")
+			//- 			span.btn__text Get the Card
+			//- .row.mt--1
+			//- 	.col-md-12
+			//- 		h5.color--blue Student Visa
+			//- 		p.
+			//- 			In school and need a convenient way to spend while establishing credit?
+			//- .row.mt--2.final
+			//- 	.col-md-12
+			//- 		p.bullet.unmarg.
+			//- 			• Low interest #[a(href="/rates#credit-cards") rate]
+			//- 		p.bullet.unmarg.
+			//- 			• Great way to build credit or improve your score
+			//- 		p.bullet.unmarg.
+			//- 			• Opportunity to establish financial independence
+			//- 		p.bullet.unmarg.
+			//- 			• Welcomed at millions of retailers
+			//- 		p.unmarg.
+			//- 			• Internet purchases protected by #[a(href="https://usa.visa.com/support/consumer/security.html") Verified by Visa]
+			//- 	.col-md-12
+			//- 		a.btn.btn-blue(href="https://internetloanapplication.cudl.com/tulare/")
+			//- 			span.btn__text Get the Card
