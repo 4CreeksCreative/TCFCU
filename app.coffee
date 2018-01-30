@@ -79,6 +79,11 @@ module.exports =
 					filters:{
 						'fields.pageName':'creditCards'
 					}
+				solarLoans:
+					id:'subPage'
+					filters:{
+						'fields.pageName':'solarLoans'
+					}
 	]
 
 	stylus:
