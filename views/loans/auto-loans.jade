@@ -2,27 +2,27 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		if contentful.autoLoans[0].headerPosition != undefined
-			.background-image-holder(class="#{contentful.autoLoans[0].headerPosition}")
-				if contentful.autoLoans[0].headerImage != undefined
-					img(src="#{asset(contentful.autoLoans[0].headerImage)}" alt="header image")
+		if subPages.loansAuto.headerPosition != undefined
+			.background-image-holder(class="#{subPages.loansAuto.headerPosition}")
+				if subPages.loansAuto.headerImage != undefined
+					img(src="#{asset(subPages.loansAuto.headerImage)}" alt="header image")
 		else
 			.background-image-holder.bg-cc
-				if contentful.autoLoans[0].headerImage != undefined
-					img(src="#{asset(contentful.autoLoans[0].headerImage)}" alt="header image")
+				if subPages.loansAuto.headerImage != undefined
+					img(src="#{asset(subPages.loansAuto.headerImage)}" alt="header image")
 				else
-					img(src="/img/header/autoLoans.jpg" alt="header image")
+					img(src="/img/header/loansAuto.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue= contentful.autoLoans[0].pageTitle
+					h2.color--blue= subPages.loansAuto.pageTitle
 					//-p.
 						Purchase or Refinance a new or pre-owned auto or recreational loan (travel trailers, motorhomes, motorcycles, boats, ATV).
 	section
 		.container
-			if contentful.autoLoans[0].subPageSections != undefined
-				for item in contentful.autoLoans[0].subPageSections
+			if subPages.loansAuto.subPageSections != undefined
+				for item in subPages.loansAuto.subPageSections
 					.row.mb--2
 						.col-sm-12
 							if item.fields.subhead != undefined
@@ -42,7 +42,7 @@ block content
 			//- 		p.bullet.unmarg.
 			//- 			• $0 down financing
 			//- 		p.bullet.unmarg.
-			//- 			• #[a(href="/autoLoans#mbi") Mechanical Breakdown Insurance] (MBI) and #[a(href="/autoLoans#gap") Guaranteed Asset autoLoansion] (GAP) available
+			//- 			• #[a(href="/loansAuto#mbi") Mechanical Breakdown Insurance] (MBI) and #[a(href="/loansAuto#gap") Guaranteed Asset loansAutoion] (GAP) available
 			//- 		p.bullet.unmarg.
 			//- 			• On-site dealership financing available
 			//- 		p.bullet.unmarg.

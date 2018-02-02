@@ -2,25 +2,25 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		if contentful.protect[0].headerPosition != undefined
-			.background-image-holder(class="#{contentful.protect[0].headerPosition}")
-				if contentful.protect[0].headerImage != undefined
-					img(src="#{asset(contentful.protect[0].headerImage)}" alt="header image")
+		if subPages.protect.headerPosition != undefined
+			.background-image-holder(class="#{subPages.protect.headerPosition}")
+				if subPages.protect.headerImage != undefined
+					img(src="#{asset(subPages.protect.headerImage)}" alt="header image")
 		else
 			.background-image-holder.bg-cc
-				if contentful.protect[0].headerImage != undefined
-					img(src="#{asset(contentful.protect[0].headerImage)}" alt="header image")
+				if subPages.protect.headerImage != undefined
+					img(src="#{asset(subPages.protect.headerImage)}" alt="header image")
 				else
 					img(src="/img/header/protect.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue= contentful.protect[0].pageTitle
+					h2.color--blue= subPages.protect.pageTitle
 	section
 		.container
-			if contentful.protect[0].subPageSections != undefined
-				for item in contentful.protect[0].subPageSections
+			if subPages.protect.subPageSections != undefined
+				for item in subPages.protect.subPageSections
 					.row.mb--2
 						.col-sm-12
 							if item.fields.subhead != undefined

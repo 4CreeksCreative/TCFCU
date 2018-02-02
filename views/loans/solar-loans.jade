@@ -2,25 +2,25 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		if contentful.solarLoans[0].headerPosition != undefined
-			.background-image-holder(class="#{contentful.solarLoans[0].headerPosition}")
-				if contentful.solarLoans[0].headerImage != undefined
-					img(src="#{asset(contentful.solarLoans[0].headerImage)}" alt="header image")
+		if subPages.solarLoans.headerPosition != undefined
+			.background-image-holder(class="#{subPages.solarLoans.headerPosition}")
+				if subPages.solarLoans.headerImage != undefined
+					img(src="#{asset(subPages.solarLoans.headerImage)}" alt="header image")
 		else
 			.background-image-holder.bg-cc
-				if contentful.solarLoans[0].headerImage != undefined
-					img(src="#{asset(contentful.solarLoans[0].headerImage)}" alt="header image")
+				if subPages.solarLoans.headerImage != undefined
+					img(src="#{asset(subPages.solarLoans.headerImage)}" alt="header image")
 				else
 					img(src="/img/header/solarLoans.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue= contentful.solarLoans[0].pageTitle
+					h2.color--blue= subPages.solarLoans.pageTitle
 	section
 		.container
-			if contentful.solarLoans[0].subPageSections != undefined
-				for item in contentful.solarLoans[0].subPageSections
+			if subPages.solarLoans.subPageSections != undefined
+				for item in subPages.solarLoans.subPageSections
 					.row.mb--2
 						.col-sm-12
 							if item.fields.subhead != undefined

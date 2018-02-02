@@ -2,25 +2,25 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		if contentful.retire[0].headerPosition != undefined
-			.background-image-holder(class="#{contentful.retire[0].headerPosition}")
-				if contentful.retire[0].headerImage != undefined
-					img(src="#{asset(contentful.retire[0].headerImage)}" alt="header image")
+		if subPages.retire.headerPosition != undefined
+			.background-image-holder(class="#{subPages.retire.headerPosition}")
+				if subPages.retire.headerImage != undefined
+					img(src="#{asset(subPages.retire.headerImage)}" alt="header image")
 		else
 			.background-image-holder.bg-cc
-				if contentful.retire[0].headerImage != undefined
-					img(src="#{asset(contentful.retire[0].headerImage)}" alt="header image")
+				if subPages.retire.headerImage != undefined
+					img(src="#{asset(subPages.retire.headerImage)}" alt="header image")
 				else
 					img(src="/img/header/retire.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue= contentful.retire[0].pageTitle
+					h2.color--blue= subPages.retire.pageTitle
 	section
 		.container
-			if contentful.retire[0].pageTitle != undefined
-				for item in contentful.retire[0].subPageSections
+			if subPages.retire.pageTitle != undefined
+				for item in subPages.retire.subPageSections
 					.row.mb--2
 						.col-sm-12
 							if item.fields.subhead != undefined

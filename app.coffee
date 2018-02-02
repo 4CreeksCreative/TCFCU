@@ -5,6 +5,10 @@ js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
 md           = require 'marked'
+subPages = {}
+
+transformFunction = (entry) ->
+	subPages[entry.pageName] = entry
 
 module.exports =
 	ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
@@ -29,61 +33,9 @@ module.exports =
 					id:'activeNotification'
 				homePage:
 					id:'homePage'
-				checking:
+				subpages:
 					id:'subPage'
-					filters:{
-						'fields.pageName':'checking'
-					}
-				savings:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'savings'
-					}
-				digitalBanking:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'digitalBanking'
-					}
-				hsa:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'hsa'
-					}
-				retire:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'retire'
-					}
-				protect:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'protect'
-					}
-				autoLoans:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'loansAuto'
-					}
-				homeLoans:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'loansMortgage'
-					}
-				personalLoans:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'loansPersonal'
-					}
-				creditCards:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'creditCards'
-					}
-				solarLoans:
-					id:'subPage'
-					filters:{
-						'fields.pageName':'solarLoans'
-					}
+					transform:transformFunction
 	]
 
 	stylus:
@@ -103,3 +55,4 @@ module.exports =
 		testing:'testing'
 		basedir: 'views'
 		md:require 'marked'
+		subPages:subPages

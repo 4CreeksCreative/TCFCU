@@ -2,25 +2,25 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		if contentful.homeLoans[0].headerPosition != undefined
-			.background-image-holder(class="#{contentful.homeLoans[0].headerPosition}")
-				if contentful.homeLoans[0].headerImage != undefined
-					img(src="#{asset(contentful.homeLoans[0].headerImage)}" alt="header image")
+		if subPages.loansMortgage.headerPosition != undefined
+			.background-image-holder(class="#{subPages.loansMortgage.headerPosition}")
+				if subPages.loansMortgage.headerImage != undefined
+					img(src="#{asset(subPages.loansMortgage.headerImage)}" alt="header image")
 		else
 			.background-image-holder.bg-cc
-				if contentful.homeLoans[0].headerImage != undefined
-					img(src="#{asset(contentful.homeLoans[0].headerImage)}" alt="header image")
+				if subPages.loansMortgage.headerImage != undefined
+					img(src="#{asset(subPages.loansMortgage.headerImage)}" alt="header image")
 				else
-					img(src="/img/header/homeLoans.jpg" alt="header image")
+					img(src="/img/header/loansMortgage.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue= contentful.homeLoans[0].pageTitle
+					h2.color--blue= subPages.loansMortgage.pageTitle
 	section
 		.container
-			if contentful.homeLoans[0].subPageSections != undefined
-				for item in contentful.homeLoans[0].subPageSections
+			if subPages.loansMortgage.subPageSections != undefined
+				for item in subPages.loansMortgage.subPageSections
 					.row.mb--2
 						.col-sm-12
 							if item.fields.subhead != undefined
@@ -41,7 +41,7 @@ block content
 			//- 		p.bullet.unmarg.
 			//- 			• #[a(href="https://hud.gov/buying/loans" target="_blank") FHA]
 			//- 		p.bullet.unmarg.
-			//- 			• #[a(href="https://benefits.va.gov/homeloans" target="_blank") VA]
+			//- 			• #[a(href="https://benefits.va.gov/loansMortgage" target="_blank") VA]
 			//- 	.col-md-12
 			//- 		a.btn.btn-blue(href="https://eloans.mortgagemaximum.com/apply.asp?siteId=D8A7650C-E2C5-4473-871C-8C4E5AE558E7")
 			//- 			span.btn__text Apply

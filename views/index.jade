@@ -2,6 +2,7 @@ extends /layout
 
 
 block content
+	//-p= JSON.stringify(subPages)
 	if contentful.activeNotification[0].activeNotification != undefined
 		.notification.pos-right.pos-bottom.col-sm-6.col-md-4(data-animation='from-bottom', data-autoshow='200')
 				.boxed.boxed--border.border--round.box-shadow

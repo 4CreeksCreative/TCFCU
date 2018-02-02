@@ -2,9 +2,16 @@ extends /layout
 
 block content
 	section#hero.cover.height-60.imagebg.parallax
-		.background-image-holder
-			img(src="/img/header/blog.jpg" alt="Header Image")
-		div#hero-content.container.pos-vertical-center
+		if subPages.resources.headerPosition != undefined
+			.background-image-holder(class="#{subPages.resources.headerPosition}")
+				if subPages.resources.headerImage != undefined
+					img(src="#{asset(subPages.resources.headerImage)}" alt="header image")
+		else
+			.background-image-holder.bg-cc
+				if subPages.resources.headerImage != undefined
+					img(src="#{asset(subPages.resources.headerImage)}" alt="header image")
+				else
+					img(src="/img/header/resources.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
