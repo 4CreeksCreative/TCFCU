@@ -7,6 +7,35 @@ block content
 	section
 		.container
 			#loan-rates.loan-section.row.margin-bottom-30.text-center
+				.col-sm-12
+					//-p= JSON.stringify(subPages.rates)
+					if subPages.rates != undefined
+						if subPages.rates.subPageSections != undefined
+							for section in subPages.rates.subPageSections
+								//-p= JSON.stringify(section)
+								if section.sys.contentType.sys.id === 'table'
+									h4= section.fields.subhead
+									table
+										if section.fields.tableHead != undefined
+											thead
+												for tr in section.fields.tableHead.fields.tableRows
+													tr
+														for th in tr.fields.tableCells
+															- var rowspan = th.fields.rowspan == undefined ? '' : th.fields.rowspan
+															- var colspan = th.fields.colspan == undefined ? '' : th.fields.colspan
+															//-p= JSON.stringify(tr)
+															th.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(th.fields.data)
+										if section.fields.tableBody != undefined
+											tbody
+												for tr in section.fields.tableBody.fields.tableRows
+													tr
+														for td in tr.fields.tableCells
+															- var rowspan = td.fields.rowspan == undefined ? '' : td.fields.rowspan
+															- var colspan = td.fields.colspan == undefined ? '' : td.fields.colspan
+															//-p= JSON.stringify(tr)
+															td.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(td.fields.data)
+		//-.container
+			#loan-rates.loan-section.row.margin-bottom-30.text-center
 				.col-md-12
 					h4.color--blue Effective January 1, 2018
 					table.table--alternate-row
