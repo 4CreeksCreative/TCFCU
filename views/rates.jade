@@ -14,8 +14,9 @@ block content
 							for section in subPages.rates.subPageSections
 								//-p= JSON.stringify(section)
 								if section.sys.contentType.sys.id === 'table'
-									h4= section.fields.subhead
-									table
+									if section.fields.description != undefined
+										.md!= md(section.fields.description)
+									table(class="#{section.fields.tableId}")
 										if section.fields.tableHead != undefined
 											thead
 												for tr in section.fields.tableHead.fields.tableRows
