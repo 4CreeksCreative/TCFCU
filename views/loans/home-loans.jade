@@ -21,12 +21,13 @@ block content
 		.container
 			if subPages.loansMortgage.subPageSections != undefined
 				for item in subPages.loansMortgage.subPageSections
-					.row.mb--2
-						.col-sm-12
-							if item.fields.subhead != undefined
-								h5.color--blue= item.fields.subhead
-							if item.fields.body != undefined
-								.md!= md(item.fields.body)
+					if item.sys.contentType.sys.id === 'textSection'
+						.row.mb--2
+							.col-sm-12
+								if item.fields.subhead != undefined
+									h5.color--blue= item.fields.subhead
+								if item.fields.body != undefined
+									.md!= md(item.fields.body)
 			//- .row
 			//- 	.col-md-12
 			//- 		h5.color--blue First Mortgages
