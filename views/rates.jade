@@ -26,7 +26,10 @@ block content
 															- var rowspan = th.fields.rowspan == undefined ? '' : th.fields.rowspan
 															- var colspan = th.fields.colspan == undefined ? '' : th.fields.colspan
 															//-p= JSON.stringify(tr)
-															th.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(th.fields.data)
+															if th.fields.data != undefined
+																th.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(th.fields.data)
+															else
+																th
 										if section.fields.tableBody != undefined
 											tbody
 												for tr in section.fields.tableBody.fields.tableRows
@@ -35,7 +38,10 @@ block content
 															- var rowspan = td.fields.rowspan == undefined ? '' : td.fields.rowspan
 															- var colspan = td.fields.colspan == undefined ? '' : td.fields.colspan
 															//-p= JSON.stringify(tr)
-															td.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(td.fields.data)
+															if td.fields.data != undefined
+																td.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(td.fields.data)
+															else
+																td
 						else if section.sys.contentType.sys.id === 'textSection'
 							.row.mb--2
 								.col-sm-12
