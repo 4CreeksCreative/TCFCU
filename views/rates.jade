@@ -6,17 +6,18 @@ block content
 			img(src="/img/header/rates.jpg" alt="Header Image")
 	section
 		.container
-			#loan-rates.loan-section.row.margin-bottom-30.text-center
-				.col-sm-12
-					//-p= JSON.stringify(subPages.rates)
-					if subPages.rates != undefined
-						if subPages.rates.subPageSections != undefined
-							for section in subPages.rates.subPageSections
-								//-p= JSON.stringify(section)
-								if section.sys.contentType.sys.id === 'table'
+			//-p= JSON.stringify(subPages.rates)
+			if subPages.rates != undefined
+				if subPages.rates.subPageSections != undefined
+					for section in subPages.rates.subPageSections
+						//-p= JSON.stringify(section)
+						if section.sys.contentType.sys.id === 'table'
+							- var tableID = section.tableId == undefined ? '' : section.tableId
+							.row.loan-section.text-center(id="#{tableID}")
+								.col-sm-12
 									if section.fields.description != undefined
 										.md!= md(section.fields.description)
-									table(class="#{section.fields.tableId}")
+									table
 										if section.fields.tableHead != undefined
 											thead
 												for tr in section.fields.tableHead.fields.tableRows
@@ -35,6 +36,13 @@ block content
 															- var colspan = td.fields.colspan == undefined ? '' : td.fields.colspan
 															//-p= JSON.stringify(tr)
 															td.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(td.fields.data)
+						else if section.sys.contentType.sys.id === 'textSection'
+							.row.mb--2
+								.col-sm-12
+									if section.fields.subhead != undefined
+										h5.color--blue= section.fields.subhead
+									if section.fields.body != undefined
+										.md!= md(section.fields.body)
 		//-.container
 			#loan-rates.loan-section.row.margin-bottom-30.text-center
 				.col-md-12
