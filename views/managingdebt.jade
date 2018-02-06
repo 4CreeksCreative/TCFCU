@@ -27,7 +27,8 @@ block content
 			if subPages.managingDebt.subPageSections != undefined
 				for item in subPages.managingDebt.subPageSections
 					if item.sys.contentType.sys.id === 'textSection'
-						.row.mb--2
+						- var sectionID = item.fields.sectionId == undefined ? '' : item.fields.sectionId
+						.row.mb--2(id="#{item.fields.sectionId}")
 							.col-sm-12
 								if item.fields.subhead != undefined
 									h5.color--blue= item.fields.subhead
