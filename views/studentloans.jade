@@ -1,142 +1,200 @@
 extends /layout
 
 block content
-	section#hero.cover.height-60.imagebg.parallax.text-center
+	//-section#hero.cover.height-60.imagebg.parallax.text-center
 		.background-image-holder
 			img.attachment-full.size-full(src="/img/header/studentloans.jpg" alt="Header image")
 		div#hero-content.container.pos-vertical-center
-
-
+	section#hero.cover.height-60.imagebg.parallax.text-center
+		if subPages.studentLoans.headerPosition != undefined
+			.background-image-holder(class="#{subPages.studentLoans.headerPosition}")
+				if subPages.studentLoans.headerImage != undefined
+					img(src="#{asset(subPages.studentLoans.headerImage)}" alt="header image")
+		else
+			.background-image-holder.bg-cc
+				if subPages.studentLoans.headerImage != undefined
+					img(src="#{asset(subPages.studentLoans.headerImage)}" alt="header image")
+				else
+					img(src="/img/header/studentLoans.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue Paying for your education doesn't have to be complicated
+					h2.color--blue= subPages.studentLoans.pageTitle
 	section
 		.container
-			.row
-				.col-sm-6
-					video#video(controls='controls', preload='none', crossorigin='anonymous', poster='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/poster/StudentLoans_poster.png')
-						source(src='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans_encoded.mp4', type='video/mp4')
-						track(kind='subtitles', srclang='en', label='English', src='/mobile/captionProxy.php?file=https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans.vtt')
-						object#swfPlayer(style='z-index: 10000;', type='application/x-shockwave-flash', data='../m/swf/player.swf', width='512', height='288')
-							param(name='allowfullscreen', value='true')
-							param(name='allowscriptaccess', value='always')
-							param(name='flashvars', value='video=https%3A%2F%2Fx7i5t7v9.ssl.hwcdn.net%2Fcds%2FmoneyBasics%2F946%2Fvideos%2F222%2FStudentLoans_encoded.mp4&poster=https%3A%2F%2Fx7i5t7v9.ssl.hwcdn.net%2Fcds%2FmoneyBasics%2F946%2Fvideos%2F222%2Fposter%2FStudentLoans_poster.png')
-							param(name='wmode', value='opaque')
-							//if IE
-								param(name='movie', value='../m/swf/player.swf')
-							img(src='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/poster/StudentLoans_poster.png', width='510', height='288', alt='Things You Should Know About Student Loans')
-							p
-								| Your browser can&rsquo;t play HTML5 video.
-								a.hoverZoomLink(href='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans_encoded.mp4')
-									| Download
-									| it
-								|  instead.
+			if subPages.studentLoans.subPageSections != undefined
+				for section in subPages.studentLoans.subPageSections
+					if section.sys.contentType.sys.id === 'textSection'
+						- var sectionID = section.fields.sectionId == undefined ? '' : section.fields.sectionId
+						.row.mb--2(id="#{section.fields.sectionId}")
+							.col-sm-12
+								if section.fields.subhead != undefined
+									h5.color--blue= section.fields.subhead
+								if section.fields.body != undefined
+									.md!= md(section.fields.body)
+					else if section.sys.contentType.sys.id === 'table'
+						- var tableID = section.tableId == undefined ? '' : section.tableId
+						.row.loan-section.text-center(id="#{tableID}")
+							.col-sm-12
+								if section.fields.description != undefined
+									.md!= md(section.fields.description)
+								table
+									if section.fields.tableHead != undefined
+										thead
+											for tr in section.fields.tableHead.fields.tableRows
+												tr
+													for th in tr.fields.tableCells
+														- var rowspan = th.fields.rowspan == undefined ? '' : th.fields.rowspan
+														- var colspan = th.fields.colspan == undefined ? '' : th.fields.colspan
+														//-p= JSON.stringify(tr)
+														if th.fields.data != undefined
+															th.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(th.fields.data)
+														else
+															th
+									if section.fields.tableBody != undefined
+										tbody
+											for tr in section.fields.tableBody.fields.tableRows
+												tr
+													for td in tr.fields.tableCells
+														- var rowspan = td.fields.rowspan == undefined ? '' : td.fields.rowspan
+														- var colspan = td.fields.colspan == undefined ? '' : td.fields.colspan
+														//-p= JSON.stringify(tr)
+														if td.fields.data != undefined
+															td.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(td.fields.data)
+														else
+															td
 
-				.col-sm-6
-					h5.color--blue 4 ways to pay for secondary education
-					p You've done the hard part and prepared yourself for secondary education, don't let task of paying for it become a roadblock to your future. Here's the five steps to applying and acquiring the funds you need to go to school.
-	section
-		.container
-			.row
-				.col-sm-12
-					h5.color--blue 1. Fill out the FAFSA
-					p.
-						FAFSA stands for Free Application for Federal Student Aid. It is the only way to apply for federal student aid. It is free to apply. You must fill out your FAFSA form at #[a(href="https://fafsa.gov/" target="_blank" rel="noopener") fafsa.gov] every year that you are in college, university or career school.
-					p.
-						In addition, many states and colleges use your FAFSA data to determine your eligibility for state and school aid. Some private financial aid providers may use your FAFSA information to determine whether you qualify for their aid.
-					p.
-						Fill out your FAFSA form for free at #[a(href="https://fafsa.gov/" target="_blank" rel="noopener") fafsa.gov].
-
-					p.
-						When you fill out your FASFA, you will also create an FSA ID. FSA ID stands for your Federal Student Aid Identification. It is a username and password that you create. You use your FSA ID to:
-					p.bullet.unmarg. • get into the Federal Student Aid system.
-					p.bullet.unmarg. • fill out your FAFSA form.
-					p • legally sign your student aid documents.
-					p.
-						Only you can create and use your FSA ID. Don’t share your FSA ID with anyone else. Dishonest people could use your FSA ID to get into your account and take control of your personal information.
-	section
-		.container
-			.row
-				.col-sm-12
-					h5.color--blue 2. Look for free money ... yeah that's right, it's free!
-					p.
-						Grants and scholarships are free money. They should be your first choice to finance your education. Why? Because you don’t have to pay them back. A good way to apply for a grant is through your FAFSA form. You  also can check out these other sources to find grant and scholarship opportunities:
-					p.bullet.unmarg. • the financial aid office at a college or career school
-					p.bullet.unmarg. • a high school or TRIO counselor
-					p.bullet.unmarg. • the U.S. Department of Labor’s free scholarship search tool
-					p.bullet.unmarg. • federal agencies
-					p.bullet.unmarg. • your state
-					p.bullet.unmarg. • your library
-					p.bullet.unmarg. • foundations, religious or community organizations, local businesses, or civic groups
-					p.bullet.unmarg. • organizations related to your field of interest, like professional associations
-					p.bullet.unmarg. • ethnicity-based organizations
-					p.bullet • your employer or your parents’ employers
-	section
-		.container
-			.row
-				.col-sm-12
-					h5.color--blue 3. Get a loan, it's worth the investment
-					p.
-						Student loans fall into two categories: federal loans and private loans.
-					p.
-						Federal loans are Direct Loans, where the U.S. Department of Education is the lender;
-					p.bullet.unmarg. • Federal Family Education Loans (FFEL), where private lenders make loans backed by the federal government;
-					p.bullet.unmarg. • Federal Perkins Loans, low-interest federal student loans for undergraduate and graduate students with exceptional financial need; and
-					p.bullet • PLUS loans, federal loans that graduate or professional students and parents of dependent undergraduate students can use to help pay for college or career school.
-					p.
-						Private Loans, sometimes called “alternative loans,” are offered by private lenders, like banks and credit unions, and do not include the benefits and protections that come with federal loans.
-	section
-		.container
-			.row
-				.col-md-12
-					table
-						thead
-							tr
-								th
-								th Federal Loans
-								th Private Loans
-						tbody
-							tr
-								td #[strong Applying for the loan]
-								td You won’t need a co-signer to get a federal student loan in most cases (except for PLUS loans).
-								td You may need a co-signer and a credit check. The cost to repay a private student loan will depend on your credit score and other factors.
-							tr
-								td #[strong Interest Rates (the cost of borrowing money)]
-								td Rates are fixed, and often lower than private loans.
-								td Private student loans can have variable interest rates.
-							tr
-								td(rowspan="7") #[strong Repayment terms]
-								td You will not have to start repaying your federal student loans until you graduate, leave school, or change your enrollment status to less than half-time.
-								td Many private student loans require payment while you are still in school.
-							tr
-								td Undergraduate students with financial need usually qualify for a subsidized loan. The government pays the interest while you are in school on at least a half-time basis.
-								td Private student loans are not subsidized. No one pays the interest on your loan but you.
-							tr
-								td Loans can be consolidated into a Direct Consolidation Loan for free. Learn about your consolidation options.
-								td There may be options for consolidation, depending on your lender. But there usually is a fee.
-							tr
-								td There is no fee to repay your loan more quickly – called a prepayment penalty fee.
-								td There may be prepayment penalty fees.
-							tr
-								td If you are having trouble repaying your loan, you may be able to temporarily postpone or lower your payments.
-								td Private student loans may not offer forbearance or deferment options.
-							tr
-								td There are several repayment options, including an option to tie your monthly payment to your income.
-								td You should check with your lender to find out about your repayment options.
-							tr
-								td You may be eligible to have some portion of your loans forgiven if you work in public service.
-								td It is unlikely that a private lender will offer a loan forgiveness program.
-	section
-		.container
-			.row
-				.col-sm-12
-					h5.color--blue 4. Get to work at school and at a job
-					p.
-						Federal work-study jobs are another way to help  pay for college. Work-study is a need-based grant that requires you to work part-time while you’re in school. To qualify for work-study, you’ll need to fill out the FASFA form and meet the needs-based criteria of the program. You are only paid for the hours that you work
-	section
-		.container
-			.row
-				.col-sm-12
-					p Source: FEDERAL TRADE COMMISSION (#[a(href="http://www.ftc.gov" target="_blank" rel="noopener") www.ftc.gov])
+	//- section.unpad--bottom
+	//- 	.container
+	//- 		.row
+	//- 			.col-sm-12
+	//- 				h2.color--blue Paying for your education doesn't have to be complicated
+	//- section
+	//- 	.container
+	//- 		.row
+	//- 			.col-sm-6
+	//- 				video#video(controls='controls', preload='none', crossorigin='anonymous', poster='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/poster/StudentLoans_poster.png')
+	//- 					source(src='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans_encoded.mp4', type='video/mp4')
+	//- 					track(kind='subtitles', srclang='en', label='English', src='/mobile/captionProxy.php?file=https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans.vtt')
+	//- 					object#swfPlayer(style='z-index: 10000;', type='application/x-shockwave-flash', data='../m/swf/player.swf', width='512', height='288')
+	//- 						param(name='allowfullscreen', value='true')
+	//- 						param(name='allowscriptaccess', value='always')
+	//- 						param(name='flashvars', value='video=https%3A%2F%2Fx7i5t7v9.ssl.hwcdn.net%2Fcds%2FmoneyBasics%2F946%2Fvideos%2F222%2FStudentLoans_encoded.mp4&poster=https%3A%2F%2Fx7i5t7v9.ssl.hwcdn.net%2Fcds%2FmoneyBasics%2F946%2Fvideos%2F222%2Fposter%2FStudentLoans_poster.png')
+	//- 						param(name='wmode', value='opaque')
+	//- 						//if IE
+	//- 							param(name='movie', value='../m/swf/player.swf')
+	//- 						img(src='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/poster/StudentLoans_poster.png', width='510', height='288', alt='Things You Should Know About Student Loans')
+	//- 						p
+	//- 							| Your browser can&rsquo;t play HTML5 video.
+	//- 							a.hoverZoomLink(href='https://x7i5t7v9.ssl.hwcdn.net/cds/moneyBasics/946/videos/222/StudentLoans_encoded.mp4')
+	//- 								| Download
+	//- 								| it
+	//- 							|  instead.
+	//- 
+	//- 			.col-sm-6
+	//- 				h5.color--blue 4 ways to pay for secondary education
+	//- 				p You've done the hard part and prepared yourself for secondary education, don't let task of paying for it become a roadblock to your future. Here's the five steps to applying and acquiring the funds you need to go to school.
+	//- section
+	//- 	.container
+	//- 		.row
+	//- 			.col-sm-12
+	//- 				h5.color--blue 1. Fill out the FAFSA
+	//- 				p.
+	//- 					FAFSA stands for Free Application for Federal Student Aid. It is the only way to apply for federal student aid. It is free to apply. You must fill out your FAFSA form at #[a(href="https://fafsa.gov/" target="_blank" rel="noopener") fafsa.gov] every year that you are in college, university or career school.
+	//- 				p.
+	//- 					In addition, many states and colleges use your FAFSA data to determine your eligibility for state and school aid. Some private financial aid providers may use your FAFSA information to determine whether you qualify for their aid.
+	//- 				p.
+	//- 					Fill out your FAFSA form for free at #[a(href="https://fafsa.gov/" target="_blank" rel="noopener") fafsa.gov].
+	//- 
+	//- 				p.
+	//- 					When you fill out your FASFA, you will also create an FSA ID. FSA ID stands for your Federal Student Aid Identification. It is a username and password that you create. You use your FSA ID to:
+	//- 				p.bullet.unmarg. • get into the Federal Student Aid system.
+	//- 				p.bullet.unmarg. • fill out your FAFSA form.
+	//- 				p • legally sign your student aid documents.
+	//- 				p.
+	//- 					Only you can create and use your FSA ID. Don’t share your FSA ID with anyone else. Dishonest people could use your FSA ID to get into your account and take control of your personal information.
+	//- section
+	//- 	.container
+	//- 		.row
+	//- 			.col-sm-12
+	//- 				h5.color--blue 2. Look for free money ... yeah that's right, it's free!
+	//- 				p.
+	//- 					Grants and scholarships are free money. They should be your first choice to finance your education. Why? Because you don’t have to pay them back. A good way to apply for a grant is through your FAFSA form. You  also can check out these other sources to find grant and scholarship opportunities:
+	//- 				p.bullet.unmarg. • the financial aid office at a college or career school
+	//- 				p.bullet.unmarg. • a high school or TRIO counselor
+	//- 				p.bullet.unmarg. • the U.S. Department of Labor’s free scholarship search tool
+	//- 				p.bullet.unmarg. • federal agencies
+	//- 				p.bullet.unmarg. • your state
+	//- 				p.bullet.unmarg. • your library
+	//- 				p.bullet.unmarg. • foundations, religious or community organizations, local businesses, or civic groups
+	//- 				p.bullet.unmarg. • organizations related to your field of interest, like professional associations
+	//- 				p.bullet.unmarg. • ethnicity-based organizations
+	//- 				p.bullet • your employer or your parents’ employers
+	//- section
+	//- 	.container
+	//- 		.row
+	//- 			.col-sm-12
+	//- 				h5.color--blue 3. Get a loan, it's worth the investment
+	//- 				p.
+	//- 					Student loans fall into two categories: federal loans and private loans.
+	//- 				p.
+	//- 					Federal loans are Direct Loans, where the U.S. Department of Education is the lender;
+	//- 				p.bullet.unmarg. • Federal Family Education Loans (FFEL), where private lenders make loans backed by the federal government;
+	//- 				p.bullet.unmarg. • Federal Perkins Loans, low-interest federal student loans for undergraduate and graduate students with exceptional financial need; and
+	//- 				p.bullet • PLUS loans, federal loans that graduate or professional students and parents of dependent undergraduate students can use to help pay for college or career school.
+	//- 				p.
+	//- 					Private Loans, sometimes called “alternative loans,” are offered by private lenders, like banks and credit unions, and do not include the benefits and protections that come with federal loans.
+	//- section
+	//- 	.container
+	//- 		.row
+	//- 			.col-md-12
+	//- 				table
+	//- 					thead
+	//- 						tr
+	//- 							th
+	//- 							th Federal Loans
+	//- 							th Private Loans
+	//- 					tbody
+	//- 						tr
+	//- 							td #[strong Applying for the loan]
+	//- 							td You won’t need a co-signer to get a federal student loan in most cases (except for PLUS loans).
+	//- 							td You may need a co-signer and a credit check. The cost to repay a private student loan will depend on your credit score and other factors.
+	//- 						tr
+	//- 							td #[strong Interest Rates (the cost of borrowing money)]
+	//- 							td Rates are fixed, and often lower than private loans.
+	//- 							td Private student loans can have variable interest rates.
+	//- 						tr
+	//- 							td(rowspan="7") #[strong Repayment terms]
+	//- 							td You will not have to start repaying your federal student loans until you graduate, leave school, or change your enrollment status to less than half-time.
+	//- 							td Many private student loans require payment while you are still in school.
+	//- 						tr
+	//- 							td Undergraduate students with financial need usually qualify for a subsidized loan. The government pays the interest while you are in school on at least a half-time basis.
+	//- 							td Private student loans are not subsidized. No one pays the interest on your loan but you.
+	//- 						tr
+	//- 							td Loans can be consolidated into a Direct Consolidation Loan for free. Learn about your consolidation options.
+	//- 							td There may be options for consolidation, depending on your lender. But there usually is a fee.
+	//- 						tr
+	//- 							td There is no fee to repay your loan more quickly – called a prepayment penalty fee.
+	//- 							td There may be prepayment penalty fees.
+	//- 						tr
+	//- 							td If you are having trouble repaying your loan, you may be able to temporarily postpone or lower your payments.
+	//- 							td Private student loans may not offer forbearance or deferment options.
+	//- 						tr
+	//- 							td There are several repayment options, including an option to tie your monthly payment to your income.
+	//- 							td You should check with your lender to find out about your repayment options.
+	//- 						tr
+	//- 							td You may be eligible to have some portion of your loans forgiven if you work in public service.
+	//- 							td It is unlikely that a private lender will offer a loan forgiveness program.
+	//- section
+	//- 	.container
+	//- 		.row
+	//- 			.col-sm-12
+	//- 				h5.color--blue 4. Get to work at school and at a job
+	//- 				p.
+	//- 					Federal work-study jobs are another way to help  pay for college. Work-study is a need-based grant that requires you to work part-time while you’re in school. To qualify for work-study, you’ll need to fill out the FASFA form and meet the needs-based criteria of the program. You are only paid for the hours that you work
+	//- section
+	//- 	.container
+	//- 		.row
+	//- 			.col-sm-12
+	//- 				p Source: FEDERAL TRADE COMMISSION (#[a(href="http://www.ftc.gov" target="_blank" rel="noopener") www.ftc.gov])
