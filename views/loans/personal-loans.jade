@@ -21,12 +21,14 @@ block content
 		.container
 			if subPages.loansPersonal.subPageSections != undefined
 				for item in subPages.loansPersonal.subPageSections
-					.row.mb--2
-						.col-sm-12
-							if item.fields.subhead != undefined
-								h5.color--blue= item.fields.subhead
-							if item.fields.body != undefined
-								.md!= md(item.fields.body)
+					if item.sys.contentType.sys.id === 'textSection'
+						- var sectionID = item.fields.sectionId == undefined ? '' : item.fields.sectionId
+						.row.mb--2(id="#{item.fields.sectionId}")
+							.col-sm-12
+								if item.fields.subhead != undefined
+									h5.color--blue= item.fields.subhead
+								if item.fields.body != undefined
+									.md!= md(item.fields.body)
 			//- .row
 			//- 	.col-md-12
 			//- 		h5.color--blue.
