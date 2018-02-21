@@ -29,8 +29,8 @@ module.exports =
 						'limit': '2'
 					}
 					path: (e) -> "promo/#{e.slug}"
-				activeNotification:
-					id:'activeNotification'
+				notifications:
+					id:'notification'
 				homePage:
 					id:'homePage'
 				subpages:

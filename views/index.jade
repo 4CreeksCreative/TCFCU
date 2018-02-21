@@ -3,12 +3,31 @@ extends /layout
 
 block content
 	//-p= JSON.stringify(subPages)
-	if contentful.activeNotification[0].activeNotification != undefined
-		.notification.pos-right.pos-bottom.col-sm-6.col-md-4(data-animation='from-bottom', data-autoshow='200')
-				.boxed.boxed--border.border--round.box-shadow
-					.text-block
-						h5= contentful.activeNotification[0].activeNotification.fields.title
-						.md!=md(contentful.activeNotification[0].activeNotification.fields.body)
+	if contentful.notifications != undefined
+		#notification-holder.pos-right.pos-bottom.col-sm-6.col-md-4
+			for notification in contentful.notifications
+				- var today = new Date()
+				- var startDate = new Date(notification.dateStart)
+				- var endDate = new Date(notification.dateEnd)
+				- if (today > startDate && today < endDate)
+					.notification(data-animation='from-bottom', data-autoshow='200' id="notification.id")
+						.boxed.boxed--border.border--round.box-shadow
+							.text-block
+								h5= notification.title
+								.md!=md(notification.body)
+					script.
+						$(document).ready(function(){
+							var today = new Date()
+							var startDate = new Date('#{notification.dateStart}')
+							var endDate = new Date('#{notification.dateEnd}')
+							if(today < startDate && today > endDate){
+								console.log('Event is NOT within date-frame')
+								$('##{notification.id}').remove()
+							}
+							else {
+								console.log('Event is within date-frame')
+							}
+						})
 	section#hero.home.cover.height-80.imagebg.parallax.overlay-blue(data-overlay="5")
 		.background-image-holder
 			img(src="/img/header/home.jpg" alt="")
