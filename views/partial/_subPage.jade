@@ -17,21 +17,24 @@ block content
 			.row
 				.col-sm-12
 					h2.color--blue= entry.pageTitle
-	section
-		.container
-			if entry.subPageSections != undefined
-				for section in entry.subPageSections
-					if section.sys.contentType.sys.id === 'textSection'
-						- var sectionID = section.fields.sectionId == undefined ? '' : section.fields.sectionId
-						.row.mb--2(id="#{section.fields.sectionId}")
+	
+	if entry.subPageSections != undefined
+		for section in entry.subPageSections
+			if section.sys.contentType.sys.id === 'textSection'
+				- var sectionID = section.fields.sectionId == undefined ? '' : section.fields.sectionId
+				section
+					.container
+						.row(id="#{section.fields.sectionId}")
 							.col-sm-12
 								if section.fields.subhead != undefined
 									h5.color--blue= section.fields.subhead
 								if section.fields.body != undefined
 									.md!= md(section.fields.body)
-					else if section.sys.contentType.sys.id === 'table'
-						- var tableID = section.tableId == undefined ? '' : section.tableId
-						.row.loan-section.text-center(id="#{tableID}")
+			else if section.sys.contentType.sys.id === 'table'
+				- var tableID = section.tableId == undefined ? '' : section.tableId
+				section
+					.container
+						.row.loan-section(id="#{tableID}")
 							.col-sm-12
 								if section.fields.description != undefined
 									.md!= md(section.fields.description)
@@ -60,6 +63,18 @@ block content
 															td.md(rowspan="#{rowspan}", colspan="#{colspan}")!= md(td.fields.data)
 														else
 															td
+			else if section.sys.contentType.sys.id === 'callToAction'
+				section.cover.imagebg.parallax.text-center(data-overlay="8" style="padding:100px 0;")
+					.background-image-holder
+						img(alt="mission statement background image" src="#{asset(section.fields.backgroundImage)}")
+					.container
+						.row.text-center
+							.col-md-12
+								h5.color--white= section.fields.title
+								.md!= md(section.fields.body)
+								if section.fields.buttonLink != undefined && section.fields.buttonText != undefined
+									a.btn.btn-white(href="#{section.fields.buttonLink}")
+										span.btn__text= section.fields.buttonText
 
 	//- section.unpad--bottom
 	//- 	.container
