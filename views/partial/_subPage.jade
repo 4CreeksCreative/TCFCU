@@ -1,30 +1,26 @@
 extends /layout
 
 block content
-	//-section#hero.cover.height-60.imagebg.parallax.text-center
-		.background-image-holder
-			img.attachment-full.size-full(src="/img/header/studentloans.jpg" alt="Header image")
-		div#hero-content.container.pos-vertical-center
 	section#hero.cover.height-60.imagebg.parallax.text-center
-		if subPages.studentLoans.headerPosition != undefined
-			.background-image-holder(class="#{subPages.studentLoans.headerPosition}")
-				if subPages.studentLoans.headerImage != undefined
-					img(src="#{asset(subPages.studentLoans.headerImage)}" alt="header image")
+		if entry.headerPosition != undefined
+			.background-image-holder(class="#{entry.headerPosition}")
+				if entry.headerImage != undefined
+					img(src="#{asset(entry.headerImage)}" alt="header image")
 		else
 			.background-image-holder.bg-cc
-				if subPages.studentLoans.headerImage != undefined
-					img(src="#{asset(subPages.studentLoans.headerImage)}" alt="header image")
+				if entry.headerImage != undefined
+					img(src="#{asset(entry.headerImage)}" alt="header image")
 				else
 					img(src="/img/header/studentLoans.jpg" alt="header image")
 	section.unpad--bottom
 		.container
 			.row
 				.col-sm-12
-					h2.color--blue= subPages.studentLoans.pageTitle
+					h2.color--blue= entry.pageTitle
 	section
 		.container
-			if subPages.studentLoans.subPageSections != undefined
-				for section in subPages.studentLoans.subPageSections
+			if entry.subPageSections != undefined
+				for section in entry.subPageSections
 					if section.sys.contentType.sys.id === 'textSection'
 						- var sectionID = section.fields.sectionId == undefined ? '' : section.fields.sectionId
 						.row.mb--2(id="#{section.fields.sectionId}")

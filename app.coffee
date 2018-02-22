@@ -36,6 +36,8 @@ module.exports =
 				subpages:
 					id:'subPage'
 					transform:transformFunction
+					template:'views/partial/_subPage.jade'
+					path: (e) -> "/#{e.pageName}"
 	]
 
 	stylus:
