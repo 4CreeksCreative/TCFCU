@@ -53,7 +53,7 @@ block content
 					.row
 						.col-sm-12
 							h4.color--blue.mb--2= entry.callToAction.fields.title
-							p= entry.callToAction.fields.body
+							.md!= md(entry.callToAction.fields.body)
 							if entry.callToAction.fields.buttonLink != undefined && entry.callToAction.fields.buttonText != undefined
 								a.btn.btn-white(href="#{entry.callToAction.fields.buttonLink}")
 									span.btn__text= entry.callToAction.fields.buttonText
