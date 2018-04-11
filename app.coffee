@@ -18,9 +18,9 @@ module.exports =
 		css_pipeline(files: ['assets/css/*.css','assets/css/*.styl'])
 		
 		contentful
-			#access_token:'429fe95700ac834cc676275beb8af66d503a93b879ee4db2bbb04441873a56cf'
-			#preview: true
-			access_token: 'ef4f7d3b1e394c4edf523bbcf0be76031a3046d0811aff6fb4a3ea528f9bec1f'
+			access_token:'429fe95700ac834cc676275beb8af66d503a93b879ee4db2bbb04441873a56cf'
+			preview: true
+			#access_token: 'ef4f7d3b1e394c4edf523bbcf0be76031a3046d0811aff6fb4a3ea528f9bec1f'
 			space_id: 'ntx0p06grhb8'
 			content_types:
 				Promotions:
