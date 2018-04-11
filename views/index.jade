@@ -46,15 +46,39 @@ block content
 					.md!= md(contentful.homePage[0].homeIntroParagraph.fields.body)
 	section#full-width-ads.unpad--bottom
 		.row.text-center.unmarg
-			if contentful.Promotions.length > 0
-				- var num = 0
-				for item in contentful.Promotions
-					- var today = new Date()
-					- var startDate = new Date(item.dateStart)
-					- var endDate = new Date(item.dateEnd)
-					- if (today > startDate && today < endDate)
-						- num++
-						//- console.log(num)
+			.slider(data-arrows="true")
+				- console.log(contentful.Promotions.length)
+				if contentful.Promotions.length > 2
+					ul.slides
+						for item in contentful.Promotions
+							- var today = new Date()
+							- var startDate = new Date(item.dateStart)
+							- var endDate = new Date(item.dateEnd)
+							- if (today > startDate && today < endDate)
+								- num++
+								//- console.log(num)
+								li.col-sm-6
+									a(href='#{item._url}' id="#{item.slug}")
+										.imagebg.height-60(data-overlay="5" class="overlay-#{item.overlay}")
+											.background-image-holder
+												img(alt="#{item.header.fields.title}" src="#{asset(item.header)}")
+											.pos-vertical-center(style="padding: 0 15px;")
+												h3 #{item.title}
+												if item.subtitle != undefined
+													p.mb--1= item.subtitle
+												.btn.btn-white
+													span.btn__text Learn More
+									script.
+										$(document).ready(function(){
+											var today = new Date()
+											var startDate = new Date('#{item.dateStart}')
+											var endDate = new Date('#{item.dateEnd}')
+											if(today < startDate && today > endDate){
+												$('##{item.slug}').remove()
+											}
+										})
+				else if contentful.Promotions.length > 1
+					for item in contentful.Promotions
 						a(href='#{item._url}' id="#{item.slug}")
 							.col-sm-6.imagebg.height-60(data-overlay="5" class="overlay-#{item.overlay}")
 								.background-image-holder
@@ -74,8 +98,28 @@ block content
 									$('##{item.slug}').remove()
 								}
 							})
-				if (num % 2) != 0
-					.hidden-xs.col-sm-6.imagebg.height-60(data-overlay="5" class="overlay-green")
+				else if contentful.Promotions.length > 0
+					for item in contentful.Promotions
+						a(href='#{item._url}' id="#{item.slug}")
+							.col-sm-6.imagebg.height-60(data-overlay="5" class="overlay-#{item.overlay}")
+								.background-image-holder
+									img(alt="#{item.header.fields.title}" src="#{asset(item.header)}")
+								.pos-vertical-center(style="padding: 0 15px;")
+									h3 #{item.title}
+									if item.subtitle != undefined
+										p.mb--1= item.subtitle
+									.btn.btn-white
+										span.btn__text Learn More
+						script.
+							$(document).ready(function(){
+								var today = new Date()
+								var startDate = new Date('#{item.dateStart}')
+								var endDate = new Date('#{item.dateEnd}')
+								if(today < startDate && today > endDate){
+									$('##{item.slug}').remove()
+								}
+							})
+					.col-sm-6.hidden-xs.imagebg.height-60(data-overlay="5" class="overlay-green")
 						.background-image-holder
 							img(alt="testing" src="/img/test3.jpg")
 						.pos-vertical-center
@@ -83,6 +127,8 @@ block content
 							p.mb--1 Watch our videos to learn helpful information about money, banking, and ID theft prevention
 							a.btn.btn-white(href="/resources")
 								span.btn__text Learn More
+
+								
 	section#our-services
 		.container
 			.row.text-center
