@@ -5,6 +5,10 @@ js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
 md           = require 'marked'
+date         = new Date()
+month        = if (date.getMonth()+1) < 10 then '0'+(date.getMonth()+1) else date.getMonth()+1
+day          = if date.getDate() < 10 then '0'+date.getDate() else date.getDate()
+today        = date.getFullYear()+'-'+month+'-'+day
 subPages = {}
 
 transformFunction = (entry) ->
@@ -28,6 +32,8 @@ module.exports =
 					template:'views/partial/_promotion.jade'
 					filters:{
 						'order': '-fields.dateStart'
+						'fields.dateStart[lte]': today
+						'fields.dateEnd[gte]': today
 					}
 					path: (e) -> "promo/#{e.slug}"
 				notifications:
