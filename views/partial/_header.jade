@@ -146,7 +146,8 @@
 															a.modal-trigger(data-modal-index='1' href="#")
 																| Need Help?
 														li
-															a.color--white.bg--blue(style="padding:5px 10px;display:inline-block;" href="//assets.contentful.com/ntx0p06grhb8/3DKSC9XnJec2Qcqse4yqEc/a0099b48de9a2ec93c0bf94964499aec/Fillable_Membership_Application__1_.pdf" target="_blank") Become a Member
+															a.color--white.bg--blue(style="padding:5px 10px;display:inline-block;" href="#{asset(contentful.pdfFiles[0].becomeAMember)}" target="_blank") Become a Member
+														//-p= JSON.stringify(contentful.pdfFiles.becomeAMember)
 														//-li
 															a.color--white.bg--blue(style="padding:5px 10px;display:inline-block;" href="https://tcfcu.typeform.com/to/Va7Cog") Become a Member
 								//-a(href="https://tcfcu.typeform.com/to/Va7Cog") Join

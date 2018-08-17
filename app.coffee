@@ -20,7 +20,7 @@ module.exports =
 	extensions: [
 		js_pipeline(files: ['assets/js/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/css/*.css','assets/css/*.styl'])
-		
+
 		contentful
 			#access_token:'429fe95700ac834cc676275beb8af66d503a93b879ee4db2bbb04441873a56cf'
 			#preview: true
@@ -38,6 +38,8 @@ module.exports =
 					path: (e) -> "promo/#{e.slug}"
 				notifications:
 					id:'notification'
+				pdfFiles:
+					id:'pdfFiles'
 				homePage:
 					id:'homePage'
 				subpages:
