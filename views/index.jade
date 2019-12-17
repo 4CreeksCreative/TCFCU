@@ -35,6 +35,10 @@ block content
 			.row
 				.col-sm-8.col-lg-12
 					h1#home-header-text.hr-green-after.text-left= contentful.homePage[0].homeHeaderText
+			if contentful.homePage[0].headerSubParagraph != undefined
+				.row
+					.col-sm-8.col-lg-12
+						.md!= md(contentful.homePage[0].headerSubParagraph)
 
 	section#home-landing
 		.container

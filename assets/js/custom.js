@@ -1,13 +1,19 @@
-$('a:not([type="submit"]):not([href*="mailto:"])').each(function(i,val){
+$('a:not([type="submit"]):not([href*="mailto:"]):not(.ignore)').each(function(i,val){
 	var regex2 = new RegExp('(^\/+(?!pdf))','ig')
-	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://internetloanapplication.cudl.com/tulare/$)|(^https://tularefcu.online-cu.com)|(^http://tularefederal.org/)','ig')
+	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://tularefcu.online-cu.com)|(^https://internetloanapplication.cudl.com/tulare/$)|(^http://tularefederal.org/)','ig')
+	var regex3 = new RegExp('(^https://tularefcu.online-cu.com)')
 	if(!regex.test($(val).attr('href'))){
 		console.log('external link found ' + $(val).attr('href'))
 		$(val).addClass('modal-trigger').addClass('externalLink')
 		$(val).attr('data-modal-index','0')
 	}
-	if(!regex2.test($(val).attr('href'))){
+	if (!regex2.test($(val).attr('href'))) {
 		$(val).attr('target','_blank')
+	}
+	if($(val).attr('href').includes('https://tularefcu.online-cu.com')){
+		console.log('Banking link found ' + $(val).attr('href'))
+		$(val).addClass('modal-trigger')
+		$(val).attr('data-modal-index','2')
 	}
 })
 $(document).on('mousedown','.modal-trigger.externalLink',function(e){
