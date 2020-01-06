@@ -10,7 +10,7 @@ $('a:not([type="submit"]):not([href*="mailto:"]):not(.ignore)').each(function(i,
 	if (!regex2.test($(val).attr('href'))) {
 		$(val).attr('target','_blank')
 	}
-	if($(val).attr('href').includes('https://tularefcu.online-cu.com')){
+	if($(val).attr('href').indexOf('https://tularefcu.online-cu.com') != -1){
 		console.log('Banking link found ' + $(val).attr('href'))
 		$(val).addClass('modal-trigger')
 		$(val).attr('data-modal-index','2')
