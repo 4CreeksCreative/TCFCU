@@ -1,7 +1,7 @@
 $('a:not([type="submit"]):not([href*="mailto:"]):not(.ignore)').each(function(i,val){
 	var regex2 = new RegExp('(^\/+(?!pdf))','ig')
-	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://my.ovation-fi.com)|(^https://tularefcu.symapp.jhahosted.com/)|(^http://tularefederal.org/)','ig')
-	//var regex3 = new RegExp('(^https://my.ovation-fi.com)')
+	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://my.tularefcu.org/)|(^https://tularefcu.symapp.jhahosted.com/)|(^http://tularefederal.org/)','ig')
+	//var regex3 = new RegExp('(^https://my.tularefcu.org/)')
 	if(!regex.test($(val).attr('href'))){
 		console.log('external link found ' + $(val).attr('href'))
 		$(val).addClass('modal-trigger').addClass('externalLink')
@@ -11,7 +11,7 @@ $('a:not([type="submit"]):not([href*="mailto:"]):not(.ignore)').each(function(i,
 		$(val).attr('target','_blank')
 	}
 	//if($(val).attr('href').indexOf('https://tularefcu.online-cu.com') != -1){
-	// if($(val).attr('href').indexOf('https://my.ovation-fi.com') != -1){
+	// if($(val).attr('href').indexOf('https://my.tularefcu.org/') != -1){
 	// 	console.log('Banking link found ' + $(val).attr('href'))
 	// 	$(val).addClass('modal-trigger')
 	// 	$(val).attr('data-modal-index','2')
