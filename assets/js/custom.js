@@ -1,6 +1,6 @@
 $('a:not([type="submit"]):not([href*="mailto:"]):not(.ignore)').each(function(i,val){
 	var regex2 = new RegExp('(^\/+(?!pdf))','ig')
-	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://my.tularefcu.org/)|(^https://tularefcu.symapp.jhahosted.com/)|(^http://tularefederal.org/)','ig')
+	var regex = new RegExp('(^#)|(^#$)|(^$)|(^\/)|('+window.location.hostname+')|(^https://my.tularefcu.org/)|(^https://tularefcu.symapp.jhahosted.com/)|(^https://internetloanapplication.cudl.com/tulare/)|(^http://tularefederal.org/)','ig')
 	//var regex3 = new RegExp('(^https://my.tularefcu.org/)')
 	if(!regex.test($(val).attr('href'))){
 		console.log('external link found ' + $(val).attr('href'))
