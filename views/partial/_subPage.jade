@@ -67,7 +67,8 @@ block content
 						.row.text-center
 							.col-md-12
 								h5.color--white= section.fields.title
-								.md!= md(section.fields.body)
+								if section.fields.body != undefined
+									.md!= md(section.fields.body)
 								if section.fields.buttonLink != undefined && section.fields.buttonText != undefined
 									a.btn.btn-white(href="#{section.fields.buttonLink}")
 										span.btn__text= section.fields.buttonText
