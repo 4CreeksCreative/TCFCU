@@ -8,7 +8,7 @@
   "dependencies": {
     "autoprefixer-stylus": "0.9.x",
     "axis": "0.6.x",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "client-templates": "^0.2.0",
     "coffee-script": "1.x",
     "css-pipeline": "0.3.x",
